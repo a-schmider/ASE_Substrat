@@ -1,9 +1,9 @@
 package edu.kit.informatik.gamerules;
 
-import edu.kit.informatik.Terminal;
-import edu.kit.informatik.models.GameBoard;
+import edu.kit.informatik.models.Connect6GameBoard;
 import edu.kit.informatik.models.GameFieldArea;
 import edu.kit.informatik.models.GameInfo;
+import edu.kit.informatik.userinterface.Terminal;
 
 /**
  * @author Andreas Schmider
@@ -19,7 +19,7 @@ public class GRTorus extends GameRule {
      * @param gB gameboard
      * @return allowed
      */
-    public boolean checkAllowedPlaceRules(int i, int j, GameBoard gB) {
+    public boolean checkAllowedPlaceRules(int i, int j, Connect6GameBoard gB) {
         boolean allowed = false;
         if (gB.getField(i, j) == "**") {
             allowed = true;
@@ -38,7 +38,7 @@ public class GRTorus extends GameRule {
      * @param gB           gameboard
      * @return win true, if player has won
      */
-    public boolean checkWin(int[] compactArray, String piece, GameInfo gI, GameBoard gB) {
+    public boolean checkWin(int[] compactArray, String piece, GameInfo gI, Connect6GameBoard gB) {
         boolean win = false;
         int x1 = compactArray[0];
         int y1 = compactArray[1];
@@ -66,7 +66,7 @@ public class GRTorus extends GameRule {
      * @param size        size
      * @return true, if row > 5
      */
-    private boolean checkAround(String piece, int[] surrounding, GameBoard gB, int x1, int y1, int size) {
+    private boolean checkAround(String piece, int[] surrounding, Connect6GameBoard gB, int x1, int y1, int size) {
         int[] count = new int[8];
         boolean ret = false;
 
@@ -99,7 +99,7 @@ public class GRTorus extends GameRule {
      * @param mod   do modulo with
      * @return number
      */
-    private int checkLeft(String piece, int i, GameBoard gB, int x, int y, int mod) {
+    private int checkLeft(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -138,7 +138,7 @@ public class GRTorus extends GameRule {
      * @param mod   do modulo with
      * @return number
      */
-    private int checkDownLeft(String piece, int i, GameBoard gB, int x, int y, int mod) {
+    private int checkDownLeft(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -177,7 +177,7 @@ public class GRTorus extends GameRule {
      * @param mod   do modulo with
      * @return number
      */
-    private int checkDown(String piece, int i, GameBoard gB, int x, int y, int mod) {
+    private int checkDown(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -216,7 +216,7 @@ public class GRTorus extends GameRule {
      * @param mod   do modulo with
      * @return number
      */
-    private int checkDownRight(String piece, int i, GameBoard gB, int x, int y, int mod) {
+    private int checkDownRight(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -255,7 +255,7 @@ public class GRTorus extends GameRule {
      * @param mod   do modulo with
      * @return number
      */
-    private int checkRight(String piece, int i, GameBoard gB, int x, int y, int mod) {
+    private int checkRight(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -294,7 +294,7 @@ public class GRTorus extends GameRule {
      * @param mod   do modulo with
      * @return number
      */
-    private int checkUpRight(String piece, int i, GameBoard gB, int x, int y, int mod) {
+    private int checkUpRight(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -333,7 +333,7 @@ public class GRTorus extends GameRule {
      * @param mod   do modulo with
      * @return number
      */
-    private int checkUp(String piece, int i, GameBoard gB, int x, int y, int mod) {
+    private int checkUp(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -372,7 +372,7 @@ public class GRTorus extends GameRule {
      * @param mod   do modulo with
      * @return number
      */
-    private int checkUpLeft(String piece, int i, GameBoard gB, int x, int y, int mod) {
+    private int checkUpLeft(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;

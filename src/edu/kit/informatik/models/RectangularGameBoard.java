@@ -1,11 +1,12 @@
 package edu.kit.informatik.models;
 
-public class RectangleGameBoard {
+public class RectangularGameBoard extends edu.kit.informatik.GameBoard {
 
     private final GameField[][] board;
 
 
-    public RectangleGameBoard(int width, int height) {
+    public RectangularGameBoard(int width, int height) {
+        super(width, height);
         board = new GameField[width][height];
     }
 

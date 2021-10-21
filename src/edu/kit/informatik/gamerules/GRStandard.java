@@ -1,9 +1,9 @@
 package edu.kit.informatik.gamerules;
 
-import edu.kit.informatik.Terminal;
-import edu.kit.informatik.models.GameBoard;
+import edu.kit.informatik.models.Connect6GameBoard;
 import edu.kit.informatik.models.GameFieldArea;
 import edu.kit.informatik.models.GameInfo;
+import edu.kit.informatik.userinterface.Terminal;
 
 /**
  * @author Andreas Schmider
@@ -18,7 +18,7 @@ public class GRStandard extends GameRule {
      * @param gB gameboard
      * @return allowed true, if allowed move
      */
-    public boolean checkAllowedPlaceRules(int i, int j, GameBoard gB) {
+    public boolean checkAllowedPlaceRules(int i, int j, Connect6GameBoard gB) {
         boolean allowed = false;
         if (i >= 0 && i < gB.getBoardSize() && j >= 0 && j < gB.getBoardSize()) {
             if (gB.getField(i, j) == "**") {
@@ -42,7 +42,7 @@ public class GRStandard extends GameRule {
      * @param gB           gameboard
      * @return win true, if the player has won
      */
-    public boolean checkWin(int[] compactArray, String piece, GameInfo gI, GameBoard gB) {
+    public boolean checkWin(int[] compactArray, String piece, GameInfo gI, Connect6GameBoard gB) {
         boolean win = false;
         int i = compactArray[0];
         int j = compactArray[1];
@@ -69,7 +69,7 @@ public class GRStandard extends GameRule {
      * @param y           y
      * @return true, if row > 5
      */
-    private boolean checkAround(String piece, int[] surrounding, GameBoard gB, int x, int y) {
+    private boolean checkAround(String piece, int[] surrounding, Connect6GameBoard gB, int x, int y) {
         int[] count = new int[8];
         boolean ret = false;
         count[0] = checkUpLeft(piece, surrounding[0], gB, x, y);
@@ -100,7 +100,7 @@ public class GRStandard extends GameRule {
      * @param y     y
      * @return number
      */
-    private int checkLeft(String piece, int i, GameBoard gB, int x, int y) {
+    private int checkLeft(String piece, int i, Connect6GameBoard gB, int x, int y) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -130,7 +130,7 @@ public class GRStandard extends GameRule {
      * @param y     y
      * @return number
      */
-    private int checkDownLeft(String piece, int i, GameBoard gB, int x, int y) {
+    private int checkDownLeft(String piece, int i, Connect6GameBoard gB, int x, int y) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -160,7 +160,7 @@ public class GRStandard extends GameRule {
      * @param y     y
      * @return number
      */
-    private int checkDown(String piece, int i, GameBoard gB, int x, int y) {
+    private int checkDown(String piece, int i, Connect6GameBoard gB, int x, int y) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -190,7 +190,7 @@ public class GRStandard extends GameRule {
      * @param y     y
      * @return number
      */
-    private int checkDownRight(String piece, int i, GameBoard gB, int x, int y) {
+    private int checkDownRight(String piece, int i, Connect6GameBoard gB, int x, int y) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -220,7 +220,7 @@ public class GRStandard extends GameRule {
      * @param y     y
      * @return number
      */
-    private int checkRight(String piece, int i, GameBoard gB, int x, int y) {
+    private int checkRight(String piece, int i, Connect6GameBoard gB, int x, int y) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -250,7 +250,7 @@ public class GRStandard extends GameRule {
      * @param y     y
      * @return number
      */
-    private int checkUpRight(String piece, int i, GameBoard gB, int x, int y) {
+    private int checkUpRight(String piece, int i, Connect6GameBoard gB, int x, int y) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -280,7 +280,7 @@ public class GRStandard extends GameRule {
      * @param y     y
      * @return number
      */
-    private int checkUp(String piece, int i, GameBoard gB, int x, int y) {
+    private int checkUp(String piece, int i, Connect6GameBoard gB, int x, int y) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
@@ -310,7 +310,7 @@ public class GRStandard extends GameRule {
      * @param y     y
      * @return number
      */
-    private int checkUpLeft(String piece, int i, GameBoard gB, int x, int y) {
+    private int checkUpLeft(String piece, int i, Connect6GameBoard gB, int x, int y) {
         boolean correct = true;
         int matches = 0;
         int j = 0;

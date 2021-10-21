@@ -1,14 +1,18 @@
 package edu.kit.informatik.games;
 
 import edu.kit.informatik.models.Player;
+import edu.kit.informatik.userinterface.GUI;
 
 public abstract class TurnBasedGame {
+
+
+    private static GUI gui = new GUI();
+    //TODO
+
 
     private boolean quited;
     private Player winner;
 
-
-    public abstract String getName();
 
     public boolean isOver() {
         return quited;
@@ -23,7 +27,8 @@ public abstract class TurnBasedGame {
         return winner;
     }
 
-    //Diese Methoden solltne nicht einfach so ausfürhbar sein nur von GamePlayer
+
+    //Diese Methoden sollten nicht einfach so ausfürhbar sein nur von GamePlayer
     void chooseVariation() {
         System.out.println("Choose Variation");
     }
@@ -38,7 +43,7 @@ public abstract class TurnBasedGame {
     }
 
     Player followUp() {
-        System.out.println("followUp");
+        gui.print("Returning to main menu\r\n");
         return winner;
     }
 }

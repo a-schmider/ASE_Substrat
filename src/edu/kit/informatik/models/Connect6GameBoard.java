@@ -1,13 +1,13 @@
 package edu.kit.informatik.models;
 
-import edu.kit.informatik.Terminal;
 import edu.kit.informatik.gamerules.GameRule;
+import edu.kit.informatik.userinterface.Terminal;
 
 /**
  * @author Andreas Schmider
  */
 
-public class GameBoard {
+public class Connect6GameBoard {
 
     private String[][] gameBoard;
     private int boardSize;
@@ -18,7 +18,7 @@ public class GameBoard {
      *
      * @param gameBoardSize gameboardsize
      */
-    public GameBoard(int gameBoardSize) {
+    public Connect6GameBoard(int gameBoardSize) {
         this.boardSize = gameBoardSize;
         this.gameBoard = new String[this.boardSize][boardSize];
         initGameBoard(this.boardSize);

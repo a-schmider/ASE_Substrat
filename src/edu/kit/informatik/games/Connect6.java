@@ -1,12 +1,12 @@
 package edu.kit.informatik.games;
 
-import edu.kit.informatik.Terminal;
 import edu.kit.informatik.gamerules.GRStandard;
 import edu.kit.informatik.gamerules.GRTorus;
 import edu.kit.informatik.gamerules.GameRule;
-import edu.kit.informatik.models.GameBoard;
+import edu.kit.informatik.models.Connect6GameBoard;
 import edu.kit.informatik.models.GameInfo;
 import edu.kit.informatik.models.Player;
+import edu.kit.informatik.userinterface.Terminal;
 
 import java.util.HashMap;
 
@@ -134,7 +134,7 @@ public class Connect6 extends TurnBasedGame {
      * @param standard     standard gamerule
      * @param torus        torus gamerule
      */
-    public static void placeUndefined(GameInfo gI, GameBoard gB, int[] compactArray, Player p, GameRule standard,
+    public static void placeUndefined(GameInfo gI, Connect6GameBoard gB, int[] compactArray, Player p, GameRule standard,
                                       GameRule torus) {
         boolean win = false;
         boolean fullBoard = false;
@@ -208,7 +208,7 @@ public class Connect6 extends TurnBasedGame {
      * @param gI           gameinfo
      * @return error true, if a error occured
      */
-    public static boolean placeDefined(GameBoard gB, int[] compactArray, String gamingPiece, GameRule gameRule,
+    public static boolean placeDefined(Connect6GameBoard gB, int[] compactArray, String gamingPiece, GameRule gameRule,
                                        GameInfo gI) {
         boolean error = false;
         int i = compactArray[0];
@@ -257,7 +257,7 @@ public class Connect6 extends TurnBasedGame {
      * @param torus    torus gamerule
      * @return quit true, if command was quit
      */
-    public static boolean getCommand(GameInfo gI, GameBoard gB, Player player, GameRule standard, GameRule torus) {
+    public static boolean getCommand(GameInfo gI, Connect6GameBoard gB, Player player, GameRule standard, GameRule torus) {
         boolean quit = false;
         String command;
         String[] arrayString = new String[2];
@@ -331,7 +331,7 @@ public class Connect6 extends TurnBasedGame {
      * @param torus    torus gamerule
      * @return quit true, if command was quit
      */
-    public static boolean doCommand(String command, String input, GameInfo gI, GameBoard gB, Player player,
+    public static boolean doCommand(String command, String input, GameInfo gI, Connect6GameBoard gB, Player player,
                                     GameRule standard, GameRule torus) {
         boolean quit = false;
         if (input.equals("")) {
@@ -473,19 +473,19 @@ public class Connect6 extends TurnBasedGame {
             m.put(1, p2);
             m.put(2, p3);
             m.put(3, p4);
-            GameBoard gameBoard = new GameBoard(gameInfo.getGameBoardSize());
+            Connect6GameBoard connect6GameBoard = new Connect6GameBoard(gameInfo.getGameBoardSize());
 
             // real game
             while (!quit) {
                 activePlayer = (Player) m.get((gameInfo.getTurn() / 2) % gameInfo.getAmountOfPlayers());
-                quit = getCommand(gameInfo, gameBoard, activePlayer, standard, torus);
+                quit = getCommand(gameInfo, connect6GameBoard, activePlayer, standard, torus);
             }
         }
 
     }
 
     @Override
-    public String getName() {
+    public String toString() {
         return "Connect6";
     }
 

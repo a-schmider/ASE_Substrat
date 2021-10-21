@@ -4,6 +4,7 @@ import edu.kit.informatik.games.Connect6;
 import edu.kit.informatik.games.ConnectFour;
 import edu.kit.informatik.games.GamePlayer;
 import edu.kit.informatik.games.TurnBasedGame;
+import edu.kit.informatik.userinterface.GUI;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,40 +15,34 @@ import java.util.Arrays;
 public class GameSelection {
 
     private static final BufferedReader IN = new BufferedReader(new InputStreamReader(System.in));
-    private static final String helloMsg = "Select one of the following games [Enter \"1\", \"2\" ...]:\r\n";
-    private static final String deniedMsg = "Could not validate input; try again";
-    private static final String helpInfoMsg = "type \"help\" for more info";
     private static final ArrayList<TurnBasedGame> gamesList =
             new ArrayList<>(Arrays.asList(new ConnectFour(), new Connect6()));
+    //TODO GUI-Methoden static machen? Dependency Inversion? Gui kennt alle, niemand kennt Gui
+    private static GuiInterface gui = new GUI();
     private static String input;
     private static boolean denied = true;
 
     public static void main(String[] argv) {
 
         while (denied) {
-            printGameList();
+            gui.printList(gamesList);
 
             try {
-                input = IN.readLine();
+                input = gui.getUserInput();
             } catch (final IOException e) {
                 denied = true;
             }
 
             int inputNumber;
             try {
-                inputNumber = Integer.parseInt(input);
+                inputNumber = Integer.parseInt(input) - 1;
 
-                GamePlayer.play(gamesList.get(inputNumber - 1));
+                GamePlayer.play(gamesList.get(inputNumber));
             } catch (NumberFormatException e) {
-                switch (input) {
-                    case "help":
-                        System.out.println(helpInfoMsg);
-                        break;
-                    case "quit":
-                        System.exit(0);
-                    default:
-                        System.out.println("\r\n" + deniedMsg);
-                        break;
+                if ("quit".equals(input)) {
+                    System.exit(0);
+                } else {
+                    gui.print("\r\n" + TextRepository.INPUT_ERROR_MSG);
                 }
             }
         }
@@ -55,11 +50,4 @@ public class GameSelection {
     }
 
 
-    private static void printGameList() {
-        System.out.println(helloMsg);
-        for (int i = 1; i < gamesList.size() + 1; i++) {
-            System.out.println(i + ". " + gamesList.get(i - 1).getName());
-        }
-        System.out.println();
-    }
 }

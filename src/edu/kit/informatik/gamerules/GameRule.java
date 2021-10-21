@@ -1,7 +1,7 @@
 package edu.kit.informatik.gamerules;
 
 import edu.kit.informatik.Connect6GameRules;
-import edu.kit.informatik.models.GameBoard;
+import edu.kit.informatik.models.Connect6GameBoard;
 import edu.kit.informatik.models.GameInfo;
 
 /**
@@ -17,7 +17,7 @@ public abstract class GameRule implements Connect6GameRules {
      * @param gB gameboard
      * @return allowed true, if the move is allowed
      */
-    public abstract boolean checkAllowedPlaceRules(int i, int j, GameBoard gB);
+    public abstract boolean checkAllowedPlaceRules(int i, int j, Connect6GameBoard gB);
 
     /**
      * checks if six in a row
@@ -28,7 +28,7 @@ public abstract class GameRule implements Connect6GameRules {
      * @param gB           gameboard
      * @return win true, if the player has won
      */
-    public abstract boolean checkWin(int[] compactArray, String piece, GameInfo gI, GameBoard gB);
+    public abstract boolean checkWin(int[] compactArray, String piece, GameInfo gI, Connect6GameBoard gB);
 
     /**
      * checks if every field is occcupied
@@ -37,7 +37,7 @@ public abstract class GameRule implements Connect6GameRules {
      * @param gI gameinfo
      * @return full true, if board is full
      */
-    public boolean checkFullBoard(GameBoard gB, GameInfo gI) {
+    public boolean checkFullBoard(Connect6GameBoard gB, GameInfo gI) {
         return gI.getTurn() == gB.getBoardSize() * gB.getBoardSize();
     }
 }
