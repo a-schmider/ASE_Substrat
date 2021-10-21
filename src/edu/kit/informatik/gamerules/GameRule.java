@@ -1,12 +1,13 @@
-package edu.kit.informatik;
+package edu.kit.informatik.gamerules;
 
+import edu.kit.informatik.Connect6GameRules;
 import edu.kit.informatik.models.GameBoard;
 import edu.kit.informatik.models.GameInfo;
 
 /**
- * @author Andi
+ * @author Andreas Schmider
  */
-public interface Connect6GameRules {
+public abstract class GameRule implements Connect6GameRules {
 
     /**
      * checks if the place move is allowed
@@ -16,18 +17,18 @@ public interface Connect6GameRules {
      * @param gB gameboard
      * @return allowed true, if the move is allowed
      */
-    boolean checkAllowedPlaceRules(int i, int j, GameBoard gB);
+    public abstract boolean checkAllowedPlaceRules(int i, int j, GameBoard gB);
 
     /**
      * checks if six in a row
      *
-     * @param compactArray contents the four coordinates
+     * @param compactArray with both x and y positions
      * @param piece        field content (playermark)
      * @param gI           gameinfo
      * @param gB           gameboard
      * @return win true, if the player has won
      */
-    boolean checkWin(int[] compactArray, String piece, GameInfo gI, GameBoard gB);
+    public abstract boolean checkWin(int[] compactArray, String piece, GameInfo gI, GameBoard gB);
 
     /**
      * checks if every field is occcupied
@@ -36,5 +37,7 @@ public interface Connect6GameRules {
      * @param gI gameinfo
      * @return full true, if board is full
      */
-    boolean checkFullBoard(GameBoard gB, GameInfo gI);
+    public boolean checkFullBoard(GameBoard gB, GameInfo gI) {
+        return gI.getTurn() == gB.getBoardSize() * gB.getBoardSize();
+    }
 }

@@ -1,23 +1,31 @@
 package edu.kit.informatik;
 
+import edu.kit.informatik.games.Connect6;
+import edu.kit.informatik.games.ConnectFour;
+import edu.kit.informatik.games.GamePlayer;
+import edu.kit.informatik.games.TurnBasedGame;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GameSelection {
 
     private static final BufferedReader IN = new BufferedReader(new InputStreamReader(System.in));
-    private static String input;
-    private static boolean denied = false;
-    private static final String HelloMsg = "Select one of the following games [Enter \"1\", \"2\" ...]:\r\n";
-    private static final String gameList =  "\r\n1. Connect6\r\n" +
-            "\r\n2. 4 Gewinnt\r\n";;
+    private static final String helloMsg = "Select one of the following games [Enter \"1\", \"2\" ...]:\r\n";
     private static final String deniedMsg = "Could not validate input; try again";
+    private static final String helpInfoMsg = "type \"help\" for more info";
+    private static final ArrayList<TurnBasedGame> gamesList =
+            new ArrayList<>(Arrays.asList(new ConnectFour(), new Connect6()));
+    private static String input;
+    private static boolean denied = true;
 
     public static void main(String[] argv) {
 
         while (denied) {
-            System.out.println(HelloMsg + gameList);
+            printGameList();
 
             try {
                 input = IN.readLine();
@@ -25,22 +33,33 @@ public class GameSelection {
                 denied = true;
             }
 
-            switch (input) {
-                case "1":
-                    //start Connect6;
-                    break;
-                case "2":
-                    //start 4 Gewinnt
-                    break;
-                default:
-                    denied = true;
-                    break;
-            }
+            int inputNumber;
+            try {
+                inputNumber = Integer.parseInt(input);
 
-            if (denied) {
-                System.out.println(deniedMsg);
+                GamePlayer.play(gamesList.get(inputNumber - 1));
+            } catch (NumberFormatException e) {
+                switch (input) {
+                    case "help":
+                        System.out.println(helpInfoMsg);
+                        break;
+                    case "quit":
+                        System.exit(0);
+                    default:
+                        System.out.println("\r\n" + deniedMsg);
+                        break;
+                }
             }
         }
 
+    }
+
+
+    private static void printGameList() {
+        System.out.println(helloMsg);
+        for (int i = 1; i < gamesList.size() + 1; i++) {
+            System.out.println(i + ". " + gamesList.get(i - 1).getName());
+        }
+        System.out.println();
     }
 }
