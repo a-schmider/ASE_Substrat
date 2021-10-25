@@ -6,19 +6,16 @@ import edu.kit.informatik.games.GamePlayer;
 import edu.kit.informatik.games.TurnBasedGame;
 import edu.kit.informatik.userinterface.GUI;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class GameSelection {
 
-    private static final BufferedReader IN = new BufferedReader(new InputStreamReader(System.in));
     private static final ArrayList<TurnBasedGame> gamesList =
             new ArrayList<>(Arrays.asList(new ConnectFour(), new Connect6()));
-    //TODO GUI-Methoden static machen? Dependency Inversion? Gui kennt alle, niemand kennt Gui
-    private static GuiInterface gui = new GUI();
+    //TODO GUI-Methoden static machen? Dependency Inversion? Gui kennt alle, main kennt Gui
+    private static final GuiInterface gui = new GUI();
     private static String input;
     private static boolean denied = true;
 

@@ -1,34 +1,47 @@
-package edu.kit.informatik.gamerules;
+package edu.kit.informatik.gamerules.connect6;
 
+import edu.kit.informatik.gamerules.BoardGameRule;
 import edu.kit.informatik.models.Connect6GameBoard;
 import edu.kit.informatik.models.GameFieldArea;
 import edu.kit.informatik.models.GameInfo;
+import edu.kit.informatik.models.RectangularGameBoard;
 import edu.kit.informatik.userinterface.Terminal;
 
 /**
  * @author Andreas Schmider
  */
-public class GRStandard extends GameRule {
+
+public class Connect6TorusGR extends BoardGameRule {
+
+    @Override
+    public boolean checkAllowedPlaceRules(int i, int j, RectangularGameBoard gB) {
+        return false;
+    }
+
+    @Override
+    public boolean checkWin(int[] compactArray, String piece, GameInfo gI, RectangularGameBoard gB) {
+        return false;
+    }
+
+    @Override
+    public boolean checkFullBoard(RectangularGameBoard gB, GameInfo gI) {
+        return false;
+    }
 
     /**
-     * checks if i,j at gameBoard and if its free
+     * checks if the field is empty
      *
      * @param i  column
      * @param j  row
      * @param gB gameboard
-     * @return allowed true, if allowed move
+     * @return allowed
      */
     public boolean checkAllowedPlaceRules(int i, int j, Connect6GameBoard gB) {
         boolean allowed = false;
-        if (i >= 0 && i < gB.getBoardSize() && j >= 0 && j < gB.getBoardSize()) {
-            if (gB.getField(i, j) == "**") {
-                allowed = true;
-            } else {
-                Terminal.printError("already occupied, again");
-            }
+        if (gB.getField(i, j) == "**") {
+            allowed = true;
         } else {
-            int help = gB.getBoardSize() - 1;
-            Terminal.printError("numbers must be between 0 and " + help + ", again");
+            Terminal.printError("already occupied, again");
         }
         return allowed;
     }
@@ -40,24 +53,25 @@ public class GRStandard extends GameRule {
      * @param piece        field content (playermark)
      * @param gI           gameinfo
      * @param gB           gameboard
-     * @return win true, if the player has won
+     * @return win true, if player has won
      */
     public boolean checkWin(int[] compactArray, String piece, GameInfo gI, Connect6GameBoard gB) {
         boolean win = false;
-        int i = compactArray[0];
-        int j = compactArray[1];
-        int k = compactArray[2];
-        int l = compactArray[3];
-        GameFieldArea gFA = new GameFieldArea(i, j, gI);
-        GameFieldArea gFA2 = new GameFieldArea(k, l, gI);
-        if (checkAround(piece, gFA.getSurrounding(), gB, i, j)) {
+        int x1 = compactArray[0];
+        int y1 = compactArray[1];
+        int x2 = compactArray[2];
+        int y2 = compactArray[3];
+        GameFieldArea gFA = new GameFieldArea(x1, y1, gI, 5);
+        GameFieldArea gFA2 = new GameFieldArea(x2, y2, gI, 5);
+        if (checkAround(piece, gFA.getSurrounding(), gB, x1, y1, gI.getGameBoardSize())) {
             win = true;
         }
-        if (checkAround(piece, gFA2.getSurrounding(), gB, k, l)) {
+        if (checkAround(piece, gFA2.getSurrounding(), gB, x2, y2, gI.getGameBoardSize())) {
             win = true;
         }
         return win;
     }
+
 
     /**
      * checks how many gamePieces of the same Player is in a row
@@ -65,21 +79,23 @@ public class GRStandard extends GameRule {
      * @param piece       p
      * @param surrounding s
      * @param gB          gameBoard
-     * @param x           x
-     * @param y           y
+     * @param x1          x
+     * @param y1          y
+     * @param size        size
      * @return true, if row > 5
      */
-    private boolean checkAround(String piece, int[] surrounding, Connect6GameBoard gB, int x, int y) {
+    private boolean checkAround(String piece, int[] surrounding, Connect6GameBoard gB, int x1, int y1, int size) {
         int[] count = new int[8];
         boolean ret = false;
-        count[0] = checkUpLeft(piece, surrounding[0], gB, x, y);
-        count[1] = checkUp(piece, surrounding[1], gB, x, y);
-        count[2] = checkUpRight(piece, surrounding[2], gB, x, y);
-        count[3] = checkRight(piece, surrounding[3], gB, x, y);
-        count[4] = checkDownRight(piece, surrounding[4], gB, x, y);
-        count[5] = checkDown(piece, surrounding[5], gB, x, y);
-        count[6] = checkDownLeft(piece, surrounding[6], gB, x, y);
-        count[7] = checkLeft(piece, surrounding[7], gB, x, y);
+
+        count[0] = checkUpLeft(piece, surrounding[0], gB, x1, y1, size);
+        count[1] = checkUp(piece, surrounding[1], gB, x1, y1, size);
+        count[2] = checkUpRight(piece, surrounding[2], gB, x1, y1, size);
+        count[3] = checkRight(piece, surrounding[3], gB, x1, y1, size);
+        count[4] = checkDownRight(piece, surrounding[4], gB, x1, y1, size);
+        count[5] = checkDown(piece, surrounding[5], gB, x1, y1, size);
+        count[6] = checkDownLeft(piece, surrounding[6], gB, x1, y1, size);
+        count[7] = checkLeft(piece, surrounding[7], gB, x1, y1, size);
 
         for (int i = 0; i < 4; i++) {
             if (count[i] + count[4 + i] > 4) {
@@ -98,15 +114,24 @@ public class GRStandard extends GameRule {
      * @param gB    gameBoard
      * @param x     x
      * @param y     y
+     * @param mod   do modulo with
      * @return number
      */
-    private int checkLeft(String piece, int i, Connect6GameBoard gB, int x, int y) {
+    private int checkLeft(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
+        int x1;
+        int y1;
         while (j < i) {
             if (correct) {
-                String s = gB.getField(x, y - (j + 1));
+                x1 = x;
+                y1 = (y - (j + 1));
+                do {
+                    x1 = ((x1 + mod) % mod);
+                    y1 = ((y1 + mod) % mod);
+                } while (x1 < 0 || y1 < 0);
+                String s = gB.getField(x1, y1);
                 if (s.equals(piece)) {
                     matches++;
                 } else {
@@ -128,15 +153,24 @@ public class GRStandard extends GameRule {
      * @param gB    gameBoard
      * @param x     x
      * @param y     y
+     * @param mod   do modulo with
      * @return number
      */
-    private int checkDownLeft(String piece, int i, Connect6GameBoard gB, int x, int y) {
+    private int checkDownLeft(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
+        int x1;
+        int y1;
         while (j < i) {
             if (correct) {
-                String s = gB.getField(x + (j + 1), y - (j + 1));
+                x1 = (x + (j + 1));
+                y1 = (y - (j + 1));
+                do {
+                    x1 = ((x1 + mod) % mod);
+                    y1 = ((y1 + mod) % mod);
+                } while (x1 < 0 || y1 < 0);
+                String s = gB.getField(x1, y1);
                 if (s.equals(piece)) {
                     matches++;
                 } else {
@@ -158,15 +192,24 @@ public class GRStandard extends GameRule {
      * @param gB    gameBoard
      * @param x     x
      * @param y     y
+     * @param mod   do modulo with
      * @return number
      */
-    private int checkDown(String piece, int i, Connect6GameBoard gB, int x, int y) {
+    private int checkDown(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
+        int x1;
+        int y1;
         while (j < i) {
             if (correct) {
-                String s = gB.getField(x + (j + 1), y);
+                x1 = (x + (j + 1));
+                y1 = y;
+                do {
+                    x1 = ((x1 + mod) % mod);
+                    y1 = ((y1 + mod) % mod);
+                } while (x1 < 0 || y1 < 0);
+                String s = gB.getField(x1, y1);
                 if (s.equals(piece)) {
                     matches++;
                 } else {
@@ -188,15 +231,24 @@ public class GRStandard extends GameRule {
      * @param gB    gameBoard
      * @param x     x
      * @param y     y
+     * @param mod   do modulo with
      * @return number
      */
-    private int checkDownRight(String piece, int i, Connect6GameBoard gB, int x, int y) {
+    private int checkDownRight(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
+        int x1;
+        int y1;
         while (j < i) {
             if (correct) {
-                String s = gB.getField(x + (j + 1), y + (j + 1));
+                x1 = x + j + 1;
+                y1 = y + j + 1;
+                do {
+                    x1 = ((x1 + mod) % mod);
+                    y1 = ((y1 + mod) % mod);
+                } while (x1 < 0 || y1 < 0);
+                String s = gB.getField(x1, y1);
                 if (s.equals(piece)) {
                     matches++;
                 } else {
@@ -218,15 +270,24 @@ public class GRStandard extends GameRule {
      * @param gB    gameBoard
      * @param x     x
      * @param y     y
+     * @param mod   do modulo with
      * @return number
      */
-    private int checkRight(String piece, int i, Connect6GameBoard gB, int x, int y) {
+    private int checkRight(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
+        int x1;
+        int y1;
         while (j < i) {
             if (correct) {
-                String s = gB.getField(x, y + (j + 1));
+                x1 = x;
+                y1 = (y + (j + 1));
+                do {
+                    x1 = ((x1 + mod) % mod);
+                    y1 = ((y1 + mod) % mod);
+                } while (x1 < 0 || y1 < 0);
+                String s = gB.getField(x1, y1);
                 if (s.equals(piece)) {
                     matches++;
                 } else {
@@ -248,15 +309,24 @@ public class GRStandard extends GameRule {
      * @param gB    gameBoard
      * @param x     x
      * @param y     y
+     * @param mod   do modulo with
      * @return number
      */
-    private int checkUpRight(String piece, int i, Connect6GameBoard gB, int x, int y) {
+    private int checkUpRight(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
+        int x1;
+        int y1;
         while (j < i) {
             if (correct) {
-                String s = gB.getField(x - (j + 1), y + (j + 1));
+                x1 = (x - (j + 1));
+                y1 = (y + (j + 1));
+                do {
+                    x1 = ((x1 + mod) % mod);
+                    y1 = ((y1 + mod) % mod);
+                } while (x1 < 0 || y1 < 0);
+                String s = gB.getField(x1, y1);
                 if (s.equals(piece)) {
                     matches++;
                 } else {
@@ -278,15 +348,24 @@ public class GRStandard extends GameRule {
      * @param gB    gameBoard
      * @param x     x
      * @param y     y
+     * @param mod   do modulo with
      * @return number
      */
-    private int checkUp(String piece, int i, Connect6GameBoard gB, int x, int y) {
+    private int checkUp(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
+        int x1;
+        int y1;
         while (j < i) {
             if (correct) {
-                String s = gB.getField(x - (j + 1), y);
+                x1 = (x - (j + 1));
+                y1 = y;
+                do {
+                    x1 = ((x1 + mod) % mod);
+                    y1 = ((y1 + mod) % mod);
+                } while (x1 < 0 || y1 < 0);
+                String s = gB.getField(x1, y1);
                 if (s.equals(piece)) {
                     matches++;
                 } else {
@@ -308,15 +387,24 @@ public class GRStandard extends GameRule {
      * @param gB    gameBoard
      * @param x     x
      * @param y     y
+     * @param mod   do modulo with
      * @return number
      */
-    private int checkUpLeft(String piece, int i, Connect6GameBoard gB, int x, int y) {
+    private int checkUpLeft(String piece, int i, Connect6GameBoard gB, int x, int y, int mod) {
         boolean correct = true;
         int matches = 0;
         int j = 0;
+        int x1;
+        int y1;
         while (j < i) {
             if (correct) {
-                String s = gB.getField(x - (j + 1), y - (j + 1));
+                x1 = (x - (j + 1));
+                y1 = (y - (j + 1));
+                do {
+                    x1 = ((x1 + mod) % mod);
+                    y1 = ((y1 + mod) % mod);
+                } while (x1 < 0 || y1 < 0);
+                String s = gB.getField(x1, y1);
                 if (s.equals(piece)) {
                     matches++;
 

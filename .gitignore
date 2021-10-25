@@ -7,18 +7,5 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 /.idea/codeStyles/codeStyleConfig.xml
-/bin/edu/kit/informatik/games/Connect6.class
-/bin/edu/kit/informatik/games/ConnectFour.class
-/bin/edu/kit/informatik/models/GameBoard.class
-/bin/edu/kit/informatik/models/GameField.class
-/bin/edu/kit/informatik/models/GameFieldArea.class
-/bin/edu/kit/informatik/models/GameInfo.class
-/bin/edu/kit/informatik/games/GamePlayer.class
-/bin/edu/kit/informatik/gamerules/GameRule.class
-/bin/edu/kit/informatik/GameSelection.class
-/bin/edu/kit/informatik/gamerules/GRStandard.class
-/bin/edu/kit/informatik/gamerules/GRTorus.class
+/bin/
 /Diagrams/informatik.uml
-/bin/edu/kit/informatik/models/Player.class
-/bin/edu/kit/informatik/models/RectangleGameBoard.class
-/bin

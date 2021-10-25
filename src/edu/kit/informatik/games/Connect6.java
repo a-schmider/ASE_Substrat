@@ -1,13 +1,17 @@
 package edu.kit.informatik.games;
 
-import edu.kit.informatik.gamerules.GRStandard;
-import edu.kit.informatik.gamerules.GRTorus;
-import edu.kit.informatik.gamerules.GameRule;
+import edu.kit.informatik.Command;
+import edu.kit.informatik.Connect6Commands;
+import edu.kit.informatik.gamerules.BoardGameRule;
+import edu.kit.informatik.gamerules.connect6.Connect6StandardGR;
+import edu.kit.informatik.gamerules.connect6.Connect6TorusGR;
 import edu.kit.informatik.models.Connect6GameBoard;
 import edu.kit.informatik.models.GameInfo;
 import edu.kit.informatik.models.Player;
 import edu.kit.informatik.userinterface.Terminal;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -134,8 +138,8 @@ public class Connect6 extends TurnBasedGame {
      * @param standard     standard gamerule
      * @param torus        torus gamerule
      */
-    public static void placeUndefined(GameInfo gI, Connect6GameBoard gB, int[] compactArray, Player p, GameRule standard,
-                                      GameRule torus) {
+    public static void placeUndefined(GameInfo gI, Connect6GameBoard gB, int[] compactArray, Player p, BoardGameRule standard,
+                                      BoardGameRule torus) {
         boolean win = false;
         boolean fullBoard = false;
         boolean error;
@@ -201,24 +205,24 @@ public class Connect6 extends TurnBasedGame {
     /**
      * places a gamingPiece at the current Location
      *
-     * @param gB           gameboard
-     * @param compactArray with both x and y positions
-     * @param gamingPiece  playermark
-     * @param gameRule     correct gamerule
-     * @param gI           gameinfo
+     * @param gB            gameboard
+     * @param compactArray  with both x and y positions
+     * @param gamingPiece   playermark
+     * @param boardGameRule correct gamerule
+     * @param gI            gameinfo
      * @return error true, if a error occured
      */
-    public static boolean placeDefined(Connect6GameBoard gB, int[] compactArray, String gamingPiece, GameRule gameRule,
+    public static boolean placeDefined(Connect6GameBoard gB, int[] compactArray, String gamingPiece, BoardGameRule boardGameRule,
                                        GameInfo gI) {
         boolean error = false;
         int i = compactArray[0];
         int j = compactArray[1];
         int k = compactArray[2];
         int l = compactArray[3];
-        if (gameRule.checkAllowedPlaceRules(i, j, gB) && gameRule.checkAllowedPlaceRules(k, l, gB)) {
+        if (boardGameRule.checkAllowedPlaceRules(i, j, gB) && boardGameRule.checkAllowedPlaceRules(k, l, gB)) {
             if ((i != k || j != l)) {
-                gB.place(i, j, gamingPiece, gameRule);
-                gB.place(k, l, gamingPiece, gameRule);
+                gB.place(i, j, gamingPiece, boardGameRule);
+                gB.place(k, l, gamingPiece, boardGameRule);
             } else {
                 Terminal.printError("already occupied");
                 error = true;
@@ -247,6 +251,7 @@ public class Connect6 extends TurnBasedGame {
         return intArray;
     }
 
+
     /**
      * reads a line of text and splits it in command and arguments
      *
@@ -257,7 +262,7 @@ public class Connect6 extends TurnBasedGame {
      * @param torus    torus gamerule
      * @return quit true, if command was quit
      */
-    public static boolean getCommand(GameInfo gI, Connect6GameBoard gB, Player player, GameRule standard, GameRule torus) {
+    public static boolean getCommand(GameInfo gI, Connect6GameBoard gB, Player player, BoardGameRule standard, BoardGameRule torus) {
         boolean quit = false;
         String command;
         String[] arrayString = new String[2];
@@ -332,14 +337,14 @@ public class Connect6 extends TurnBasedGame {
      * @return quit true, if command was quit
      */
     public static boolean doCommand(String command, String input, GameInfo gI, Connect6GameBoard gB, Player player,
-                                    GameRule standard, GameRule torus) {
+                                    BoardGameRule standard, BoardGameRule torus) {
         boolean quit = false;
         if (input.equals("")) {
             switch (command) {
                 case "help":
                     System.out.println("Available commands:\r\n" +
                             "\r\nprint:\r\n Prints the entire board\r\n" +
-                            "\r\nreset:\r\n ???\r\n" +
+                            "\r\nreset:\r\n Resets the game so it can be played again\r\n" +
                             "\r\nquit:\r\n Terminates the program\r\n" +
                             "\r\nplace w x y z:\r\n Places stones on the fields w|x and y|z\r\n" +
                             "\r\nrowprint z:\r\n Prints the selected row\r\n" +
@@ -461,8 +466,8 @@ public class Connect6 extends TurnBasedGame {
             // preparations
             boolean quit = false;
             GameInfo gameInfo = new GameInfo(args[0], Integer.parseInt(args[1]), Integer.parseInt(args[2]));
-            GameRule standard = new GRStandard();
-            GameRule torus = new GRTorus();
+            BoardGameRule standard = new Connect6StandardGR();
+            BoardGameRule torus = new Connect6TorusGR();
             Player p1 = new Player();
             Player p2 = new Player();
             Player p3 = new Player();
@@ -479,9 +484,67 @@ public class Connect6 extends TurnBasedGame {
             while (!quit) {
                 activePlayer = (Player) m.get((gameInfo.getTurn() / 2) % gameInfo.getAmountOfPlayers());
                 quit = getCommand(gameInfo, connect6GameBoard, activePlayer, standard, torus);
+
+                //TODO neuer Spielverlauf
+//                try {
+//                    String input = Terminal.readLine();
+//                    Command command = getCommand(input);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
             }
         }
 
+    }
+
+
+    //TODO neu implementierung con getCommand was wirklich nur das Commando zurückgibt
+    public static Command getCommand(String input) throws IOException {
+        String[] arrayString;
+
+        arrayString = input.split("\\s+");
+        Connect6Commands command;
+
+        // 1 out of bounds
+        String[] parameter = Arrays.copyOfRange(arrayString, 1, arrayString.length);
+
+        switch (arrayString[0]) {
+            case "print":
+                command = Connect6Commands.print;
+                break;
+            case "rowprint":
+                command = Connect6Commands.rowprint;
+                break;
+            case "colprint":
+                command = Connect6Commands.colprint;
+                break;
+            case "quit":
+                command = Connect6Commands.quit;
+                break;
+            case "reset":
+                command = Connect6Commands.reset;
+                break;
+            case "place":
+                command = Connect6Commands.place;
+                break;
+            case "state":
+                command = Connect6Commands.state;
+                break;
+            default:
+                throw new IOException("Command not recognized");
+        }
+
+        if (checkCorrectParameters(command, parameter)) {
+            return new Command(command, parameter);
+        }
+
+        //TODO Rückgabewert
+        throw new IOException("Falsche Parameter TODO");
+    }
+
+    private static boolean checkCorrectParameters(Connect6Commands command, String[] parameter) {
+        //TODO implementieren
+        return false;
     }
 
     @Override

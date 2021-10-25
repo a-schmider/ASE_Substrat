@@ -1,13 +1,13 @@
 package edu.kit.informatik.models;
 
-import edu.kit.informatik.gamerules.GameRule;
+import edu.kit.informatik.gamerules.BoardGameRule;
 import edu.kit.informatik.userinterface.Terminal;
 
 /**
  * @author Andreas Schmider
  */
 
-public class Connect6GameBoard {
+public class Connect6GameBoard extends RectangularGameBoard {
 
     private String[][] gameBoard;
     private int boardSize;
@@ -19,6 +19,7 @@ public class Connect6GameBoard {
      * @param gameBoardSize gameboardsize
      */
     public Connect6GameBoard(int gameBoardSize) {
+        super(gameBoardSize, gameBoardSize);//TODO nachschauen ob richtig
         this.boardSize = gameBoardSize;
         this.gameBoard = new String[this.boardSize][boardSize];
         initGameBoard(this.boardSize);
@@ -132,12 +133,12 @@ public class Connect6GameBoard {
     /**
      * fills the field with gamingPiece
      *
-     * @param i           column
-     * @param j           row
-     * @param gamingPiece playermark
-     * @param gameRule    gamerule
+     * @param i             column
+     * @param j             row
+     * @param gamingPiece   playermark
+     * @param boardGameRule gamerule
      */
-    public void place(int i, int j, String gamingPiece, GameRule gameRule) {
+    public void place(int i, int j, String gamingPiece, BoardGameRule boardGameRule) {
         this.gameBoard[i][j] = gamingPiece;
     }
 

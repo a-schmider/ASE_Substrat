@@ -2,9 +2,9 @@ package edu.kit.informatik.games;
 
 import edu.kit.informatik.ConnectFourVariations;
 import edu.kit.informatik.TextRepository;
-import edu.kit.informatik.gamerules.connect_four.ConnectFourGameRule;
-import edu.kit.informatik.gamerules.connect_four.DropFourGameRule;
-import edu.kit.informatik.gamerules.connect_four.StandardConnectFourGameRule;
+import edu.kit.informatik.gamerules.BoardGameRule;
+import edu.kit.informatik.gamerules.connect_four.ConnectFourDropGR;
+import edu.kit.informatik.gamerules.connect_four.ConnectFourStandardGR;
 import edu.kit.informatik.models.RectangularGameBoard;
 import edu.kit.informatik.userinterface.GUI;
 
@@ -20,7 +20,7 @@ public class ConnectFour extends TurnBasedGame {
     private static GUI gui = new GUI();
     private static ConnectFourVariations chosenVariation;
     private RectangularGameBoard board;
-    private ConnectFourGameRule gameRule;
+    private BoardGameRule boardGameRule;
 
 
     @Override
@@ -49,10 +49,10 @@ public class ConnectFour extends TurnBasedGame {
 
         switch (chosenVariation) {
             case standard:
-                gameRule = new StandardConnectFourGameRule();
+                boardGameRule = new ConnectFourStandardGR();
                 break;
             case dropFour:
-                gameRule = new DropFourGameRule();
+                boardGameRule = new ConnectFourDropGR();
                 break;
         }
     }

@@ -1,12 +1,12 @@
-package edu.kit.informatik;
+package edu.kit.informatik.gamerules;
 
-import edu.kit.informatik.models.Connect6GameBoard;
 import edu.kit.informatik.models.GameInfo;
+import edu.kit.informatik.models.RectangularGameBoard;
 
 /**
  * @author Andi
  */
-public interface Connect6GameRules {
+public interface ConnectGameRules {
 
     /**
      * checks if the place move is allowed
@@ -16,7 +16,7 @@ public interface Connect6GameRules {
      * @param gB gameboard
      * @return allowed true, if the move is allowed
      */
-    boolean checkAllowedPlaceRules(int i, int j, Connect6GameBoard gB);
+    boolean checkAllowedPlaceRules(int i, int j, RectangularGameBoard gB);
 
     /**
      * checks if six in a row
@@ -27,7 +27,7 @@ public interface Connect6GameRules {
      * @param gB           gameboard
      * @return win true, if the player has won
      */
-    boolean checkWin(int[] compactArray, String piece, GameInfo gI, Connect6GameBoard gB);
+    boolean checkWin(int[] compactArray, String piece, GameInfo gI, RectangularGameBoard gB);
 
     /**
      * checks if every field is occcupied
@@ -36,5 +36,5 @@ public interface Connect6GameRules {
      * @param gI gameinfo
      * @return full true, if board is full
      */
-    boolean checkFullBoard(Connect6GameBoard gB, GameInfo gI);
+    boolean checkFullBoard(RectangularGameBoard gB, GameInfo gI);
 }

@@ -25,6 +25,8 @@ public class GUI implements GuiInterface {
     }
 
     public String getUserInput() throws IOException {
-        return IN.readLine();
+        String input = IN.readLine();
+        System.out.println();
+        return input;
     }
 }
