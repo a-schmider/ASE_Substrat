@@ -349,7 +349,8 @@ public class Connect6 extends TurnBasedGame {
                             "\r\nplace w x y z:\r\n Places stones on the fields w|x and y|z\r\n" +
                             "\r\nrowprint z:\r\n Prints the selected row\r\n" +
                             "\r\ncolprint z:\r\n Prints the selected column\r\n" +
-                            "\r\nstate y z:\r\n Prints which stone is placed on the selected field\r\n\r\n");
+                            "\r\nstate y z:\r\n Prints which stone is placed on the selected field\r\n" +
+                            "\r\nhelp:\r\n Shows this screen\r\n\r\n");
                     break;
                 case "print":
                     gB.boardPrint();
@@ -482,16 +483,16 @@ public class Connect6 extends TurnBasedGame {
 
             // real game
             while (!quit) {
-                activePlayer = (Player) m.get((gameInfo.getTurn() / 2) % gameInfo.getAmountOfPlayers());
-                quit = getCommand(gameInfo, connect6GameBoard, activePlayer, standard, torus);
+                //activePlayer = (Player) m.get((gameInfo.getTurn() / 2) % gameInfo.getAmountOfPlayers());
+                //quit = getCommand(gameInfo, connect6GameBoard, activePlayer, standard, torus);
 
                 //TODO neuer Spielverlauf
-//                try {
-//                    String input = Terminal.readLine();
-//                    Command command = getCommand(input);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
+                try {
+                    String input = Terminal.readLine();
+                    Command command = getCommand(input);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
 
@@ -504,9 +505,12 @@ public class Connect6 extends TurnBasedGame {
 
         arrayString = input.split("\\s+");
         Connect6Commands command;
+        String[] parameter = new String[0];
 
-        // 1 out of bounds
-        String[] parameter = Arrays.copyOfRange(arrayString, 1, arrayString.length);
+        if (arrayString.length >= 1) {
+            parameter = Arrays.copyOfRange(arrayString, 1, arrayString.length);
+        }
+
 
         switch (arrayString[0]) {
             case "print":
@@ -530,6 +534,9 @@ public class Connect6 extends TurnBasedGame {
             case "state":
                 command = Connect6Commands.state;
                 break;
+            case "help":
+                command = Connect6Commands.help;
+                break;
             default:
                 throw new IOException("Command not recognized");
         }
@@ -543,13 +550,37 @@ public class Connect6 extends TurnBasedGame {
     }
 
     private static boolean checkCorrectParameters(Connect6Commands command, String[] parameter) {
-        //TODO implementieren
-        return false;
+        //TODO in int casten
+        switch (command) {
+            case print:
+                return parameter.length == Command.PRINT_PARAM_LENGTH;
+            case rowprint:
+                return parameter.length == Command.ROWPRINT_PARAM_LENGTH;
+            case colprint:
+                return parameter.length == Command.COLPRINT_PARAM_LENGTH;
+            case quit:
+                return parameter.length == Command.QUIT_PARAM_LENGTH;
+            case reset:
+                return parameter.length == Command.RESET_PARAM_LENGTH;
+            case place:
+                return parameter.length == Command.PLACE_PARAM_LENGTH;
+            case state:
+                return parameter.length == Command.STATE_PARAM_LENGTH;
+            case help:
+                return parameter.length == Command.HELP_PARAM_LENGTH;
+            default:
+                return false;
+        }
     }
 
     @Override
     public String toString() {
         return "Connect6";
+    }
+
+    @Override
+    void chooseVariation() {
+
     }
 
     @Override
