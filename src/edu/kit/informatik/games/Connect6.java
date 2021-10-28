@@ -499,19 +499,11 @@ public class Connect6 extends TurnBasedGame {
     }
 
 
-    //TODO neu implementierung con getCommand was wirklich nur das Commando zurückgibt
     public static Command getCommand(String input) throws IOException {
         String[] arrayString;
-
         arrayString = input.split("\\s+");
+
         Connect6Commands command;
-        String[] parameter = new String[0];
-
-        if (arrayString.length >= 1) {
-            parameter = Arrays.copyOfRange(arrayString, 1, arrayString.length);
-        }
-
-
         switch (arrayString[0]) {
             case "print":
                 command = Connect6Commands.print;
@@ -541,33 +533,43 @@ public class Connect6 extends TurnBasedGame {
                 throw new IOException("Command not recognized");
         }
 
-        if (checkCorrectParameters(command, parameter)) {
-            return new Command(command, parameter);
+        String[] parameter = new String[0];
+        if (arrayString.length > 1) {
+            parameter = Arrays.copyOfRange(arrayString, 1, arrayString.length);
         }
 
-        //TODO Rückgabewert
-        throw new IOException("Falsche Parameter TODO");
+        if (checkCorrectParametersTypes(command, parameter)) {
+            return new Command(command, Arrays.stream(parameter).mapToInt(Integer::parseInt).toArray());
+        }
+
+        throw new IOException("Mismatch of command and parameters");
     }
 
-    private static boolean checkCorrectParameters(Connect6Commands command, String[] parameter) {
-        //TODO in int casten
+    private static boolean checkCorrectParametersTypes(Connect6Commands command, String[] parameters) {
+        int[] values;
+        try {
+            values = Arrays.stream(parameters).mapToInt(Integer::parseInt).toArray();
+        } catch (Exception e) {
+            return false;
+        }
+
         switch (command) {
             case print:
-                return parameter.length == Command.PRINT_PARAM_LENGTH;
+                return values.length == Command.PRINT_PARAM_LENGTH;
             case rowprint:
-                return parameter.length == Command.ROWPRINT_PARAM_LENGTH;
+                return values.length == Command.ROWPRINT_PARAM_LENGTH;
             case colprint:
-                return parameter.length == Command.COLPRINT_PARAM_LENGTH;
+                return values.length == Command.COLPRINT_PARAM_LENGTH;
             case quit:
-                return parameter.length == Command.QUIT_PARAM_LENGTH;
+                return values.length == Command.QUIT_PARAM_LENGTH;
             case reset:
-                return parameter.length == Command.RESET_PARAM_LENGTH;
+                return values.length == Command.RESET_PARAM_LENGTH;
             case place:
-                return parameter.length == Command.PLACE_PARAM_LENGTH;
+                return values.length == Command.PLACE_PARAM_LENGTH;
             case state:
-                return parameter.length == Command.STATE_PARAM_LENGTH;
+                return values.length == Command.STATE_PARAM_LENGTH;
             case help:
-                return parameter.length == Command.HELP_PARAM_LENGTH;
+                return values.length == Command.HELP_PARAM_LENGTH;
             default:
                 return false;
         }
