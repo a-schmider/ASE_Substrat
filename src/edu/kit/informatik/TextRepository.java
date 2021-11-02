@@ -3,8 +3,8 @@ package edu.kit.informatik;
 public class TextRepository {
 
     public static final String SELECT_ONE = "\r\nSelect one of the following [Enter \"1\", \"2\" ...]:\r\n";
-    public static final String INPUT_ERROR_MSG = "Could not validate input; try again";
-    public static final String HELP_INFO_MSG = "type \"help\" for more info";
+    public static final String INPUT_ERROR_MSG = "Command no recognized; try again";
+    public static final String HELP_INFO_MSG = "Type \"help\" for more info";
     public static final String PLACEMENT_NOT_ALLOWED = "At least one of the chosen fields is not allowing to place a stone";
 
     public static final String CONNECT6_HELP = "Available commands:\r\n" +

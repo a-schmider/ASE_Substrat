@@ -20,7 +20,6 @@ public class RectangularGameBoard extends edu.kit.informatik.GameBoard {
                 board[row][column] = new GameField();
             }
         }
-        board[0][1].placeStone(new Player());
     }
 
 

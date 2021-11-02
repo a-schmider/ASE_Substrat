@@ -57,7 +57,7 @@ public class Connect6StandardGR extends BoardGameRule {
 
     @Override
     public boolean checkFullBoard(RectangularGameBoard gB, GameInfo gI) {
-        return gI.getTurn() == gB.getBoardSize() * gB.getBoardSize();
+        return gI.getTurns() == gB.getBoardSize() * gB.getBoardSize();
         //TODO schauen wie richtig vererbt wird und implementieren indem auf GameArea zugegriffen wird und nicht null ist
     }
 

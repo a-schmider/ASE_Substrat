@@ -93,7 +93,9 @@ public final class Terminal {
      */
     public static String readLine() {
         try {
-            return IN.readLine();
+            String input = IN.readLine();
+            System.out.println();
+            return input;
         } catch (final IOException e) {
             /*
              * The IOException will not occur during tests executed by the praktomat, therefore the

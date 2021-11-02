@@ -38,6 +38,6 @@ public abstract class BoardGameRule implements ConnectGameRules {
      * @return true, if board is full
      */
     public boolean checkFullBoard(Connect6GameBoard gB, GameInfo gI) {
-        return gI.getTurn() == gB.getBoardSize() * gB.getBoardSize();
+        return gI.getTurns() == gB.getBoardSize() * gB.getBoardSize();
     }
 }

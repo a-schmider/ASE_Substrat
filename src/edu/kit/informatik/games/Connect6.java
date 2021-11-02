@@ -5,7 +5,6 @@ import edu.kit.informatik.Connect6Commands;
 import edu.kit.informatik.TextRepository;
 import edu.kit.informatik.gamerules.BoardGameRule;
 import edu.kit.informatik.gamerules.connect6.Connect6StandardGR;
-import edu.kit.informatik.gamerules.connect6.Connect6TorusGR;
 import edu.kit.informatik.models.Connect6GameBoard;
 import edu.kit.informatik.models.GameInfo;
 import edu.kit.informatik.models.Player;
@@ -15,7 +14,6 @@ import edu.kit.informatik.userinterface.Terminal;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 
 /**
  * @author Andreas Schmider
@@ -364,7 +362,7 @@ public class Connect6 extends TurnBasedGame {
                     break;
                 case "reset":
                     gB.resetGameBoard();
-                    gI.resetTurn();
+                    gI.resetTurns();
                     finished = false;
                     break;
                 case "quit":
@@ -466,26 +464,28 @@ public class Connect6 extends TurnBasedGame {
      * @param args standard
      */
     public void start(String[] args) {
-        System.out.println("Type \"help\" for available commands");
+        gui.print(TextRepository.HELP_INFO_MSG);
         args = new String[]{"standard", "18", "2"};
 
         boolean checkStart = checkStart(args);
         if (checkStart) {
             // preparations
             boolean quit = false;
-            GameInfo gameInfo = new GameInfo(args[0], Integer.parseInt(args[1]), Integer.parseInt(args[2]), null);
-            BoardGameRule standard = new Connect6StandardGR();
-            BoardGameRule torus = new Connect6TorusGR();
-            Player p1 = new Player();
-            Player p2 = new Player();
-            Player p3 = new Player();
-            Player p4 = new Player();
-            Player activePlayer = p1;
-            HashMap<Integer, Player> m = new HashMap<>();
-            m.put(0, p1);
-            m.put(1, p2);
-            m.put(2, p3);
-            m.put(3, p4);
+            //TODO noch checken welche Gamerule verwendet werden soll
+            gameInfo = new GameInfo(args[0], Integer.parseInt(args[1]), Integer.parseInt(args[2]), new Connect6StandardGR());
+//            BoardGameRule standard = new Connect6StandardGR();
+//            BoardGameRule torus = new Connect6TorusGR();
+//            Player p1 = new Player();
+//            Player p2 = new Player();
+//            Player p3 = new Player();
+//            Player p4 = new Player();
+//            Player activePlayer = p1;
+//            HashMap<Integer, Player> m = new HashMap<>();
+//            m.put(0, p1);
+//            m.put(1, p2);
+//            m.put(2, p3);
+//            m.put(3, p4);
+            Player activePlayer;
             gameboard = new Connect6GameBoard(gameInfo.getGameBoardSize());
 
             // real game
@@ -494,13 +494,15 @@ public class Connect6 extends TurnBasedGame {
                 //quit = getCommand(gameInfo, connect6GameBoard, activePlayer, standard, torus);
 
                 //TODO neuer Spielverlauf
+
+                activePlayer = gameInfo.getActivePlayer();
+                gui.print(activePlayer.getGamingPiece() + "s turn:");
+                String input = Terminal.readLine();
                 try {
-                    activePlayer = m.get((gameInfo.getTurn() / 2) % gameInfo.getAmountOfPlayers());
-                    String input = Terminal.readLine();
                     Command command = getCommand(input);
                     executeCommand(activePlayer, command);
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    gui.print(TextRepository.INPUT_ERROR_MSG);
                 }
             }
         }
@@ -586,7 +588,6 @@ public class Connect6 extends TurnBasedGame {
 
 
     private void executeCommand(Player player, Command command) {
-        //TODO implementieren
         switch (command.getCommand()) {
             case print:
                 gui.print(gameboard.toString());
@@ -601,17 +602,16 @@ public class Connect6 extends TurnBasedGame {
                 exit = true;
                 break;
             case reset:
-//                gB.resetGameBoard();
-//                gI.resetTurn();
-//                finished = false;
+                finished = false;
                 gameboard.initGameBoard();
+                gameInfo.resetTurns();
                 break;
             case place:
-                //TODO gamerule.checkFullboard nochmal schauen ob mit protected besser
-                if (gameInfo.getGamerule().checkAllowedPlacement(command.getParameters()[0], command.getParameters()[1], gameboard)
-                        && gameInfo.getGamerule().checkAllowedPlacement(command.getParameters()[2], command.getParameters()[3], gameboard)) {
+                //TODO gamerule.checkFullboard nochmal schauen wie das überschrieben werden kann
+                if (checkAllowedPlacement(command)) {
                     gameboard.placeStone(command.getParameters()[0], command.getParameters()[1], player);
                     gameboard.placeStone(command.getParameters()[2], command.getParameters()[3], player);
+                    gameInfo.addTurn();
                 } else {
                     gui.print(TextRepository.PLACEMENT_NOT_ALLOWED);
                 }
@@ -625,6 +625,15 @@ public class Connect6 extends TurnBasedGame {
             default:
                 break;
         }
+    }
+
+    private boolean checkAllowedPlacement(Command command) {
+        //checks if game is not over, placing stones on both coordinates is allowed and if both coordinates are different
+        return !finished
+                && gameInfo.getGamerule().checkAllowedPlacement(command.getParameters()[0], command.getParameters()[1], gameboard)
+                && gameInfo.getGamerule().checkAllowedPlacement(command.getParameters()[2], command.getParameters()[3], gameboard)
+                && (command.getParameters()[0] != command.getParameters()[2] || command.getParameters()[1] != command.getParameters()[3]);
+
     }
 
     @Override
