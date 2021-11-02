@@ -6,7 +6,7 @@ import edu.kit.informatik.userinterface.GUI;
 public abstract class TurnBasedGame {
 
 
-    private static GUI gui = new GUI();
+    private static final GUI gui = new GUI();
     //TODO
 
 

@@ -1,8 +1,5 @@
 package edu.kit.informatik;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Command {
 
     public static final int PRINT_PARAM_LENGTH = 0;
@@ -16,18 +13,23 @@ public class Command {
 
 
     private final Connect6Commands command;
-    private final List<Object> parameters;
+    private final int[] parameters;
 
-    public Command(Connect6Commands command, Object parameters) {
+    public Command(Connect6Commands command, int parameters) {
         this.command = command;
-        this.parameters = Arrays.asList(parameters);
+        this.parameters = new int[]{parameters};
+    }
+
+    public Command(Connect6Commands command, int[] parameters) {
+        this.command = command;
+        this.parameters = parameters;
     }
 
     public Connect6Commands getCommand() {
         return command;
     }
 
-    public List<Object> getParameters() {
+    public int[] getParameters() {
         return parameters;
     }
 }

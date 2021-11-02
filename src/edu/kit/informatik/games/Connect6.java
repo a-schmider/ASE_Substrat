@@ -2,12 +2,15 @@ package edu.kit.informatik.games;
 
 import edu.kit.informatik.Command;
 import edu.kit.informatik.Connect6Commands;
+import edu.kit.informatik.TextRepository;
 import edu.kit.informatik.gamerules.BoardGameRule;
 import edu.kit.informatik.gamerules.connect6.Connect6StandardGR;
 import edu.kit.informatik.gamerules.connect6.Connect6TorusGR;
 import edu.kit.informatik.models.Connect6GameBoard;
 import edu.kit.informatik.models.GameInfo;
 import edu.kit.informatik.models.Player;
+import edu.kit.informatik.models.RectangularGameBoard;
+import edu.kit.informatik.userinterface.GUI;
 import edu.kit.informatik.userinterface.Terminal;
 
 import java.io.IOException;
@@ -19,7 +22,10 @@ import java.util.HashMap;
  */
 public class Connect6 extends TurnBasedGame {
 
-    private static boolean finished = false;
+    private static final GUI gui = new GUI();
+    private boolean finished = false;
+    private GameInfo gameInfo;
+    private RectangularGameBoard gameboard;
 
     /**
      * checks if the startarguments are allowed
@@ -28,7 +34,7 @@ public class Connect6 extends TurnBasedGame {
      * @param args standard
      * @return startallowed true, if the beginrequirements are correct
      */
-    public static boolean checkStart(String[] args) {
+    public boolean checkStart(String[] args) {
         boolean start = true;
         boolean error = false;
 
@@ -63,7 +69,7 @@ public class Connect6 extends TurnBasedGame {
      * @param s String which will be converted
      * @return number converted String
      */
-    public static int stringToInt(String s) {
+    public int stringToInt(String s) {
         int number;
 
         try {
@@ -81,7 +87,7 @@ public class Connect6 extends TurnBasedGame {
      * @param s input
      * @return accepted true, if standard
      */
-    public static boolean stdOrTrs(String s) {
+    public boolean stdOrTrs(String s) {
         return s.equals("standard") || s.equals("torus");
     }
 
@@ -91,7 +97,7 @@ public class Connect6 extends TurnBasedGame {
      * @param s String with number
      * @return allowed true, if the input is 2/3/4
      */
-    public static boolean correctNumbers(String s) {
+    public boolean correctNumbers(String s) {
         boolean allowed = true;
 
         int o = stringToInt(s);
@@ -113,7 +119,7 @@ public class Connect6 extends TurnBasedGame {
      * @param s String with number
      * @return allowed true, if the input is 18/20
      */
-    public static boolean correctGameBoardSize(String s) {
+    public boolean correctGameBoardSize(String s) {
         boolean allowed = true;
 
         int o = stringToInt(s);
@@ -138,8 +144,8 @@ public class Connect6 extends TurnBasedGame {
      * @param standard     standard gamerule
      * @param torus        torus gamerule
      */
-    public static void placeUndefined(GameInfo gI, Connect6GameBoard gB, int[] compactArray, Player p, BoardGameRule standard,
-                                      BoardGameRule torus) {
+    public void placeUndefined(GameInfo gI, Connect6GameBoard gB, int[] compactArray, Player p, BoardGameRule standard,
+                               BoardGameRule torus) {
         boolean win = false;
         boolean fullBoard = false;
         boolean error;
@@ -212,8 +218,8 @@ public class Connect6 extends TurnBasedGame {
      * @param gI            gameinfo
      * @return error true, if a error occured
      */
-    public static boolean placeDefined(Connect6GameBoard gB, int[] compactArray, String gamingPiece, BoardGameRule boardGameRule,
-                                       GameInfo gI) {
+    public boolean placeDefined(Connect6GameBoard gB, int[] compactArray, String gamingPiece, BoardGameRule boardGameRule,
+                                GameInfo gI) {
         boolean error = false;
         int i = compactArray[0];
         int j = compactArray[1];
@@ -241,7 +247,7 @@ public class Connect6 extends TurnBasedGame {
      * @return integer array
      * @throws NumberFormatException when not convertable
      */
-    public static int[] stringArrayToIntArray(String[] s) throws NumberFormatException {
+    public int[] stringArrayToIntArray(String[] s) throws NumberFormatException {
         int[] intArray = new int[s.length];
 
         for (int i = 0; i < s.length; i++) {
@@ -262,7 +268,7 @@ public class Connect6 extends TurnBasedGame {
      * @param torus    torus gamerule
      * @return quit true, if command was quit
      */
-    public static boolean getCommand(GameInfo gI, Connect6GameBoard gB, Player player, BoardGameRule standard, BoardGameRule torus) {
+    public boolean getCommand(GameInfo gI, Connect6GameBoard gB, Player player, BoardGameRule standard, BoardGameRule torus) {
         boolean quit = false;
         String command;
         String[] arrayString = new String[2];
@@ -300,7 +306,7 @@ public class Connect6 extends TurnBasedGame {
      * @param s command
      * @return aOA amount of arguments
      */
-    public static byte checkForCommand(String s) {
+    public byte checkForCommand(String s) {
         try {
             byte allowed = 1;
             switch (s) {
@@ -336,8 +342,8 @@ public class Connect6 extends TurnBasedGame {
      * @param torus    torus gamerule
      * @return quit true, if command was quit
      */
-    public static boolean doCommand(String command, String input, GameInfo gI, Connect6GameBoard gB, Player player,
-                                    BoardGameRule standard, BoardGameRule torus) {
+    public boolean doCommand(String command, String input, GameInfo gI, Connect6GameBoard gB, Player player,
+                             BoardGameRule standard, BoardGameRule torus) {
         boolean quit = false;
         if (input.equals("")) {
             switch (command) {
@@ -428,7 +434,7 @@ public class Connect6 extends TurnBasedGame {
         return quit;
     }
 
-    private static int moduloMod(int mod, int i) {
+    private int moduloMod(int mod, int i) {
         int i2 = (i + mod) % mod;
         do {
             i2 = (i2 + mod) % mod;
@@ -442,7 +448,7 @@ public class Connect6 extends TurnBasedGame {
      * @param s input
      * @return split splits arguments
      */
-    public static String[] split(String s) {
+    public String[] split(String s) {
         String[] split;
         split = s.split(";");
         return split;
@@ -451,14 +457,14 @@ public class Connect6 extends TurnBasedGame {
     /**
      * sets finished to true
      */
-    public static void preventPlace() {
+    public void preventPlace() {
         finished = true;
     }
 
     /**
      * @param args standard
      */
-    public static void start(String[] args) {
+    public void start(String[] args) {
         System.out.println("Type \"help\" for available commands");
         args = new String[]{"standard", "18", "2"};
 
@@ -479,7 +485,7 @@ public class Connect6 extends TurnBasedGame {
             m.put(1, p2);
             m.put(2, p3);
             m.put(3, p4);
-            Connect6GameBoard connect6GameBoard = new Connect6GameBoard(gameInfo.getGameBoardSize());
+            gameboard = new Connect6GameBoard(gameInfo.getGameBoardSize());
 
             // real game
             while (!quit) {
@@ -490,6 +496,7 @@ public class Connect6 extends TurnBasedGame {
                 try {
                     String input = Terminal.readLine();
                     Command command = getCommand(input);
+                    executeCommand(command);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -499,7 +506,7 @@ public class Connect6 extends TurnBasedGame {
     }
 
 
-    public static Command getCommand(String input) throws IOException {
+    public Command getCommand(String input) throws IOException {
         String[] arrayString;
         arrayString = input.split("\\s+");
 
@@ -545,7 +552,7 @@ public class Connect6 extends TurnBasedGame {
         throw new IOException("Mismatch of command and parameters");
     }
 
-    private static boolean checkCorrectParametersTypes(Connect6Commands command, String[] parameters) {
+    private boolean checkCorrectParametersTypes(Connect6Commands command, String[] parameters) {
         int[] values;
         try {
             values = Arrays.stream(parameters).mapToInt(Integer::parseInt).toArray();
@@ -575,6 +582,39 @@ public class Connect6 extends TurnBasedGame {
         }
     }
 
+
+    private void executeCommand(Command command) {
+        //TODO implementieren
+        switch (command.getCommand()) {
+            case print:
+                gui.print(gameboard.toString());
+                break;
+            case rowprint:
+                gui.print(gameboard.getRowAsString(command.getParameters()[0]));
+                break;
+            case colprint:
+                gui.print(gameboard.getColumnAsString(command.getParameters()[0]));
+                break;
+            case quit:
+                break;
+            case reset:
+//                gB.resetGameBoard();
+//                gI.resetTurn();
+//                finished = false;
+                break;
+            case place:
+                break;
+            case state:
+                gameboard.getStateOfField(command.getParameters()[0], command.getParameters()[1]);
+                break;
+            case help:
+                gui.print(TextRepository.CONNECT6_HELP);
+                break;
+            default:
+                break;
+        }
+    }
+
     @Override
     public String toString() {
         return "Connect6";
@@ -587,6 +627,6 @@ public class Connect6 extends TurnBasedGame {
 
     @Override
     public void prepare() {
-        Connect6.start(null);
+        start(null);
     }
 }

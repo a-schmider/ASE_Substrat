@@ -16,4 +16,16 @@ public class GameField {
         }
         return false;
     }
+
+    public Player getStone() {
+        return stone;
+    }
+
+    public String toString() {
+        if (isFree()) {
+            return "**";
+        } else {
+            return stone.getGamingPiece();
+        }
+    }
 }

@@ -18,4 +18,10 @@ public abstract class GameBoard {
     public String getField(int x, int y) {
         return board[x][y].toString();
     }
+
+    public GameField getGameField(int x, int y) {
+        return board[x][y];
+    }
+
+
 }
