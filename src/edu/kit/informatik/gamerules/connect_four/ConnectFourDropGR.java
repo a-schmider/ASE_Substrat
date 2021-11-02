@@ -7,7 +7,7 @@ import edu.kit.informatik.models.RectangularGameBoard;
 public class ConnectFourDropGR extends BoardGameRule {
 
     @Override
-    public boolean checkAllowedPlaceRules(int i, int j, RectangularGameBoard gB) {
+    public boolean checkAllowedPlacement(int row, int column, RectangularGameBoard gB) {
         return false;
     }
 

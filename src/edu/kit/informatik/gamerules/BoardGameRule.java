@@ -12,12 +12,12 @@ public abstract class BoardGameRule implements ConnectGameRules {
     /**
      * checks if the place move is allowed
      *
-     * @param i  column
-     * @param j  row
-     * @param gB gameboard
+     * @param row    row
+     * @param column column
+     * @param gB     gameboard
      * @return allowed true, if the move is allowed
      */
-    public abstract boolean checkAllowedPlaceRules(int i, int j, RectangularGameBoard gB);
+    public abstract boolean checkAllowedPlacement(int row, int column, RectangularGameBoard gB);
 
     /**
      * checks if six in a row

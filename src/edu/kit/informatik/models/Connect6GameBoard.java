@@ -33,12 +33,12 @@ public class Connect6GameBoard extends RectangularGameBoard {
     }
 
     /**
-     * @param i coordinate
-     * @param j coordinate
+     * @param row    coordinate
+     * @param column coordinate
      * @return content of the field
      */
-    public String getField(int i, int j) {
-        return this.gameBoard[i][j];
+    public String getField(int row, int column) {
+        return this.gameBoard[row][column];
     }
 
     /**

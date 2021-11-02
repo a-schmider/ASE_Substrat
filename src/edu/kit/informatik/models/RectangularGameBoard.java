@@ -5,9 +5,9 @@ public class RectangularGameBoard extends edu.kit.informatik.GameBoard {
     private final GameField[][] board;
 
 
-    public RectangularGameBoard(int width, int height) {
-        super(width, height);
-        board = new GameField[width][height];
+    public RectangularGameBoard(int row, int column) {
+        super(row, column);
+        board = new GameField[row][column];
         initGameBoard();
     }
 
@@ -16,20 +16,20 @@ public class RectangularGameBoard extends edu.kit.informatik.GameBoard {
      */
     public void initGameBoard() {
         for (int row = 0; row < board.length; row++) {
-            for (int col = 0; col < board[row].length; col++) {
-                board[row][col] = new GameField();
+            for (int column = 0; column < board[row].length; column++) {
+                board[row][column] = new GameField();
             }
         }
         board[0][1].placeStone(new Player());
     }
 
 
-    public boolean placeStone(int width, int height, Player player) {
-        return board[width][height].placeStone(player);
+    public boolean placeStone(int row, int column, Player player) {
+        return board[row][column].placeStone(player);
     }
 
-    public Player getStateOfField(int width, int height) {
-        return board[width][height].getStone();
+    public String getFieldAsString(int row, int col) {
+        return board[row][col].toString();
     }
 
     public String toString() {

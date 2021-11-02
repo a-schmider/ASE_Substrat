@@ -23,6 +23,7 @@ import java.util.HashMap;
 public class Connect6 extends TurnBasedGame {
 
     private static final GUI gui = new GUI();
+    private boolean exit = false;
     private boolean finished = false;
     private GameInfo gameInfo;
     private RectangularGameBoard gameboard;
@@ -225,7 +226,7 @@ public class Connect6 extends TurnBasedGame {
         int j = compactArray[1];
         int k = compactArray[2];
         int l = compactArray[3];
-        if (boardGameRule.checkAllowedPlaceRules(i, j, gB) && boardGameRule.checkAllowedPlaceRules(k, l, gB)) {
+        if (boardGameRule.checkAllowedPlacement(i, j, gB) && boardGameRule.checkAllowedPlacement(k, l, gB)) {
             if ((i != k || j != l)) {
                 gB.place(i, j, gamingPiece, boardGameRule);
                 gB.place(k, l, gamingPiece, boardGameRule);
@@ -472,7 +473,7 @@ public class Connect6 extends TurnBasedGame {
         if (checkStart) {
             // preparations
             boolean quit = false;
-            GameInfo gameInfo = new GameInfo(args[0], Integer.parseInt(args[1]), Integer.parseInt(args[2]));
+            GameInfo gameInfo = new GameInfo(args[0], Integer.parseInt(args[1]), Integer.parseInt(args[2]), null);
             BoardGameRule standard = new Connect6StandardGR();
             BoardGameRule torus = new Connect6TorusGR();
             Player p1 = new Player();
@@ -488,15 +489,16 @@ public class Connect6 extends TurnBasedGame {
             gameboard = new Connect6GameBoard(gameInfo.getGameBoardSize());
 
             // real game
-            while (!quit) {
+            while (!exit) {
                 //activePlayer = (Player) m.get((gameInfo.getTurn() / 2) % gameInfo.getAmountOfPlayers());
                 //quit = getCommand(gameInfo, connect6GameBoard, activePlayer, standard, torus);
 
                 //TODO neuer Spielverlauf
                 try {
+                    activePlayer = m.get((gameInfo.getTurn() / 2) % gameInfo.getAmountOfPlayers());
                     String input = Terminal.readLine();
                     Command command = getCommand(input);
-                    executeCommand(command);
+                    executeCommand(activePlayer, command);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -583,7 +585,7 @@ public class Connect6 extends TurnBasedGame {
     }
 
 
-    private void executeCommand(Command command) {
+    private void executeCommand(Player player, Command command) {
         //TODO implementieren
         switch (command.getCommand()) {
             case print:
@@ -596,16 +598,26 @@ public class Connect6 extends TurnBasedGame {
                 gui.print(gameboard.getColumnAsString(command.getParameters()[0]));
                 break;
             case quit:
+                exit = true;
                 break;
             case reset:
 //                gB.resetGameBoard();
 //                gI.resetTurn();
 //                finished = false;
+                gameboard.initGameBoard();
                 break;
             case place:
+                //TODO gamerule.checkFullboard nochmal schauen ob mit protected besser
+                if (gameInfo.getGamerule().checkAllowedPlacement(command.getParameters()[0], command.getParameters()[1], gameboard)
+                        && gameInfo.getGamerule().checkAllowedPlacement(command.getParameters()[2], command.getParameters()[3], gameboard)) {
+                    gameboard.placeStone(command.getParameters()[0], command.getParameters()[1], player);
+                    gameboard.placeStone(command.getParameters()[2], command.getParameters()[3], player);
+                } else {
+                    gui.print(TextRepository.PLACEMENT_NOT_ALLOWED);
+                }
                 break;
             case state:
-                gameboard.getStateOfField(command.getParameters()[0], command.getParameters()[1]);
+                gui.print(gameboard.getFieldAsString(command.getParameters()[0], command.getParameters()[1]));
                 break;
             case help:
                 gui.print(TextRepository.CONNECT6_HELP);

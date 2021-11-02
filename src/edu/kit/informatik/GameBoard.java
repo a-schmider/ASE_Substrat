@@ -6,8 +6,8 @@ public abstract class GameBoard {
 
     private final GameField[][] board;
 
-    protected GameBoard(int width, int height) {
-        this.board = new GameField[width][height];
+    protected GameBoard(int row, int column) {
+        this.board = new GameField[row][column];
     }
 
     public int getBoardSize() {
@@ -15,13 +15,12 @@ public abstract class GameBoard {
     }
 
     //TODO umstellen auf GameField
-    public String getField(int x, int y) {
-        return board[x][y].toString();
+    public String getField(int row, int column) {
+        return board[row][column].toString();
     }
 
-    public GameField getGameField(int x, int y) {
-        return board[x][y];
+    public GameField getGameField(int row, int column) {
+        return board[row][column];
     }
-
 
 }

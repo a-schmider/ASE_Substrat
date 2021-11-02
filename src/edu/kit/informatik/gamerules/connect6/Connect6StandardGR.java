@@ -13,18 +13,10 @@ public class Connect6StandardGR extends BoardGameRule {
 
     //TODO parameter gB Connect6GameBoard wurde überall ausgetauscht mit RectangularGameBoard
 
-    /**
-     * checks if i,j at gameBoard and if its free
-     *
-     * @param i  column
-     * @param j  row
-     * @param gB gameboard
-     * @return allowed true, if allowed move
-     */
-    public boolean checkAllowedPlaceRules(int i, int j, RectangularGameBoard gB) {
+    public boolean checkAllowedPlacement(int row, int column, RectangularGameBoard gB) {
         boolean allowed = false;
-        if (i >= 0 && i < gB.getBoardSize() && j >= 0 && j < gB.getBoardSize()) {
-            if (gB.getField(i, j) == "**") {
+        if (row >= 0 && row < gB.getBoardSize() && column >= 0 && column < gB.getBoardSize()) {
+            if (gB.getField(row, column) == "**") {
                 allowed = true;
             } else {
                 Terminal.printError("already occupied, again");

@@ -1,10 +1,14 @@
 package edu.kit.informatik.models;
 
+import edu.kit.informatik.gamerules.BoardGameRule;
+
 /**
  * @author Andi
  */
 public class GameInfo {
 
+    //TODO neue Gamerule miteinbeziehen
+    private final BoardGameRule gamerule;
     private boolean gRStandard;
     private int gameBoardSize;
     private int amountOfPlayers;
@@ -17,11 +21,12 @@ public class GameInfo {
      * @param gBS      gameboard size
      * @param aOP      amount of players
      */
-    public GameInfo(String gameType, int gBS, int aOP) {
+    public GameInfo(String gameType, int gBS, int aOP, BoardGameRule gameRule) {
         this.gRStandard = gameType.equals("standard");
         this.gameBoardSize = gBS;
         this.amountOfPlayers = aOP;
         this.turn = 0;
+        this.gamerule = gameRule;
     }
 
     /**
@@ -50,6 +55,10 @@ public class GameInfo {
      */
     public int getTurn() {
         return this.turn;
+    }
+
+    public BoardGameRule getGamerule() {
+        return gamerule;
     }
 
     /**
