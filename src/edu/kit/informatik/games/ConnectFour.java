@@ -29,7 +29,7 @@ public class ConnectFour extends TurnBasedGame {
     }
 
     @Override
-    public void chooseVariation() {
+    public void prepareSettings() {
         gui.printList(variations);
 
         int inputNumber;

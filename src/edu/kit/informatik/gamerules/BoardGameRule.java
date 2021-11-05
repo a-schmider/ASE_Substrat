@@ -1,6 +1,5 @@
 package edu.kit.informatik.gamerules;
 
-import edu.kit.informatik.models.Connect6GameBoard;
 import edu.kit.informatik.models.GameInfo;
 import edu.kit.informatik.models.RectangularGameBoard;
 
@@ -37,7 +36,9 @@ public abstract class BoardGameRule implements ConnectGameRules {
      * @param gI gameinfo
      * @return true, if board is full
      */
-    public boolean checkFullBoard(Connect6GameBoard gB, GameInfo gI) {
+    public boolean checkFullBoard(RectangularGameBoard gB, GameInfo gI) {
         return gI.getTurns() == gB.getBoardSize() * gB.getBoardSize();
     }
+
+    public abstract String toString();
 }

@@ -29,7 +29,7 @@ public abstract class TurnBasedGame {
 
 
     //Diese Methoden sollten nicht einfach so ausfürhbar sein nur von GamePlayer
-    void chooseVariation() {
+    void prepareSettings() {
         System.out.println("Choose Variation");
     }
 

@@ -3,6 +3,7 @@ package edu.kit.informatik.models;
 import edu.kit.informatik.gamerules.BoardGameRule;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Andi
@@ -10,12 +11,14 @@ import java.util.ArrayList;
 public class GameInfo {
 
     //TODO neue Gamerule miteinbeziehen
+
+    private final ArrayList<Player> players;
     private final BoardGameRule gamerule;
-    private boolean gRStandard;
-    private int gameBoardSize;
-    private int amountOfPlayers;
+    private final int gameBoardSize;
     private int turns;
-    private ArrayList<Player> players;
+
+    private boolean gRStandard;
+    private int amountOfPlayers;
 
     /**
      * sets all stats according to the begininput
@@ -35,6 +38,24 @@ public class GameInfo {
         while (aOP-- > 0) {
             players.add(new Player());
         }
+    }
+
+    public GameInfo(int boardSize, int playerCount, BoardGameRule gameRule) {
+        this.gameBoardSize = boardSize;
+        this.amountOfPlayers = playerCount;
+
+        this.turns = 1;
+        this.gamerule = gameRule;
+        players = new ArrayList<>();
+        while (playerCount-- > 0) {
+            players.add(new Player());
+        }
+    }
+
+    public GameInfo(BoardGameRule gameRule, int boardSize, List<Player> players) {
+        this.gamerule = gameRule;
+        this.gameBoardSize = boardSize;
+        this.players = new ArrayList<>(players);
     }
 
     /**

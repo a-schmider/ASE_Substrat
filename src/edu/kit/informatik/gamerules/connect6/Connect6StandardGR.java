@@ -1,6 +1,5 @@
 package edu.kit.informatik.gamerules.connect6;
 
-import edu.kit.informatik.gamerules.BoardGameRule;
 import edu.kit.informatik.models.GameFieldArea;
 import edu.kit.informatik.models.GameInfo;
 import edu.kit.informatik.models.RectangularGameBoard;
@@ -9,7 +8,7 @@ import edu.kit.informatik.userinterface.Terminal;
 /**
  * @author Andreas Schmider
  */
-public class Connect6StandardGR extends BoardGameRule {
+public class Connect6StandardGR extends Connect6GameRule {
 
     //TODO parameter gB Connect6GameBoard wurde überall ausgetauscht mit RectangularGameBoard
 
@@ -27,7 +26,6 @@ public class Connect6StandardGR extends BoardGameRule {
         }
         return allowed;
     }
-
 
     /**
      * checks if six in a row
@@ -59,6 +57,11 @@ public class Connect6StandardGR extends BoardGameRule {
     public boolean checkFullBoard(RectangularGameBoard gB, GameInfo gI) {
         return gI.getTurns() == gB.getBoardSize() * gB.getBoardSize();
         //TODO schauen wie richtig vererbt wird und implementieren indem auf GameArea zugegriffen wird und nicht null ist
+    }
+
+    @Override
+    public String toString() {
+        return "Standard";
     }
 
     /**

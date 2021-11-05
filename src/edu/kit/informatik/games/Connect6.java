@@ -4,7 +4,9 @@ import edu.kit.informatik.Command;
 import edu.kit.informatik.Connect6Commands;
 import edu.kit.informatik.TextRepository;
 import edu.kit.informatik.gamerules.BoardGameRule;
+import edu.kit.informatik.gamerules.connect6.Connect6GameRule;
 import edu.kit.informatik.gamerules.connect6.Connect6StandardGR;
+import edu.kit.informatik.gamerules.connect6.Connect6TorusGR;
 import edu.kit.informatik.models.Connect6GameBoard;
 import edu.kit.informatik.models.GameInfo;
 import edu.kit.informatik.models.Player;
@@ -13,7 +15,9 @@ import edu.kit.informatik.userinterface.GUI;
 import edu.kit.informatik.userinterface.Terminal;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Andreas Schmider
@@ -21,10 +25,27 @@ import java.util.Arrays;
 public class Connect6 extends TurnBasedGame {
 
     private static final GUI gui = new GUI();
+    private static final ArrayList<Integer> boardSizes =
+            new ArrayList<>(Arrays.asList(18, 20));
+    private static final ArrayList<Integer> playerCount =
+            new ArrayList<>(Arrays.asList(2, 3, 4));
+
+
+    private final List<Connect6GameRule> possibleGameRules;
+    private final List<Integer> possibleBoardSizes;
+    private final List<Integer> possiblePlayers;
+
     private boolean exit = false;
     private boolean finished = false;
     private GameInfo gameInfo;
     private RectangularGameBoard gameboard;
+
+
+    public Connect6(List<Connect6GameRule> possibleGameRules, List<Integer> possibleBoardSizes, List<Integer> possiblePlayersCount) {
+        this.possibleGameRules = possibleGameRules;
+        this.possibleBoardSizes = possibleBoardSizes;
+        this.possiblePlayers = possiblePlayersCount;
+    }
 
     /**
      * checks if the startarguments are allowed
@@ -55,7 +76,7 @@ public class Connect6 extends TurnBasedGame {
         }
 
         if (error) {
-            Terminal.printError("two startarguments needed; (standard/torus) (2/3/4) ");
+            Terminal.printError("three startarguments needed; (standard/torus) (18/20) (2/3/4) ");
             start = false;
         }
 
@@ -467,46 +488,76 @@ public class Connect6 extends TurnBasedGame {
         gui.print(TextRepository.HELP_INFO_MSG);
         args = new String[]{"standard", "18", "2"};
 
-        boolean checkStart = checkStart(args);
-        if (checkStart) {
-            // preparations
-            boolean quit = false;
-            //TODO noch checken welche Gamerule verwendet werden soll
-            gameInfo = new GameInfo(args[0], Integer.parseInt(args[1]), Integer.parseInt(args[2]), new Connect6StandardGR());
-//            BoardGameRule standard = new Connect6StandardGR();
-//            BoardGameRule torus = new Connect6TorusGR();
-//            Player p1 = new Player();
-//            Player p2 = new Player();
-//            Player p3 = new Player();
-//            Player p4 = new Player();
-//            Player activePlayer = p1;
-//            HashMap<Integer, Player> m = new HashMap<>();
-//            m.put(0, p1);
-//            m.put(1, p2);
-//            m.put(2, p3);
-//            m.put(3, p4);
-            Player activePlayer;
-            gameboard = new Connect6GameBoard(gameInfo.getGameBoardSize());
+        // preparations
+        //TODO noch checken welche Gamerule verwendet werden soll
+        try {
+            gameInfo = createGameInfo(args);
+        } catch (IOException e) {
+            //TODO Nachricht anpassen
+            gui.print(e.getMessage());
+        }
 
-            // real game
-            while (!exit) {
-                //activePlayer = (Player) m.get((gameInfo.getTurn() / 2) % gameInfo.getAmountOfPlayers());
-                //quit = getCommand(gameInfo, connect6GameBoard, activePlayer, standard, torus);
+        gameInfo = new GameInfo(args[0], Integer.parseInt(args[1]), Integer.parseInt(args[2]), new Connect6StandardGR());
+        Player activePlayer;
+        gameboard = new Connect6GameBoard(gameInfo.getGameBoardSize());
 
-                //TODO neuer Spielverlauf
+        // real game
+        while (!exit) {
+            //activePlayer = (Player) m.get((gameInfo.getTurn() / 2) % gameInfo.getAmountOfPlayers());
+            //quit = getCommand(gameInfo, connect6GameBoard, activePlayer, standard, torus);
 
-                activePlayer = gameInfo.getActivePlayer();
-                gui.print(activePlayer.getGamingPiece() + "s turn:");
-                String input = Terminal.readLine();
-                try {
-                    Command command = getCommand(input);
-                    executeCommand(activePlayer, command);
-                } catch (IOException e) {
-                    gui.print(TextRepository.INPUT_ERROR_MSG);
-                }
+            //TODO neuer Spielverlauf
+
+            activePlayer = gameInfo.getActivePlayer();
+            gui.print(activePlayer.getGamingPiece() + "s turn:");
+            String input = Terminal.readLine();
+            try {
+                Command command = getCommand(input);
+                executeCommand(activePlayer, command);
+            } catch (IOException e) {
+                gui.print(TextRepository.INPUT_ERROR_MSG);
             }
         }
 
+    }
+
+    private GameInfo createGameInfo(String[] input) throws IOException {
+        if (input.length != 3) {
+            throw new IOException("Three parameters expected");
+        }
+
+        BoardGameRule gameRule;
+        switch (input[0]) {
+            case "standard":
+                gameRule = new Connect6StandardGR();
+                break;
+            case "torus":
+                gameRule = new Connect6TorusGR();
+                break;
+            default:
+                throw new IOException("\"standard\" or \"torus\" expected");
+        }
+
+        int boardsize = Integer.parseInt(input[1]);
+        switch (boardsize) {
+            case 18:
+            case 20:
+                break;
+            default:
+                throw new IOException("18 or 20 expected");
+        }
+
+        int playerCount = Integer.parseInt(input[2]);
+        switch (playerCount) {
+            case 2:
+            case 3:
+            case 4:
+                break;
+            default:
+                throw new IOException("2, 3 or 4 expected");
+        }
+
+        return new GameInfo(boardsize, playerCount, gameRule);
     }
 
 
@@ -586,7 +637,6 @@ public class Connect6 extends TurnBasedGame {
         }
     }
 
-
     private void executeCommand(Player player, Command command) {
         switch (command.getCommand()) {
             case print:
@@ -607,7 +657,6 @@ public class Connect6 extends TurnBasedGame {
                 gameInfo.resetTurns();
                 break;
             case place:
-                //TODO gamerule.checkFullboard nochmal schauen wie das überschrieben werden kann
                 if (checkAllowedPlacement(command)) {
                     gameboard.placeStone(command.getParameters()[0], command.getParameters()[1], player);
                     gameboard.placeStone(command.getParameters()[2], command.getParameters()[3], player);
@@ -642,12 +691,91 @@ public class Connect6 extends TurnBasedGame {
     }
 
     @Override
-    void chooseVariation() {
+    void prepareSettings() {
+        Connect6GameRule gamerule = chooseVariation();
+        int boardSize = chooseBoardSize();
+        ArrayList<Player> players = choosePlayerCount();
 
+        gameInfo = new GameInfo(gamerule, boardSize, players);
+
+        //TODO Input nochmal anzeigen und Kontrollieren und abbrechen nach jedem schritt
     }
 
     @Override
     public void prepare() {
-        start(null);
+        //start(null);
+    }
+
+    private Connect6GameRule chooseVariation() {
+        while (true) {
+            try {
+                gui.print(TextRepository.CHOOSE_VARIATION);
+                gui.printList(possibleGameRules);
+                String input = gui.getUserInput();
+
+                int selectedVariation = Integer.parseInt(input);
+                switch (selectedVariation) {
+                    case 1:
+                    case 2:
+                        return possibleGameRules.get(selectedVariation - 1);
+                    default:
+                        gui.print(TextRepository.INPUT_ERROR_MSG);
+                }
+
+            } catch (IOException ignored) {
+                gui.print(TextRepository.INPUT_ERROR_MSG);
+            }
+        }
+    }
+
+    private int chooseBoardSize() {
+        while (true) {
+            try {
+                gui.print(TextRepository.CHOOSE_BOARD_SIZE);
+                gui.printOptions(possibleBoardSizes);
+                String input = gui.getUserInput();
+
+                //TODO immer alle optionen anzeigen und in switch pflegen, die in der Liste enthalten sind
+                int boardsize = Integer.parseInt(input);
+                switch (boardsize) {
+                    case 18:
+                    case 20:
+                        return boardsize;
+                    default:
+                        gui.print(TextRepository.INPUT_ERROR_MSG);
+                }
+
+            } catch (IOException ignored) {
+                gui.print(TextRepository.INPUT_ERROR_MSG);
+            }
+        }
+    }
+
+    private ArrayList<Player> choosePlayerCount() {
+        while (true) {
+            try {
+                gui.print(TextRepository.CHOOSE_PLAYER_COUNT);
+                gui.printOptions(possiblePlayers);
+                String input = gui.getUserInput();
+
+                //TODO immer alle optionen anzeigen und in switch pflegen, die in der Liste enthalten sind
+                int playerCount = Integer.parseInt(input);
+                ArrayList<Player> players = new ArrayList<>();
+                players.add(new Player());
+                switch (playerCount) {
+                    case 4:
+                        players.add(new Player());
+                    case 3:
+                        players.add(new Player());
+                    case 2:
+                        players.add(new Player());
+                        return players;
+                    default:
+                        gui.print(TextRepository.INPUT_ERROR_MSG);
+                }
+            } catch (IOException ignored) {
+                gui.print(TextRepository.INPUT_ERROR_MSG);
+            }
+        }
     }
 }

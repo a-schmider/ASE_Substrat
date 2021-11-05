@@ -1,6 +1,5 @@
 package edu.kit.informatik.gamerules.connect6;
 
-import edu.kit.informatik.gamerules.BoardGameRule;
 import edu.kit.informatik.models.Connect6GameBoard;
 import edu.kit.informatik.models.GameFieldArea;
 import edu.kit.informatik.models.GameInfo;
@@ -11,7 +10,7 @@ import edu.kit.informatik.userinterface.Terminal;
  * @author Andreas Schmider
  */
 
-public class Connect6TorusGR extends BoardGameRule {
+public class Connect6TorusGR extends Connect6GameRule {
 
     @Override
     public boolean checkAllowedPlacement(int row, int column, RectangularGameBoard gB) {
@@ -26,6 +25,11 @@ public class Connect6TorusGR extends BoardGameRule {
     @Override
     public boolean checkFullBoard(RectangularGameBoard gB, GameInfo gI) {
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Torus";
     }
 
     /**

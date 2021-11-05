@@ -1,13 +1,14 @@
 package edu.kit.informatik;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public interface GuiInterface {
 
     void print(String text);
 
-    void printList(ArrayList<?> gamesList);
+    void printList(Iterable<?> list);
+
+    void printOptions(Iterable<?> options);
 
     String getUserInput() throws IOException;
 }

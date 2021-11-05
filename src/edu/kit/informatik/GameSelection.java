@@ -1,5 +1,7 @@
 package edu.kit.informatik;
 
+import edu.kit.informatik.gamerules.connect6.Connect6StandardGR;
+import edu.kit.informatik.gamerules.connect6.Connect6TorusGR;
 import edu.kit.informatik.games.Connect6;
 import edu.kit.informatik.games.ConnectFour;
 import edu.kit.informatik.games.GamePlayer;
@@ -13,7 +15,12 @@ import java.util.Arrays;
 public class GameSelection {
 
     private static final ArrayList<TurnBasedGame> gamesList =
-            new ArrayList<>(Arrays.asList(new ConnectFour(), new Connect6()));
+            new ArrayList<>(Arrays.asList(
+                    new ConnectFour(),
+                    new Connect6(
+                            new ArrayList<>(Arrays.asList(new Connect6StandardGR(), new Connect6TorusGR())),
+                            new ArrayList<>(Arrays.asList(18, 20)),
+                            new ArrayList<>(Arrays.asList(2, 3, 4)))));
     //TODO GUI-Methoden static machen? Dependency Inversion? Gui kennt alle, main kennt Gui
     private static final GuiInterface gui = new GUI();
     private static String input;
