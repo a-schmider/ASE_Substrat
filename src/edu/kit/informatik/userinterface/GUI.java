@@ -2,6 +2,7 @@ package edu.kit.informatik.userinterface;
 
 import edu.kit.informatik.GuiInterface;
 import edu.kit.informatik.TextRepository;
+import edu.kit.informatik.models.GameInfo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,5 +37,14 @@ public class GUI implements GuiInterface {
         String input = IN.readLine();
         System.out.println();
         return input;
+    }
+
+    @Override
+    public void print(GameInfo gameInfo) {
+        System.out.println(TextRepository.SETTINGS_USED);
+        System.out.println("Gamerule: " + gameInfo.getGamerule().toString());
+        System.out.println("Boardsize: " + gameInfo.getGameBoardSize());
+        System.out.println("Player count: " + gameInfo.getPlayers().size() + 1);
+        System.out.println();
     }
 }

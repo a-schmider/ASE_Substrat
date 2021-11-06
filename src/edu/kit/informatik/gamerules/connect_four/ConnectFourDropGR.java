@@ -21,4 +21,9 @@ public class ConnectFourDropGR extends BoardGameRule {
         return gI.getTurns() == gB.getBoardSize() * gB.getBoardSize();
         //TODO schauen wie richtig vererbt wird und implementieren indem auf GameArea zugegriffen wird und nicht null ist
     }
+
+    @Override
+    public String toString() {
+        return "Drop Four";
+    }
 }

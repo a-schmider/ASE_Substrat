@@ -22,4 +22,8 @@ public class TextRepository {
     public static final String CHOOSE_PLAYER_COUNT = "Choose how many players will be playing";
     public static final String CHOOSE_VARIATION = "Choose a variation";
     public static final String FOLLOWING_OPTIONS = "Type one of the following options\r\n";
+    public static final String SETTINGS_USED = "Following settings will be used:";
+    public static final String CHANGE_SETTINGS = "Do you want to change the settings again?\r\n" +
+            "Enter \"yes\" or \"no\"";
+    public static final String YES = "yes";
 }

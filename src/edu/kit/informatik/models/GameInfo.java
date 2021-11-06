@@ -116,4 +116,7 @@ public class GameInfo {
         return players.get((turns - 1) % players.size());
     }
 
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
 }

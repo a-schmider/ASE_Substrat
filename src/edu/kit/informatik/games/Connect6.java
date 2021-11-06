@@ -692,18 +692,37 @@ public class Connect6 extends TurnBasedGame {
 
     @Override
     void prepareSettings() {
+        //Repeat settings questions until the settings are accepted
+        while (chooseSettings()) ;
+    }
+
+    @Override
+    public void prepare() {
+        //start(null);
+    }
+
+    private boolean chooseSettings() {
         Connect6GameRule gamerule = chooseVariation();
         int boardSize = chooseBoardSize();
         ArrayList<Player> players = choosePlayerCount();
 
         gameInfo = new GameInfo(gamerule, boardSize, players);
 
-        //TODO Input nochmal anzeigen und Kontrollieren und abbrechen nach jedem schritt
+        //show settings again
+        gui.print(gameInfo);
+        return repeatSettings();
     }
 
-    @Override
-    public void prepare() {
-        //start(null);
+    private boolean repeatSettings() {
+        while (true) {
+            try {
+                gui.print(TextRepository.CHANGE_SETTINGS);
+                String input = gui.getUserInput();
+                return input.equals(TextRepository.YES);
+            } catch (IOException e) {
+                gui.print(TextRepository.INPUT_ERROR_MSG);
+            }
+        }
     }
 
     private Connect6GameRule chooseVariation() {
@@ -735,14 +754,11 @@ public class Connect6 extends TurnBasedGame {
                 gui.printOptions(possibleBoardSizes);
                 String input = gui.getUserInput();
 
-                //TODO immer alle optionen anzeigen und in switch pflegen, die in der Liste enthalten sind
                 int boardsize = Integer.parseInt(input);
-                switch (boardsize) {
-                    case 18:
-                    case 20:
-                        return boardsize;
-                    default:
-                        gui.print(TextRepository.INPUT_ERROR_MSG);
+                if (possibleBoardSizes.contains(boardsize)) {
+                    return boardsize;
+                } else {
+                    gui.print(TextRepository.INPUT_ERROR_MSG);
                 }
 
             } catch (IOException ignored) {
@@ -758,20 +774,17 @@ public class Connect6 extends TurnBasedGame {
                 gui.printOptions(possiblePlayers);
                 String input = gui.getUserInput();
 
-                //TODO immer alle optionen anzeigen und in switch pflegen, die in der Liste enthalten sind
                 int playerCount = Integer.parseInt(input);
                 ArrayList<Player> players = new ArrayList<>();
                 players.add(new Player());
-                switch (playerCount) {
-                    case 4:
+
+                if (possiblePlayers.contains(playerCount)) {
+                    while (players.size() < playerCount) {
                         players.add(new Player());
-                    case 3:
-                        players.add(new Player());
-                    case 2:
-                        players.add(new Player());
-                        return players;
-                    default:
-                        gui.print(TextRepository.INPUT_ERROR_MSG);
+                    }
+                    return players;
+                } else {
+                    gui.print(TextRepository.INPUT_ERROR_MSG);
                 }
             } catch (IOException ignored) {
                 gui.print(TextRepository.INPUT_ERROR_MSG);
