@@ -68,35 +68,17 @@ public class Connect6 extends TurnBasedGame {
         String[] arrayString;
         arrayString = input.split("\\s+");
 
-        Connect6Commands command;
-        switch (arrayString[0]) {
-            case "print":
-                command = Connect6Commands.print;
-                break;
-            case "rowprint":
-                command = Connect6Commands.rowprint;
-                break;
-            case "colprint":
-                command = Connect6Commands.colprint;
-                break;
-            case "quit":
-                command = Connect6Commands.quit;
-                break;
-            case "reset":
-                command = Connect6Commands.reset;
-                break;
-            case "place":
-                command = Connect6Commands.place;
-                break;
-            case "state":
-                command = Connect6Commands.state;
-                break;
-            case "help":
-                command = Connect6Commands.help;
-                break;
-            default:
-                throw new IOException("Command not recognized");
-        }
+        Connect6Commands command = switch (arrayString[0]) {
+            case "print" -> Connect6Commands.print;
+            case "rowprint" -> Connect6Commands.rowprint;
+            case "colprint" -> Connect6Commands.colprint;
+            case "quit" -> Connect6Commands.quit;
+            case "reset" -> Connect6Commands.reset;
+            case "place" -> Connect6Commands.place;
+            case "state" -> Connect6Commands.state;
+            case "help" -> Connect6Commands.help;
+            default -> throw new IOException("Command not recognized");
+        };
 
         String[] parameter = new String[0];
         if (arrayString.length > 1) {
@@ -118,26 +100,16 @@ public class Connect6 extends TurnBasedGame {
             return false;
         }
 
-        switch (command) {
-            case print:
-                return values.length == Command.PRINT_PARAM_LENGTH;
-            case rowprint:
-                return values.length == Command.ROWPRINT_PARAM_LENGTH;
-            case colprint:
-                return values.length == Command.COLPRINT_PARAM_LENGTH;
-            case quit:
-                return values.length == Command.QUIT_PARAM_LENGTH;
-            case reset:
-                return values.length == Command.RESET_PARAM_LENGTH;
-            case place:
-                return values.length == Command.PLACE_PARAM_LENGTH;
-            case state:
-                return values.length == Command.STATE_PARAM_LENGTH;
-            case help:
-                return values.length == Command.HELP_PARAM_LENGTH;
-            default:
-                return false;
-        }
+        return switch (command) {
+            case print -> values.length == Command.PRINT_PARAM_LENGTH;
+            case rowprint -> values.length == Command.ROWPRINT_PARAM_LENGTH;
+            case colprint -> values.length == Command.COLPRINT_PARAM_LENGTH;
+            case quit -> values.length == Command.QUIT_PARAM_LENGTH;
+            case reset -> values.length == Command.RESET_PARAM_LENGTH;
+            case place -> values.length == Command.PLACE_PARAM_LENGTH;
+            case state -> values.length == Command.STATE_PARAM_LENGTH;
+            case help -> values.length == Command.HELP_PARAM_LENGTH;
+        };
     }
 
     private void executeCommand(Player player, Command command) {
