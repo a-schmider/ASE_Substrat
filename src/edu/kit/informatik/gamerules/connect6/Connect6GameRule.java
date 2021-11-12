@@ -4,4 +4,5 @@ import edu.kit.informatik.gamerules.BoardGameRule;
 
 public abstract class Connect6GameRule extends BoardGameRule {
 
+    protected final int xInARowToWin = 6;
 }

@@ -1,11 +1,11 @@
 package edu.kit.informatik.gamerules.connect6;
 
 import edu.kit.informatik.Command;
-import edu.kit.informatik.models.GameFieldArea;
-import edu.kit.informatik.models.GameInfo;
-import edu.kit.informatik.models.Player;
-import edu.kit.informatik.models.RectangularGameBoard;
+import edu.kit.informatik.models.*;
 import edu.kit.informatik.userinterface.Terminal;
+
+import java.util.EnumMap;
+import java.util.Map;
 
 /**
  * @author Andreas Schmider
@@ -46,10 +46,10 @@ public class Connect6StandardGR extends Connect6GameRule {
         int l = compactArray[3];
         GameFieldArea gFA = new GameFieldArea(i, j, gI);
         GameFieldArea gFA2 = new GameFieldArea(k, l, gI);
-        if (checkSurroundings(piece, gFA.getSurrounding(), gB, i, j)) {
+        if (hasSurroundingWinner(piece, gFA.getSurrounding(), gB, i, j)) {
             win = true;
         }
-        if (checkSurroundings(piece, gFA2.getSurrounding(), gB, k, l)) {
+        if (hasSurroundingWinner(piece, gFA2.getSurrounding(), gB, k, l)) {
             win = true;
         }
         return win;
@@ -66,8 +66,8 @@ public class Connect6StandardGR extends Connect6GameRule {
     public Player checkWin(RectangularGameBoard board, Command command) {
         Player player = board.getGameField(command.getParameters()[0], command.getParameters()[0]).getStone();
 
-        if (checkSurroundings(board, command.getParameters()[0], command.getParameters()[1])
-                || checkSurroundings(board, command.getParameters()[2], command.getParameters()[3])) {
+        if (hasSurroundingWinner(board, command.getParameters()[0], command.getParameters()[1])
+                || hasSurroundingWinner(board, command.getParameters()[2], command.getParameters()[3])) {
             return player;
         }
 
@@ -79,8 +79,46 @@ public class Connect6StandardGR extends Connect6GameRule {
         return "Standard";
     }
 
-    private boolean checkSurroundings(RectangularGameBoard board, int width, int height) {
+    private boolean hasSurroundingWinner(RectangularGameBoard board, int width, int height) {
+        Map<Compass, Integer> surroundings = new EnumMap<Compass, Integer>(Compass.class);
+        surroundings.put(Compass.N, checkNorth(board, width, height, 0));
+//        surroundings.put(Compass.NE, checkNorth());
+//        surroundings.put(Compass.E, checkNorth());
+//        surroundings.put(Compass.SE, checkNorth());
+//        surroundings.put(Compass.S, checkNorth());
+//        surroundings.put(Compass.SW, checkNorth());
+//        surroundings.put(Compass.W, checkNorth());
+//        surroundings.put(Compass.NW, checkNorth());
+
+        if (surroundings.get(Compass.N) + 1 >= xInARowToWin) {
+            return true;
+        }
         return false;
+    }
+
+    private int checkNorth(RectangularGameBoard board, int width, int height, int curInARow) {
+        Player currentPlayer = board.getGameField(width, height).getStone();
+
+        boolean stillOnBoard = checkOnBoard(board, width, height - 1);
+        if (curInARow < xInARowToWin - 1 && stillOnBoard) {
+            if (board.getGameField(width, height - 1).getStone() == currentPlayer) {
+                return checkNorth(board, width, --height, ++curInARow);
+            } else {
+                return curInARow;
+            }
+        } else {
+            return curInARow;
+        }
+
+//        int matches = 0;
+//        for (int running = 0; running <= 5; running++) {
+//
+//        }
+//        return 0;
+    }
+
+    private boolean checkOnBoard(RectangularGameBoard board, int width, int height) {
+        return width >= 0 && width < board.getBoardSize() && height >= 0 && height < board.getBoardSize();
     }
 
     /**
@@ -93,7 +131,7 @@ public class Connect6StandardGR extends Connect6GameRule {
      * @param y           y
      * @return true, if row > 5
      */
-    private boolean checkSurroundings(String piece, int[] surrounding, RectangularGameBoard gB, int x, int y) {
+    private boolean hasSurroundingWinner(String piece, int[] surrounding, RectangularGameBoard gB, int x, int y) {
         int[] count = new int[8];
         boolean ret = false;
         count[0] = checkUpLeft(piece, surrounding[0], gB, x, y);

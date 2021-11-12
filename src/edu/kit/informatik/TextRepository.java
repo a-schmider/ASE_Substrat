@@ -27,4 +27,6 @@ public class TextRepository {
             "Enter \"yes\" or \"no\"";
     public static final String YES = "yes";
     public static final String WINNER_IS = "Thw Winner is";
+    public static final String GAME_ENDING = "The Game is over. You can still use all commands except the place command.";
+    public static final String RETURN_TO_MAIN_MENU = "Returning to main menu...\r\n\r\n";
 }

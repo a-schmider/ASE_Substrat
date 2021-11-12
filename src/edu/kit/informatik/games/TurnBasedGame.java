@@ -1,5 +1,6 @@
 package edu.kit.informatik.games;
 
+import edu.kit.informatik.TextRepository;
 import edu.kit.informatik.models.Player;
 import edu.kit.informatik.userinterface.GUI;
 
@@ -48,7 +49,7 @@ public abstract class TurnBasedGame {
     }
 
     Player followUp() {
-        gui.print("Returning to main menu\r\n");
+        gui.print(TextRepository.RETURN_TO_MAIN_MENU);
         return winner;
     }
 }

@@ -163,20 +163,26 @@ public class Connect6 extends TurnBasedGame {
     void makeTurn() {
         //TODO neuer Spielverlauf, Gewinner noch testen
 
-        Player activePlayer = gameInfo.getActivePlayer();
-        gui.print(activePlayer.getPlayerStone().getLabel() + "s turn:");
-        String input = Terminal.readLine();
-        try {
-            Command command = getCommand(input);
-            executeCommand(activePlayer, command);
-        } catch (IOException e) {
-            gui.print(TextRepository.INPUT_ERROR_MSG);
+        if (!wasQuited()) {
+            Player activePlayer = gameInfo.getActivePlayer();
+            gui.print(activePlayer.getPlayerStone().getLabel() + "s turn:");
+            String input = Terminal.readLine();
+            try {
+                Command command = getCommand(input);
+                executeCommand(activePlayer, command);
+            } catch (IOException e) {
+                gui.print(TextRepository.INPUT_ERROR_MSG);
+            }
+
+            if (!isRunning()) {
+                gui.print(TextRepository.WINNER_IS + " " + winner.getPlayerStone().getLabel());
+                gui.print(TextRepository.GAME_ENDING);
+            }
         }
     }
 
     @Override
     Player followUp() {
-        gui.print(TextRepository.WINNER_IS + " " + winner.getPlayerStone().getLabel());
         return super.followUp();
     }
 
