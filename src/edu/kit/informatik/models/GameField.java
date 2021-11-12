@@ -2,30 +2,29 @@ package edu.kit.informatik.models;
 
 public class GameField {
 
-    private Player stone;
-
+    private Player player;
 
     public boolean isFree() {
-        return stone == null;
+        return player == null;
     }
 
     public boolean placeStone(Player player) {
         if (isFree()) {
-            stone = player;
+            this.player = player;
             return true;
         }
         return false;
     }
 
     public Player getStone() {
-        return stone;
+        return player;
     }
 
     public String toString() {
         if (isFree()) {
             return "**";
         } else {
-            return stone.getGamingPiece();
+            return player.getPlayerStone().getLabel();
         }
     }
 }

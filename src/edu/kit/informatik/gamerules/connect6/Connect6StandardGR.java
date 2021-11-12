@@ -1,7 +1,9 @@
 package edu.kit.informatik.gamerules.connect6;
 
+import edu.kit.informatik.Command;
 import edu.kit.informatik.models.GameFieldArea;
 import edu.kit.informatik.models.GameInfo;
+import edu.kit.informatik.models.Player;
 import edu.kit.informatik.models.RectangularGameBoard;
 import edu.kit.informatik.userinterface.Terminal;
 
@@ -44,14 +46,15 @@ public class Connect6StandardGR extends Connect6GameRule {
         int l = compactArray[3];
         GameFieldArea gFA = new GameFieldArea(i, j, gI);
         GameFieldArea gFA2 = new GameFieldArea(k, l, gI);
-        if (checkAround(piece, gFA.getSurrounding(), gB, i, j)) {
+        if (checkSurroundings(piece, gFA.getSurrounding(), gB, i, j)) {
             win = true;
         }
-        if (checkAround(piece, gFA2.getSurrounding(), gB, k, l)) {
+        if (checkSurroundings(piece, gFA2.getSurrounding(), gB, k, l)) {
             win = true;
         }
         return win;
     }
+
 
     @Override
     public boolean checkFullBoard(RectangularGameBoard gB, GameInfo gI) {
@@ -59,9 +62,25 @@ public class Connect6StandardGR extends Connect6GameRule {
         //TODO schauen wie richtig vererbt wird und implementieren indem auf GameArea zugegriffen wird und nicht null ist
     }
 
+    //TODO  Methoden umbenennen
+    public Player checkWin(RectangularGameBoard board, Command command) {
+        Player player = board.getGameField(command.getParameters()[0], command.getParameters()[0]).getStone();
+
+        if (checkSurroundings(board, command.getParameters()[0], command.getParameters()[1])
+                || checkSurroundings(board, command.getParameters()[2], command.getParameters()[3])) {
+            return player;
+        }
+
+        return null;
+    }
+
     @Override
     public String toString() {
         return "Standard";
+    }
+
+    private boolean checkSurroundings(RectangularGameBoard board, int width, int height) {
+        return false;
     }
 
     /**
@@ -74,7 +93,7 @@ public class Connect6StandardGR extends Connect6GameRule {
      * @param y           y
      * @return true, if row > 5
      */
-    private boolean checkAround(String piece, int[] surrounding, RectangularGameBoard gB, int x, int y) {
+    private boolean checkSurroundings(String piece, int[] surrounding, RectangularGameBoard gB, int x, int y) {
         int[] count = new int[8];
         boolean ret = false;
         count[0] = checkUpLeft(piece, surrounding[0], gB, x, y);

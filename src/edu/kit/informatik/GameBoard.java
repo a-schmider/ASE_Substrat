@@ -4,11 +4,12 @@ import edu.kit.informatik.models.GameField;
 
 public abstract class GameBoard {
 
-    private final GameField[][] board;
+    protected final GameField[][] board;
 
-    protected GameBoard(int row, int column) {
-        this.board = new GameField[row][column];
+    protected GameBoard(int rows, int columns) {
+        board = new GameField[rows][columns];
     }
+
 
     public int getBoardSize() {
         return board.length;

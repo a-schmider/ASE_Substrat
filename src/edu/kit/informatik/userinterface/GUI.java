@@ -44,7 +44,7 @@ public class GUI implements GuiInterface {
         System.out.println(TextRepository.SETTINGS_USED);
         System.out.println("Gamerule: " + gameInfo.getGamerule().toString());
         System.out.println("Boardsize: " + gameInfo.getGameBoardSize());
-        System.out.println("Player count: " + gameInfo.getPlayers().size() + 1);
+        System.out.println("Player count: " + gameInfo.getPlayers().size());
         System.out.println();
     }
 }

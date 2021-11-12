@@ -44,7 +44,7 @@ public class ConnectFour extends TurnBasedGame {
     }
 
     @Override
-    public void prepare() {
+    public void makeTurn() {
         board = new RectangularGameBoard(7, 6);
 
         switch (chosenVariation) {

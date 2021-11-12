@@ -9,12 +9,21 @@ public abstract class TurnBasedGame {
     private static final GUI gui = new GUI();
     //TODO
 
+    protected boolean quited;
+    protected boolean finished;
+    protected Player winner;
 
-    private boolean quited;
-    private Player winner;
 
+    /**
+     * Returns true if the game is not finished yet
+     *
+     * @return true if the game is not finished yet
+     */
+    public final boolean isRunning() {
+        return !finished;
+    }
 
-    public boolean isOver() {
+    public final boolean wasQuited() {
         return quited;
     }
 
@@ -33,13 +42,9 @@ public abstract class TurnBasedGame {
         System.out.println("Choose Variation");
     }
 
-    void prepare() {
-        System.out.println("Prepare");
-    }
-
     void makeTurn() {
         System.out.println("Make Turn");
-        quited = true;
+        finished = true;
     }
 
     Player followUp() {

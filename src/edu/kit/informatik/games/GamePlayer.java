@@ -6,9 +6,8 @@ public class GamePlayer {
 
     public static Player play(TurnBasedGame turnBasedGame) {
         turnBasedGame.prepareSettings();
-        turnBasedGame.prepare();
 
-        while (!turnBasedGame.isOver()) {
+        while (!turnBasedGame.wasQuited()) {
             turnBasedGame.makeTurn();
         }
 

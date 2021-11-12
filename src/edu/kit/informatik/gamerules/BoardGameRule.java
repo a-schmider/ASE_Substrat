@@ -1,6 +1,8 @@
 package edu.kit.informatik.gamerules;
 
+import edu.kit.informatik.Command;
 import edu.kit.informatik.models.GameInfo;
+import edu.kit.informatik.models.Player;
 import edu.kit.informatik.models.RectangularGameBoard;
 
 /**
@@ -40,5 +42,12 @@ public abstract class BoardGameRule implements ConnectGameRules {
         return gI.getTurns() == gB.getBoardSize() * gB.getBoardSize();
     }
 
+    public abstract Player checkWin(RectangularGameBoard board, Command command);
+
+    /**
+     * Should return the name of the GameBoardRule
+     *
+     * @return the name of the GameBoardRule
+     */
     public abstract String toString();
 }

@@ -26,4 +26,5 @@ public class TextRepository {
     public static final String CHANGE_SETTINGS = "Do you want to change the settings again?\r\n" +
             "Enter \"yes\" or \"no\"";
     public static final String YES = "yes";
+    public static final String WINNER_IS = "Thw Winner is";
 }

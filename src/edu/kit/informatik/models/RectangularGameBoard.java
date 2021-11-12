@@ -2,22 +2,17 @@ package edu.kit.informatik.models;
 
 public class RectangularGameBoard extends edu.kit.informatik.GameBoard {
 
-    private final GameField[][] board;
 
-
-    public RectangularGameBoard(int row, int column) {
-        super(row, column);
-        board = new GameField[row][column];
+    public RectangularGameBoard(int rows, int columns) {
+        super(rows, columns);
         initGameBoard();
     }
 
-    /**
-     * initializes the board with "**"
-     */
+
     public void initGameBoard() {
         for (int row = 0; row < board.length; row++) {
-            for (int column = 0; column < board[row].length; column++) {
-                board[row][column] = new GameField();
+            for (int col = 0; col < board[0].length; col++) {
+                board[row][col] = new GameField();
             }
         }
     }

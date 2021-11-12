@@ -27,8 +27,6 @@ public class Connect6 extends TurnBasedGame {
     private final List<Integer> possibleBoardSizes;
     private final List<Integer> possiblePlayers;
 
-    private boolean exit = false;
-    private boolean finished = false;
     private GameInfo gameInfo;
     private RectangularGameBoard gameboard;
 
@@ -38,31 +36,6 @@ public class Connect6 extends TurnBasedGame {
         this.possibleBoardSizes = possibleBoardSizes;
         this.possiblePlayers = possiblePlayersCount;
     }
-
-
-    public void start() {
-        gui.print(TextRepository.HELP_INFO_MSG);
-
-        Player activePlayer;
-        gameboard = new Connect6GameBoard(gameInfo.getGameBoardSize());
-
-        // real game
-        while (!exit) {
-            //TODO neuer Spielverlauf, Gewinner noch testen
-
-            activePlayer = gameInfo.getActivePlayer();
-            gui.print(activePlayer.getGamingPiece() + "s turn:");
-            String input = Terminal.readLine();
-            try {
-                Command command = getCommand(input);
-                executeCommand(activePlayer, command);
-            } catch (IOException e) {
-                gui.print(TextRepository.INPUT_ERROR_MSG);
-            }
-        }
-
-    }
-
 
     private Command getCommand(String input) throws IOException {
         String[] arrayString;
@@ -124,10 +97,11 @@ public class Connect6 extends TurnBasedGame {
                 gui.print(gameboard.getColumnAsString(command.getParameters()[0]));
                 break;
             case quit:
-                exit = true;
+                quited = true;
                 break;
             case reset:
                 finished = false;
+                winner = null;
                 gameboard.initGameBoard();
                 gameInfo.resetTurns();
                 break;
@@ -136,7 +110,11 @@ public class Connect6 extends TurnBasedGame {
                     gameboard.placeStone(command.getParameters()[0], command.getParameters()[1], player);
                     gameboard.placeStone(command.getParameters()[2], command.getParameters()[3], player);
                     gameInfo.addTurn();
-                    //gameInfo.getGamerule().checkWin();
+
+                    winner = gameInfo.getGamerule().checkWin(gameboard, command);
+                    if (winner != null) {
+                        finished = true;
+                    }
                 } else {
                     gui.print(TextRepository.PLACEMENT_NOT_ALLOWED);
                 }
@@ -152,9 +130,14 @@ public class Connect6 extends TurnBasedGame {
         }
     }
 
+    /**
+     * checks if game is not over, placing stones on both coordinates is allowed and if both coordinates are different
+     *
+     * @param command to executed command
+     * @return true, if it is allowed to place both stones
+     */
     private boolean checkAllowedPlacement(Command command) {
-        //checks if game is not over, placing stones on both coordinates is allowed and if both coordinates are different
-        return !finished
+        return isRunning()
                 && gameInfo.getGamerule().checkAllowedPlacement(command.getParameters()[0], command.getParameters()[1], gameboard)
                 && gameInfo.getGamerule().checkAllowedPlacement(command.getParameters()[2], command.getParameters()[3], gameboard)
                 && (command.getParameters()[0] != command.getParameters()[2] || command.getParameters()[1] != command.getParameters()[3]);
@@ -170,11 +153,31 @@ public class Connect6 extends TurnBasedGame {
     void prepareSettings() {
         //Repeat settings questions until the settings are accepted
         while (chooseSettings()) ;
+
+        gameboard = new Connect6GameBoard(gameInfo.getGameBoardSize());
+
+        gui.print(TextRepository.HELP_INFO_MSG);
     }
 
     @Override
-    void prepare() {
-        //start();
+    void makeTurn() {
+        //TODO neuer Spielverlauf, Gewinner noch testen
+
+        Player activePlayer = gameInfo.getActivePlayer();
+        gui.print(activePlayer.getPlayerStone().getLabel() + "s turn:");
+        String input = Terminal.readLine();
+        try {
+            Command command = getCommand(input);
+            executeCommand(activePlayer, command);
+        } catch (IOException e) {
+            gui.print(TextRepository.INPUT_ERROR_MSG);
+        }
+    }
+
+    @Override
+    Player followUp() {
+        gui.print(TextRepository.WINNER_IS + " " + winner.getPlayerStone().getLabel());
+        return super.followUp();
     }
 
     private boolean chooseSettings() {
