@@ -1,7 +1,10 @@
 package edu.kit.informatik.gamerules.connect6;
 
 import edu.kit.informatik.Command;
-import edu.kit.informatik.models.*;
+import edu.kit.informatik.models.Compass;
+import edu.kit.informatik.models.GameInfo;
+import edu.kit.informatik.models.Player;
+import edu.kit.informatik.models.RectangularGameBoard;
 import edu.kit.informatik.userinterface.Terminal;
 
 import java.util.EnumMap;
@@ -12,8 +15,9 @@ import java.util.Map;
  */
 public class Connect6StandardGR extends Connect6GameRule {
 
-    //TODO parameter gB Connect6GameBoard wurde überall ausgetauscht mit RectangularGameBoard
 
+    //TODO parameter gB Connect6GameBoard wurde überall ausgetauscht mit RectangularGameBoard
+    //TODO muss noch angepasst werden
     public boolean checkAllowedPlacement(int row, int column, RectangularGameBoard gB) {
         boolean allowed = false;
         if (row >= 0 && row < gB.getBoardSize() && column >= 0 && column < gB.getBoardSize()) {
@@ -29,32 +33,9 @@ public class Connect6StandardGR extends Connect6GameRule {
         return allowed;
     }
 
-    /**
-     * checks if six in a row
-     *
-     * @param compactArray contents the four coordinates
-     * @param piece        field content (playermark)
-     * @param gI           gameinfo
-     * @param gB           gameboard
-     * @return win true, if the player has won
-     */
     public boolean checkWin(int[] compactArray, String piece, GameInfo gI, RectangularGameBoard gB) {
-        boolean win = false;
-        int i = compactArray[0];
-        int j = compactArray[1];
-        int k = compactArray[2];
-        int l = compactArray[3];
-        GameFieldArea gFA = new GameFieldArea(i, j, gI);
-        GameFieldArea gFA2 = new GameFieldArea(k, l, gI);
-        if (hasSurroundingWinner(piece, gFA.getSurrounding(), gB, i, j)) {
-            win = true;
-        }
-        if (hasSurroundingWinner(piece, gFA2.getSurrounding(), gB, k, l)) {
-            win = true;
-        }
-        return win;
+        return false;
     }
-
 
     @Override
     public boolean checkFullBoard(RectangularGameBoard gB, GameInfo gI) {
@@ -62,9 +43,8 @@ public class Connect6StandardGR extends Connect6GameRule {
         //TODO schauen wie richtig vererbt wird und implementieren indem auf GameArea zugegriffen wird und nicht null ist
     }
 
-    //TODO  Methoden umbenennen
     public Player checkWin(RectangularGameBoard board, Command command) {
-        Player player = board.getGameField(command.getParameters()[0], command.getParameters()[0]).getStone();
+        Player player = board.getGameField(command.getParameters()[0], command.getParameters()[1]).getStone();
 
         if (hasSurroundingWinner(board, command.getParameters()[0], command.getParameters()[1])
                 || hasSurroundingWinner(board, command.getParameters()[2], command.getParameters()[3])) {
@@ -80,316 +60,152 @@ public class Connect6StandardGR extends Connect6GameRule {
     }
 
     private boolean hasSurroundingWinner(RectangularGameBoard board, int width, int height) {
-        Map<Compass, Integer> surroundings = new EnumMap<Compass, Integer>(Compass.class);
-        surroundings.put(Compass.N, checkNorth(board, width, height, 0));
-//        surroundings.put(Compass.NE, checkNorth());
-//        surroundings.put(Compass.E, checkNorth());
-//        surroundings.put(Compass.SE, checkNorth());
-//        surroundings.put(Compass.S, checkNorth());
-//        surroundings.put(Compass.SW, checkNorth());
-//        surroundings.put(Compass.W, checkNorth());
-//        surroundings.put(Compass.NW, checkNorth());
+        Map<Compass, Integer> surroundings = new EnumMap<>(Compass.class);
+        surroundings.put(Compass.NW, checkNorthWest(board, width, height));
+        surroundings.put(Compass.N, checkNorth(board, width, height));
+        surroundings.put(Compass.NE, checkNorthEast(board, width, height));
+        surroundings.put(Compass.W, checkWest(board, width, height));
+        surroundings.put(Compass.E, checkEast(board, width, height));
+        surroundings.put(Compass.SW, checkSouthWest(board, width, height));
+        surroundings.put(Compass.S, checkSouth(board, width, height));
+        surroundings.put(Compass.SE, checkSouthEast(board, width, height));
 
-        if (surroundings.get(Compass.N) + 1 >= xInARowToWin) {
-            return true;
-        }
-        return false;
+        return surroundings.get(Compass.NW) + surroundings.get(Compass.SE) + 1 >= xInARowToWin
+                || surroundings.get(Compass.N) + surroundings.get(Compass.S) + 1 >= xInARowToWin
+                || surroundings.get(Compass.NE) + surroundings.get(Compass.SW) + 1 >= xInARowToWin
+                || surroundings.get(Compass.W) + surroundings.get(Compass.E) + 1 >= xInARowToWin;
     }
 
-    private int checkNorth(RectangularGameBoard board, int width, int height, int curInARow) {
+
+    //TODO schauen ob in Elternklasse verlegt werden kann
+    private int checkNorthWest(RectangularGameBoard board, int width, int height) {
+        try {
+            return checkDirection(board, width, height, 0, Compass.NW);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    private int checkNorth(RectangularGameBoard board, int width, int height) {
+        try {
+            return checkDirection(board, width, height, 0, Compass.N);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    private int checkNorthEast(RectangularGameBoard board, int width, int height) {
+        try {
+            return checkDirection(board, width, height, 0, Compass.NE);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    private int checkWest(RectangularGameBoard board, int width, int height) {
+        try {
+            return checkDirection(board, width, height, 0, Compass.W);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    private int checkEast(RectangularGameBoard board, int width, int height) {
+        try {
+            return checkDirection(board, width, height, 0, Compass.E);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    private int checkSouthWest(RectangularGameBoard board, int width, int height) {
+        try {
+            return checkDirection(board, width, height, 0, Compass.SW);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    private int checkSouth(RectangularGameBoard board, int width, int height) {
+        try {
+            return checkDirection(board, width, height, 0, Compass.S);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    private int checkSouthEast(RectangularGameBoard board, int width, int height) {
+        try {
+            return checkDirection(board, width, height, 0, Compass.SE);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    private int checkDirection(RectangularGameBoard board, int width, int height, int curInARow, Compass direction) throws NoSuchFieldException {
         Player currentPlayer = board.getGameField(width, height).getStone();
 
-        boolean stillOnBoard = checkOnBoard(board, width, height - 1);
+        int nextWidth = getNextWidth(width, direction);
+        int nextHeight = getNextHeight(height, direction);
+
+        if (direction == Compass.E) {
+            int v = 0;
+        }
+
+        boolean stillOnBoard = checkOnBoard(board, nextWidth, nextHeight);
         if (curInARow < xInARowToWin - 1 && stillOnBoard) {
-            if (board.getGameField(width, height - 1).getStone() == currentPlayer) {
-                return checkNorth(board, width, --height, ++curInARow);
+            if (board.getGameField(nextWidth, nextHeight).getStone() == currentPlayer) {
+                return checkDirection(board, nextWidth, nextHeight, ++curInARow, direction);
             } else {
                 return curInARow;
             }
         } else {
             return curInARow;
         }
+    }
 
-//        int matches = 0;
-//        for (int running = 0; running <= 5; running++) {
-//
-//        }
-//        return 0;
+    @SuppressWarnings("DuplicatedCode")
+    private int getNextWidth(int width, Compass direction) throws NoSuchFieldException {
+        switch (direction) {
+            case N, S -> {
+                return width;
+            }
+            case NE, E, SE -> {
+                return ++width;
+            }
+            case NW, W, SW -> {
+                return --width;
+            }
+            default -> throw new NoSuchFieldException("No direction specified");
+        }
+    }
+
+    @SuppressWarnings("DuplicatedCode")
+    private int getNextHeight(int height, Compass direction) throws NoSuchFieldException {
+        switch (direction) {
+            case W, E -> {
+                return height;
+            }
+            case NW, N, NE -> {
+                return ++height;
+            }
+            case SW, S, SE -> {
+                return --height;
+            }
+            default -> throw new NoSuchFieldException("No direction specified");
+        }
     }
 
     private boolean checkOnBoard(RectangularGameBoard board, int width, int height) {
         return width >= 0 && width < board.getBoardSize() && height >= 0 && height < board.getBoardSize();
     }
 
-    /**
-     * checks how many gamePieces of the same Player is in a row
-     *
-     * @param piece       p
-     * @param surrounding s
-     * @param gB          gameBoard
-     * @param x           x
-     * @param y           y
-     * @return true, if row > 5
-     */
-    private boolean hasSurroundingWinner(String piece, int[] surrounding, RectangularGameBoard gB, int x, int y) {
-        int[] count = new int[8];
-        boolean ret = false;
-        count[0] = checkUpLeft(piece, surrounding[0], gB, x, y);
-        count[1] = checkUp(piece, surrounding[1], gB, x, y);
-        count[2] = checkUpRight(piece, surrounding[2], gB, x, y);
-        count[3] = checkRight(piece, surrounding[3], gB, x, y);
-        count[4] = checkDownRight(piece, surrounding[4], gB, x, y);
-        count[5] = checkDown(piece, surrounding[5], gB, x, y);
-        count[6] = checkDownLeft(piece, surrounding[6], gB, x, y);
-        count[7] = checkLeft(piece, surrounding[7], gB, x, y);
-
-        for (int i = 0; i < 4; i++) {
-            if (count[i] + count[4 + i] > 4) {
-                ret = true;
-                break;
-            }
-        }
-        return ret;
-    }
-
-    /**
-     * counts how many gamePieces of the same Player is in the left row
-     *
-     * @param piece p
-     * @param i     i
-     * @param gB    gameBoard
-     * @param x     x
-     * @param y     y
-     * @return number
-     */
-    private int checkLeft(String piece, int i, RectangularGameBoard gB, int x, int y) {
-        boolean correct = true;
-        int matches = 0;
-        int j = 0;
-        while (j < i) {
-            if (correct) {
-                String s = gB.getField(x, y - (j + 1));
-                if (s.equals(piece)) {
-                    matches++;
-                } else {
-                    correct = false;
-                }
-            } else {
-                break;
-            }
-            j++;
-        }
-        return matches;
-    }
-
-    /**
-     * counts how many gamePieces of the same Player is in the down-left row
-     *
-     * @param piece p
-     * @param i     i
-     * @param gB    gameBoard
-     * @param x     x
-     * @param y     y
-     * @return number
-     */
-    private int checkDownLeft(String piece, int i, RectangularGameBoard gB, int x, int y) {
-        boolean correct = true;
-        int matches = 0;
-        int j = 0;
-        while (j < i) {
-            if (correct) {
-                String s = gB.getField(x + (j + 1), y - (j + 1));
-                if (s.equals(piece)) {
-                    matches++;
-                } else {
-                    correct = false;
-                }
-            } else {
-                break;
-            }
-            j++;
-        }
-        return matches;
-    }
-
-    /**
-     * counts how many gamePieces of the same Player is in the down row
-     *
-     * @param piece p
-     * @param i     i
-     * @param gB    gameBoard
-     * @param x     x
-     * @param y     y
-     * @return number
-     */
-    private int checkDown(String piece, int i, RectangularGameBoard gB, int x, int y) {
-        boolean correct = true;
-        int matches = 0;
-        int j = 0;
-        while (j < i) {
-            if (correct) {
-                String s = gB.getField(x + (j + 1), y);
-                if (s.equals(piece)) {
-                    matches++;
-                } else {
-                    correct = false;
-                }
-            } else {
-                break;
-            }
-            j++;
-        }
-        return matches;
-    }
-
-    /**
-     * counts how many gamePieces of the same Player is in the down-right row
-     *
-     * @param piece p
-     * @param i     i
-     * @param gB    gameBoard
-     * @param x     x
-     * @param y     y
-     * @return number
-     */
-    private int checkDownRight(String piece, int i, RectangularGameBoard gB, int x, int y) {
-        boolean correct = true;
-        int matches = 0;
-        int j = 0;
-        while (j < i) {
-            if (correct) {
-                String s = gB.getField(x + (j + 1), y + (j + 1));
-                if (s.equals(piece)) {
-                    matches++;
-                } else {
-                    correct = false;
-                }
-            } else {
-                break;
-            }
-            j++;
-        }
-        return matches;
-    }
-
-    /**
-     * counts how many gamePieces of the same Player is in the right row
-     *
-     * @param piece p
-     * @param i     i
-     * @param gB    gameBoard
-     * @param x     x
-     * @param y     y
-     * @return number
-     */
-    private int checkRight(String piece, int i, RectangularGameBoard gB, int x, int y) {
-        boolean correct = true;
-        int matches = 0;
-        int j = 0;
-        while (j < i) {
-            if (correct) {
-                String s = gB.getField(x, y + (j + 1));
-                if (s.equals(piece)) {
-                    matches++;
-                } else {
-                    correct = false;
-                }
-            } else {
-                break;
-            }
-            j++;
-        }
-        return matches;
-    }
-
-    /**
-     * counts how many gamePieces of the same Player is in the up-right row
-     *
-     * @param piece p
-     * @param i     i
-     * @param gB    gameBoard
-     * @param x     x
-     * @param y     y
-     * @return number
-     */
-    private int checkUpRight(String piece, int i, RectangularGameBoard gB, int x, int y) {
-        boolean correct = true;
-        int matches = 0;
-        int j = 0;
-        while (j < i) {
-            if (correct) {
-                String s = gB.getField(x - (j + 1), y + (j + 1));
-                if (s.equals(piece)) {
-                    matches++;
-                } else {
-                    correct = false;
-                }
-            } else {
-                break;
-            }
-            j++;
-        }
-        return matches;
-    }
-
-    /**
-     * counts how many gamePieces of the same Player is in the up row
-     *
-     * @param piece p
-     * @param i     i
-     * @param gB    gameBoard
-     * @param x     x
-     * @param y     y
-     * @return number
-     */
-    private int checkUp(String piece, int i, RectangularGameBoard gB, int x, int y) {
-        boolean correct = true;
-        int matches = 0;
-        int j = 0;
-        while (j < i) {
-            if (correct) {
-                String s = gB.getField(x - (j + 1), y);
-                if (s.equals(piece)) {
-                    matches++;
-                } else {
-                    correct = false;
-                }
-            } else {
-                break;
-            }
-            j++;
-        }
-        return matches;
-    }
-
-    /**
-     * counts how many gamePieces of the same Player is in the up-left row
-     *
-     * @param piece p
-     * @param i     i
-     * @param gB    gameBoard
-     * @param x     x
-     * @param y     y
-     * @return number
-     */
-    private int checkUpLeft(String piece, int i, RectangularGameBoard gB, int x, int y) {
-        boolean correct = true;
-        int matches = 0;
-        int j = 0;
-        while (j < i) {
-            if (correct) {
-                String s = gB.getField(x - (j + 1), y - (j + 1));
-                if (s.equals(piece)) {
-                    matches++;
-
-                } else {
-                    correct = false;
-                }
-            } else {
-                break;
-            }
-            j++;
-        }
-        return matches;
-    }
 }

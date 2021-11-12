@@ -29,6 +29,7 @@ public class GameSelection {
     public static void main(String[] argv) {
 
         while (denied) {
+            //TODO nachdem ein Spiel beendet wird stürzt das Programm ab
             gui.printList(gamesList);
 
             try {
