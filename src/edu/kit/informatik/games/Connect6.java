@@ -138,8 +138,8 @@ public class Connect6 extends TurnBasedGame {
      */
     private boolean checkAllowedPlacement(Command command) {
         return isRunning()
-                && gameInfo.getGamerule().checkAllowedPlacement(command.getParameters()[0], command.getParameters()[1], gameboard)
-                && gameInfo.getGamerule().checkAllowedPlacement(command.getParameters()[2], command.getParameters()[3], gameboard)
+                && gameInfo.getGamerule().checkAllowedPlacement(gameboard, command.getParameters()[0], command.getParameters()[1])
+                && gameInfo.getGamerule().checkAllowedPlacement(gameboard, command.getParameters()[2], command.getParameters()[3])
                 && (command.getParameters()[0] != command.getParameters()[2] || command.getParameters()[1] != command.getParameters()[3]);
 
     }

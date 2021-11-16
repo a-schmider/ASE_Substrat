@@ -1,5 +1,7 @@
 package edu.kit.informatik.models;
 
+
+//TODO bisher quadratisch
 public class RectangularGameBoard extends edu.kit.informatik.GameBoard {
 
 

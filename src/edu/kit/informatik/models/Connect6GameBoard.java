@@ -28,17 +28,17 @@ public class Connect6GameBoard extends RectangularGameBoard {
     /**
      * @return boardSize
      */
-    public int getBoardSize() {
+    public int getBoardWidth() {
         return this.boardSize;
     }
 
     /**
-     * @param row    coordinate
-     * @param column coordinate
+     * @param width  coordinate
+     * @param height coordinate
      * @return content of the field
      */
-    public String getField(int row, int column) {
-        return this.gameBoard[row][column];
+    public String getField(int width, int height) {
+        return this.gameBoard[width][height];
     }
 
     /**

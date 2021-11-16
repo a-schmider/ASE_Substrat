@@ -11,18 +11,13 @@ import edu.kit.informatik.userinterface.Terminal;
 public class Connect6TorusGR extends Connect6GameRule {
 
     @Override
-    public boolean checkAllowedPlacement(int row, int column, RectangularGameBoard gB) {
-        return false;
+    public boolean checkAllowedPlacement(RectangularGameBoard board, int width, int height) {
+        return super.checkAllowedPlacement(board, width, height);
     }
 
     @Override
-    public boolean checkWin(int[] compactArray, String piece, GameInfo gI, RectangularGameBoard gB) {
-        return false;
-    }
-
-    @Override
-    public boolean checkFullBoard(RectangularGameBoard gB, GameInfo gI) {
-        return false;
+    public String toString() {
+        return "Torus";
     }
 
     @Override
@@ -30,9 +25,16 @@ public class Connect6TorusGR extends Connect6GameRule {
         return null;
     }
 
+
+    //TODO implement
     @Override
-    public String toString() {
-        return "Torus";
+    protected int getNextWidth(int width, Compass direction) throws NoSuchFieldException {
+        return 0;
+    }
+
+    @Override
+    protected int getNextHeight(int height, Compass direction) throws NoSuchFieldException {
+        return 0;
     }
 
     /**
@@ -424,5 +426,4 @@ public class Connect6TorusGR extends Connect6GameRule {
         }
         return matches;
     }
-
 }
