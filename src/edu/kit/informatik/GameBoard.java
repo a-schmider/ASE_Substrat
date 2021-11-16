@@ -19,11 +19,6 @@ public abstract class GameBoard {
         return board[0].length;
     }
 
-    //TODO umstellen auf GameField
-    public String getField(int width, int height) {
-        return board[width][height].toString();
-    }
-
     public GameField getGameField(int width, int height) {
         return board[width][height];
     }

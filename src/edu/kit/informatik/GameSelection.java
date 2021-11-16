@@ -1,7 +1,7 @@
 package edu.kit.informatik;
 
-import edu.kit.informatik.gamerules.connect6.Connect6StandardGR;
-import edu.kit.informatik.gamerules.connect6.Connect6TorusGR;
+import edu.kit.informatik.gamerules.connect6.Connect6StandardGameRule;
+import edu.kit.informatik.gamerules.connect6.Connect6TorusGameRule;
 import edu.kit.informatik.games.Connect6;
 import edu.kit.informatik.games.ConnectFour;
 import edu.kit.informatik.games.GamePlayer;
@@ -18,7 +18,7 @@ public class GameSelection {
             new ArrayList<>(Arrays.asList(
                     new ConnectFour(),
                     new Connect6(
-                            new ArrayList<>(Arrays.asList(new Connect6StandardGR(), new Connect6TorusGR())),
+                            new ArrayList<>(Arrays.asList(new Connect6StandardGameRule(), new Connect6TorusGameRule())),
                             new ArrayList<>(Arrays.asList(18, 20)),
                             new ArrayList<>(Arrays.asList(2, 3, 4)))));
     //TODO GUI-Methoden static machen? Dependency Inversion? Gui kennt alle, main kennt Gui

@@ -4,7 +4,7 @@ import edu.kit.informatik.models.Compass;
 import edu.kit.informatik.models.RectangularGameBoard;
 
 
-public class Connect6StandardGR extends Connect6GameRule {
+public class Connect6StandardGameRule extends Connect6GameRule {
 
     public boolean checkAllowedPlacement(RectangularGameBoard board, int width, int height) {
         if (checkOnBoard(board, width, height)) {
@@ -20,7 +20,7 @@ public class Connect6StandardGR extends Connect6GameRule {
     }
 
     @SuppressWarnings("DuplicatedCode")
-    protected int getNextWidth(int width, Compass direction) throws NoSuchFieldException {
+    protected int getNextWidth(RectangularGameBoard board, int width, Compass direction) throws NoSuchFieldException {
         switch (direction) {
             case N, S -> {
                 return width;
@@ -36,7 +36,7 @@ public class Connect6StandardGR extends Connect6GameRule {
     }
 
     @SuppressWarnings("DuplicatedCode")
-    protected int getNextHeight(int height, Compass direction) throws NoSuchFieldException {
+    protected int getNextHeight(RectangularGameBoard board, int height, Compass direction) throws NoSuchFieldException {
         switch (direction) {
             case W, E -> {
                 return height;

@@ -16,9 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @author Andreas Schmider
- */
+
 public class Connect6 extends TurnBasedGame {
 
     private static final GUI gui = new GUI();
@@ -162,8 +160,6 @@ public class Connect6 extends TurnBasedGame {
 
     @Override
     void makeTurn() {
-        //TODO neuer Spielverlauf, Gewinner noch testen
-
         if (!wasQuited()) {
             Player activePlayer = gameInfo.getActivePlayer();
             gui.print(activePlayer.getPlayerStone().getLabel() + "s turn:");
@@ -180,11 +176,6 @@ public class Connect6 extends TurnBasedGame {
                 gui.print(TextRepository.GAME_ENDING);
             }
         }
-    }
-
-    @Override
-    Player followUp() {
-        return super.followUp();
     }
 
     private boolean chooseSettings() {

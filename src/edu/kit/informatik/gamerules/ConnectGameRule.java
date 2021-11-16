@@ -120,8 +120,8 @@ public abstract class ConnectGameRule extends BoardGameRule {
     protected int checkDirection(RectangularGameBoard board, int width, int height, int curInARow, Compass direction) throws NoSuchFieldException {
         Player currentPlayer = board.getGameField(width, height).getStone();
 
-        int nextWidth = getNextWidth(width, direction);
-        int nextHeight = getNextHeight(height, direction);
+        int nextWidth = getNextWidth(board, width, direction);
+        int nextHeight = getNextHeight(board, height, direction);
 
         boolean stillOnBoard = checkOnBoard(board, nextWidth, nextHeight);
         if (curInARow < xInARowToWin - 1 && stillOnBoard) {
@@ -136,7 +136,7 @@ public abstract class ConnectGameRule extends BoardGameRule {
     }
 
 
-    protected abstract int getNextWidth(int width, Compass direction) throws NoSuchFieldException;
+    protected abstract int getNextWidth(RectangularGameBoard board, int width, Compass direction) throws NoSuchFieldException;
 
-    protected abstract int getNextHeight(int height, Compass direction) throws NoSuchFieldException;
+    protected abstract int getNextHeight(RectangularGameBoard board, int height, Compass direction) throws NoSuchFieldException;
 }

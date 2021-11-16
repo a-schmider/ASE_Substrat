@@ -23,12 +23,12 @@ public class ConnectFourStandardGameRule extends ConnectFourGameRule {
     }
 
     @Override
-    protected int getNextWidth(int width, Compass direction) throws NoSuchFieldException {
+    protected int getNextWidth(RectangularGameBoard board, int width, Compass direction) throws NoSuchFieldException {
         return 0;
     }
 
     @Override
-    protected int getNextHeight(int height, Compass direction) throws NoSuchFieldException {
+    protected int getNextHeight(RectangularGameBoard board, int height, Compass direction) throws NoSuchFieldException {
         return 0;
     }
 }
