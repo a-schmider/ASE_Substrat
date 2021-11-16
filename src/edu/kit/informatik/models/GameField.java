@@ -8,12 +8,8 @@ public class GameField {
         return player == null;
     }
 
-    public boolean placeStone(Player player) {
-        if (isFree()) {
-            this.player = player;
-            return true;
-        }
-        return false;
+    public void placeStone(Player player) {
+        this.player = player;
     }
 
     public Player getStone() {

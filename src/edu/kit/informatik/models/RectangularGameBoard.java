@@ -20,8 +20,8 @@ public class RectangularGameBoard extends edu.kit.informatik.GameBoard {
     }
 
 
-    public boolean placeStone(int row, int column, Player player) {
-        return board[row][column].placeStone(player);
+    public void placeStone(int row, int column, Player player) {
+        board[row][column].placeStone(player);
     }
 
     public String getFieldAsString(int row, int col) {
