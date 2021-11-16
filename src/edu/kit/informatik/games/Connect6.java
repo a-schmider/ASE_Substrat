@@ -3,7 +3,7 @@ package edu.kit.informatik.games;
 import edu.kit.informatik.Command;
 import edu.kit.informatik.Connect6Commands;
 import edu.kit.informatik.TextRepository;
-import edu.kit.informatik.gamerules.connect6.Connect6GameRule;
+import edu.kit.informatik.gamerules.ConnectGameRule;
 import edu.kit.informatik.models.Connect6GameBoard;
 import edu.kit.informatik.models.GameInfo;
 import edu.kit.informatik.models.Player;
@@ -23,7 +23,7 @@ public class Connect6 extends TurnBasedGame {
 
     private static final GUI gui = new GUI();
 
-    private final List<Connect6GameRule> possibleGameRules;
+    private final List<ConnectGameRule> possibleGameRules;
     private final List<Integer> possibleBoardSizes;
     private final List<Integer> possiblePlayers;
 
@@ -31,7 +31,7 @@ public class Connect6 extends TurnBasedGame {
     private RectangularGameBoard gameboard;
 
 
-    public Connect6(List<Connect6GameRule> possibleGameRules, List<Integer> possibleBoardSizes, List<Integer> possiblePlayersCount) {
+    public Connect6(List<ConnectGameRule> possibleGameRules, List<Integer> possibleBoardSizes, List<Integer> possiblePlayersCount) {
         this.possibleGameRules = possibleGameRules;
         this.possibleBoardSizes = possibleBoardSizes;
         this.possiblePlayers = possiblePlayersCount;
@@ -152,6 +152,7 @@ public class Connect6 extends TurnBasedGame {
     @Override
     void prepareSettings() {
         //Repeat settings questions until the settings are accepted
+        //noinspection StatementWithEmptyBody
         while (chooseSettings()) ;
 
         gameboard = new Connect6GameBoard(gameInfo.getGameBoardSize());
@@ -187,7 +188,7 @@ public class Connect6 extends TurnBasedGame {
     }
 
     private boolean chooseSettings() {
-        Connect6GameRule gamerule = chooseVariation();
+        ConnectGameRule gamerule = chooseVariation();
         int boardSize = chooseBoardSize();
         ArrayList<Player> players = choosePlayerCount();
 
@@ -210,7 +211,7 @@ public class Connect6 extends TurnBasedGame {
         }
     }
 
-    private Connect6GameRule chooseVariation() {
+    private ConnectGameRule chooseVariation() {
         while (true) {
             try {
                 gui.print(TextRepository.CHOOSE_VARIATION);

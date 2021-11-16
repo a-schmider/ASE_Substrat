@@ -4,10 +4,6 @@ import edu.kit.informatik.Command;
 import edu.kit.informatik.models.*;
 import edu.kit.informatik.userinterface.Terminal;
 
-/**
- * @author Andreas Schmider
- */
-
 public class Connect6TorusGR extends Connect6GameRule {
 
     @Override
