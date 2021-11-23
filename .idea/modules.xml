@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ExtraktKern/ExtraktKern.iml" filepath="$PROJECT_DIR$/ExtraktKern/ExtraktKern.iml" />
       <module fileurl="file://$PROJECT_DIR$/ZZzFinal_01.iml" filepath="$PROJECT_DIR$/ZZzFinal_01.iml" />
     </modules>
   </component>
