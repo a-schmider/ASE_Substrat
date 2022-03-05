@@ -6,6 +6,7 @@ import dhbw.ase.core.gamerules.connect_four.ConnectFourStandardGameRule;
 import dhbw.ase.core.misc.ConnectFourVariations;
 import dhbw.ase.core.misc.TextRepository;
 import dhbw.ase.core.models.RectangularGameBoard;
+import dhbw.ase.plugin.userinterface.GUI;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,6 +21,9 @@ public class ConnectFour extends TurnBasedGame {
     private RectangularGameBoard board;
     private BoardGameRule boardGameRule;
 
+    public ConnectFour() {
+        gui = new GUI();
+    }
 
     @Override
     public String toString() {

@@ -1,0 +1,1581 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     contentScriptType="application/ecmascript" contentStyleType="text/css" height="1322px" preserveAspectRatio="none"
+     style="width:3666px;height:1322px;background:#FFFFFF;" version="1.1" viewBox="0 0 3666 1322" width="3666px"
+     zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f1snjpap8q9d8z" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g><!--MD5=[52c0225d9e57a8bbb947bff93649ba1d]
+cluster dhbw.ase.core.gamerules.connect_four-->
+        <polygon fill="#FFFFFF" filter="url(#f1snjpap8q9d8z)"
+                 points="1004,1038,1289,1038,1296,1061.6094,1743,1061.6094,1743,1315,1004,1315,1004,1038"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="1004" x2="1296" y1="1061.6094" y2="1061.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+              textLength="279" x="1008" y="1054.5332">dhbw.ase.core.gamerules.connect_four
+        </text><!--MD5=[cd3434dcc7b15ab72fc8cd97f1f58d82]
+cluster dhbw.ase.plugin.userinterface-->
+        <polygon fill="#FFFFFF" filter="url(#f1snjpap8q9d8z)"
+                 points="2121,68,2341,68,2348,91.6094,2421,91.6094,2421,670.5,2121,670.5,2121,68"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="2121" x2="2348" y1="91.6094" y2="91.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+              textLength="214" x="2125" y="84.5332">dhbw.ase.plugin.userinterface
+        </text><!--MD5=[ea3548211bb26957dd009a2f2f4b1880]
+cluster dhbw.ase.plugin.games-->
+        <polygon fill="#FFFFFF" filter="url(#f1snjpap8q9d8z)"
+                 points="2445,61.5,2616,61.5,2623,85.1094,3118,85.1094,3118,698,2445,698,2445,61.5"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="2445" x2="2623" y1="85.1094" y2="85.1094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+              textLength="165" x="2449" y="78.0332">dhbw.ase.plugin.games
+        </text><!--MD5=[86389cba4ee2b17bdc09dab6bb035e4d]
+cluster dhbw.ase.core.gamerules.connect6-->
+        <polygon fill="#FFFFFF" filter="url(#f1snjpap8q9d8z)"
+                 points="1767,1038,2023,1038,2030,1061.6094,2506,1061.6094,2506,1315,1767,1315,1767,1038"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="1767" x2="2030" y1="1061.6094" y2="1061.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+              textLength="250" x="1771" y="1054.5332">dhbw.ase.core.gamerules.connect6
+        </text><!--MD5=[dec34931907df9527e5d256fbe86cc92]
+cluster dhbw.ase.core.models-->
+        <polygon fill="#FFFFFF" filter="url(#f1snjpap8q9d8z)"
+                 points="679,397.5,843,397.5,850,421.1094,1390,421.1094,1390,931,679,931,679,397.5"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="679" x2="850" y1="421.1094" y2="421.1094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+              textLength="158" x="683" y="414.0332">dhbw.ase.core.models
+        </text><!--MD5=[775965efb238dae365af7bbaff9491ed]
+cluster dhbw.ase.core.gamerules-->
+        <polygon fill="#FFFFFF" filter="url(#f1snjpap8q9d8z)"
+                 points="1414,123.5,1601,123.5,1608,147.1094,2097,147.1094,2097,1014,1414,1014,1414,123.5"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="1414" x2="1608" y1="147.1094" y2="147.1094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+              textLength="181" x="1418" y="140.0332">dhbw.ase.core.gamerules
+        </text><!--MD5=[9e9ae1f18c0e241a85c8f2247259d1f6]
+cluster dhbw.ase.core.misc-->
+        <polygon fill="#FFFFFF" filter="url(#f1snjpap8q9d8z)"
+                 points="16,6,161,6,168,29.6094,655,29.6094,655,663.5,16,663.5,16,6"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="168" y1="29.6094" y2="29.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+              textLength="139" x="20" y="22.5332">dhbw.ase.core.misc
+        </text><!--MD5=[d3535a45b8310334734ba3108d99680c]
+cluster dhbw.ase.plugin.main-->
+        <polygon fill="#FFFFFF" filter="url(#f1snjpap8q9d8z)"
+                 points="3142,96,3300,96,3307,119.6094,3390,119.6094,3390,265,3142,265,3142,96"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="3142" x2="3307" y1="119.6094" y2="119.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+              textLength="152" x="3146" y="112.5332">dhbw.ase.plugin.main
+        </text><!--MD5=[1e279cde6c75848d4cf2da47ec9e1d1d]
+cluster dhbw.ase.core.NeededInPlugin-->
+        <polygon fill="#FFFFFF" filter="url(#f1snjpap8q9d8z)"
+                 points="3414,130.5,3639,130.5,3646,154.1094,3649,154.1094,3649,230.5,3414,230.5,3414,130.5"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="3414" x2="3646" y1="154.1094" y2="154.1094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+              textLength="219" x="3418" y="147.0332">dhbw.ase.core.NeededInPlugin
+        </text><!--MD5=[2398cc6238c40f8bc48407bfd6d4282c]
+class dhbw.ase.core.gamerules.connect_four.ConnectFourDropGameRule-->
+        <rect codeLine="1" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="117.1797"
+              id="dhbw.ase.core.gamerules.connect_four.ConnectFourDropGameRule" style="stroke:#A80036;stroke-width:1.5;"
+              width="336" x="1020" y="1182"/>
+        <ellipse cx="1104.75" cy="1198" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1106.75,1194.5 Q1106.9531,1194 1107.1875,1193.75 Q1107.4219,1193.5 1107.6875,1193.5 Q1108.1563,1193.5 1108.4531,1193.7813 Q1108.75,1194.0625 1108.75,1194.7188 L1108.75,1196.2813 Q1108.75,1196.9375 1108.4688,1197.2188 Q1108.1875,1197.5 1107.75,1197.5 Q1107.3594,1197.5 1107.1094,1197.3281 Q1106.8594,1197.1563 1106.75,1196.7031 Q1106.7031,1196.3906 1106.5313,1196.2188 Q1106.2188,1195.8906 1105.6563,1195.7031 Q1105.0938,1195.5 1104.5313,1195.5 Q1103.8281,1195.5 1103.2344,1195.7813 Q1102.6563,1196.0625 1102.2031,1196.6875 Q1101.75,1197.3125 1101.75,1198.1719 L1101.75,1199.0938 Q1101.75,1200.125 1102.5938,1200.8125 Q1103.4375,1201.5 1104.9375,1201.5 Q1105.8281,1201.5 1106.4531,1201.2969 Q1106.8125,1201.1875 1107.2188,1200.8281 Q1107.4844,1200.625 1107.625,1200.5625 Q1107.7656,1200.5 1107.9375,1200.5 Q1108.2656,1200.5 1108.5,1200.7656 Q1108.75,1201.0156 1108.75,1201.375 Q1108.75,1201.7188 1108.4063,1202.125 Q1107.9063,1202.7188 1107.1094,1203.0469 Q1106.0625,1203.5 1104.7813,1203.5 Q1103.2813,1203.5 1102.0781,1202.9063 Q1101.1094,1202.4375 1100.4219,1201.4219 Q1099.75,1200.4063 1099.75,1199.2031 L1099.75,1198.1094 Q1099.75,1196.8594 1100.3438,1195.7656 Q1100.9531,1194.6719 1102,1194.0938 Q1103.0625,1193.5 1104.25,1193.5 Q1104.9688,1193.5 1105.5938,1193.75 Q1106.2188,1194 1106.75,1194.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="158" x="1125.25"
+              y="1202.9102">ConnectFourDropGameRule
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1021" x2="1355" y1="1214" y2="1214"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1021" x2="1355" y1="1222" y2="1222"/>
+        <ellipse cx="1031" cy="1233" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="310" x="1040"
+              y="1237.4189">boolean checkAllowedPlacement(RectangularGameBoard,int,int)
+        </text>
+        <ellipse cx="1031" cy="1246.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="1040"
+              y="1251.2549">String toString()
+        </text>
+        <ellipse cx="1031" cy="1260.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="253" x="1040"
+              y="1265.0908">Player checkWin(RectangularGameBoard,Command)
+        </text>
+        <polygon fill="#FFFF44" points="1031,1269.5078,1035,1273.5078,1031,1277.5078,1027,1273.5078"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="263" x="1040"
+              y="1278.9268">int getNextWidth(RectangularGameBoard,int,Compass)
+        </text>
+        <polygon fill="#FFFF44" points="1031,1283.3438,1035,1287.3438,1031,1291.3438,1027,1287.3438"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="266" x="1040"
+              y="1292.7627">int getNextHeight(RectangularGameBoard,int,Compass)
+        </text><!--MD5=[ec16f4994323fa79f41f6f6b4d0e0b4e]
+class dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule-->
+        <rect codeLine="23" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="48"
+              id="dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule" style="stroke:#A80036;stroke-width:1.5;"
+              width="163" x="1477.5" y="1074"/>
+        <ellipse cx="1492.5" cy="1090" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1494.25,1091.5 L1490.9531,1091.5 L1490.5156,1092.5 L1490.5156,1092.5 L1490.9844,1092.5 L1491.5,1093.125 L1491.5,1093.5 L1491.5,1093.875 L1490.9844,1094.5 L1490.5156,1094.5 L1488.625,1094.5 L1488.0156,1094.5 L1487.5,1093.875 L1487.5,1093.5 L1487.5,1093.125 L1488.0156,1092.5 L1488.625,1092.5 L1490.9375,1086.5 L1490.0625,1086.5 L1489.0156,1086.5 L1488.5,1085.875 L1488.5,1085.5 L1488.5,1085.125 L1489.0156,1084.5 L1490.0625,1084.5 L1493.7344,1084.5 L1496.4219,1092.5 L1496.9844,1092.5 L1496.9844,1092.5 L1497.5,1093.125 L1497.5,1093.5 L1497.5,1093.875 L1496.9844,1094.5 L1496.4219,1094.5 L1494.5313,1094.5 L1494.0156,1094.5 L1493.5,1093.875 L1493.5,1093.5 L1493.5,1093.125 L1494.0156,1092.5 L1494.5313,1092.5 L1494.5313,1092.5 L1494.25,1091.5 Z M1493.7031,1089.5 L1492.5,1085.9219 L1491.4688,1089.5 L1493.7031,1089.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing"
+              textLength="131" x="1506.5" y="1094.9102">ConnectFourGameRule
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1478.5" x2="1639.5" y1="1106" y2="1106"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1478.5" x2="1639.5" y1="1114" y2="1114"/><!--MD5=[50f766bfcab8875032dc76f3881bb7a7]
+class dhbw.ase.core.gamerules.connect_four.ConnectFourStandardGameRule-->
+        <rect codeLine="144" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="117.1797"
+              id="dhbw.ase.core.gamerules.connect_four.ConnectFourStandardGameRule"
+              style="stroke:#A80036;stroke-width:1.5;" width="336" x="1391" y="1182"/>
+        <ellipse cx="1464.25" cy="1198" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1466.25,1194.5 Q1466.4531,1194 1466.6875,1193.75 Q1466.9219,1193.5 1467.1875,1193.5 Q1467.6563,1193.5 1467.9531,1193.7813 Q1468.25,1194.0625 1468.25,1194.7188 L1468.25,1196.2813 Q1468.25,1196.9375 1467.9688,1197.2188 Q1467.6875,1197.5 1467.25,1197.5 Q1466.8594,1197.5 1466.6094,1197.3281 Q1466.3594,1197.1563 1466.25,1196.7031 Q1466.2031,1196.3906 1466.0313,1196.2188 Q1465.7188,1195.8906 1465.1563,1195.7031 Q1464.5938,1195.5 1464.0313,1195.5 Q1463.3281,1195.5 1462.7344,1195.7813 Q1462.1563,1196.0625 1461.7031,1196.6875 Q1461.25,1197.3125 1461.25,1198.1719 L1461.25,1199.0938 Q1461.25,1200.125 1462.0938,1200.8125 Q1462.9375,1201.5 1464.4375,1201.5 Q1465.3281,1201.5 1465.9531,1201.2969 Q1466.3125,1201.1875 1466.7188,1200.8281 Q1466.9844,1200.625 1467.125,1200.5625 Q1467.2656,1200.5 1467.4375,1200.5 Q1467.7656,1200.5 1468,1200.7656 Q1468.25,1201.0156 1468.25,1201.375 Q1468.25,1201.7188 1467.9063,1202.125 Q1467.4063,1202.7188 1466.6094,1203.0469 Q1465.5625,1203.5 1464.2813,1203.5 Q1462.7813,1203.5 1461.5781,1202.9063 Q1460.6094,1202.4375 1459.9219,1201.4219 Q1459.25,1200.4063 1459.25,1199.2031 L1459.25,1198.1094 Q1459.25,1196.8594 1459.8438,1195.7656 Q1460.4531,1194.6719 1461.5,1194.0938 Q1462.5625,1193.5 1463.75,1193.5 Q1464.4688,1193.5 1465.0938,1193.75 Q1465.7188,1194 1466.25,1194.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="181" x="1484.75"
+              y="1202.9102">ConnectFourStandardGameRule
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1392" x2="1726" y1="1214" y2="1214"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1392" x2="1726" y1="1222" y2="1222"/>
+        <ellipse cx="1402" cy="1233" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="310" x="1411"
+              y="1237.4189">boolean checkAllowedPlacement(RectangularGameBoard,int,int)
+        </text>
+        <ellipse cx="1402" cy="1246.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="1411"
+              y="1251.2549">String toString()
+        </text>
+        <ellipse cx="1402" cy="1260.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="253" x="1411"
+              y="1265.0908">Player checkWin(RectangularGameBoard,Command)
+        </text>
+        <polygon fill="#FFFF44" points="1402,1269.5078,1406,1273.5078,1402,1277.5078,1398,1273.5078"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="263" x="1411"
+              y="1278.9268">int getNextWidth(RectangularGameBoard,int,Compass)
+        </text>
+        <polygon fill="#FFFF44" points="1402,1283.3438,1406,1287.3438,1402,1291.3438,1398,1287.3438"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="266" x="1411"
+              y="1292.7627">int getNextHeight(RectangularGameBoard,int,Compass)
+        </text><!--MD5=[9316ee656d4803f2e830c680d26537df]
+class dhbw.ase.plugin.userinterface.GUI-->
+        <rect codeLine="8" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="227.8672"
+              id="dhbw.ase.plugin.userinterface.GUI" style="stroke:#A80036;stroke-width:1.5;" width="268" x="2137"
+              y="426.5"/>
+        <ellipse cx="2256.25" cy="442.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M2258.25,439 Q2258.4531,438.5 2258.6875,438.25 Q2258.9219,438 2259.1875,438 Q2259.6563,438 2259.9531,438.2813 Q2260.25,438.5625 2260.25,439.2188 L2260.25,440.7813 Q2260.25,441.4375 2259.9688,441.7188 Q2259.6875,442 2259.25,442 Q2258.8594,442 2258.6094,441.8281 Q2258.3594,441.6563 2258.25,441.2031 Q2258.2031,440.8906 2258.0313,440.7188 Q2257.7188,440.3906 2257.1563,440.2031 Q2256.5938,440 2256.0313,440 Q2255.3281,440 2254.7344,440.2813 Q2254.1563,440.5625 2253.7031,441.1875 Q2253.25,441.8125 2253.25,442.6719 L2253.25,443.5938 Q2253.25,444.625 2254.0938,445.3125 Q2254.9375,446 2256.4375,446 Q2257.3281,446 2257.9531,445.7969 Q2258.3125,445.6875 2258.7188,445.3281 Q2258.9844,445.125 2259.125,445.0625 Q2259.2656,445 2259.4375,445 Q2259.7656,445 2260,445.2656 Q2260.25,445.5156 2260.25,445.875 Q2260.25,446.2188 2259.9063,446.625 Q2259.4063,447.2188 2258.6094,447.5469 Q2257.5625,448 2256.2813,448 Q2254.7813,448 2253.5781,447.4063 Q2252.6094,446.9375 2251.9219,445.9219 Q2251.25,444.9063 2251.25,443.7031 L2251.25,442.6094 Q2251.25,441.3594 2251.8438,440.2656 Q2252.4531,439.1719 2253.5,438.5938 Q2254.5625,438 2255.75,438 Q2256.4688,438 2257.0938,438.25 Q2257.7188,438.5 2258.25,439 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="21" x="2276.75"
+              y="447.4102">GUI
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2138" x2="2404" y1="458.5" y2="458.5"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2145" y="466.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="90" x="2157" y="473.9189">BufferedReader IN
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2138" x2="2404" y1="480.3359" y2="480.3359"/>
+        <ellipse cx="2148" cy="491.3359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="104" x="2157" y="495.7549">void printError(String)
+        </text>
+        <ellipse cx="2148" cy="505.1719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="103" x="2157" y="509.5908">void printLine(Object)
+        </text>
+        <ellipse cx="2148" cy="519.0078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="100" x="2157" y="523.4268">void printLine(char[])
+        </text>
+        <ellipse cx="2148" cy="532.8438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="121" x="2157"
+              y="537.2627">void print(String,boolean)
+        </text>
+        <ellipse cx="2148" cy="546.6797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="122" x="2157"
+              y="551.0986">void printList(Iterable&lt;?&gt;)
+        </text>
+        <ellipse cx="2148" cy="560.5156" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="142" x="2157"
+              y="564.9346">void printOptions(Iterable&lt;?&gt;)
+        </text>
+        <ellipse cx="2148" cy="574.3516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="100" x="2157"
+              y="578.7705">String getUserInput()
+        </text>
+        <ellipse cx="2148" cy="588.1875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98" x="2157"
+              y="592.6064">void print(GameInfo)
+        </text>
+        <ellipse cx="2148" cy="602.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="81" x="2157"
+              y="606.4424">String readLine()
+        </text>
+        <ellipse cx="2148" cy="615.8594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="201" x="2157"
+              y="620.2783">void rowPrint(RectangularGameBoard,int)
+        </text>
+        <ellipse cx="2148" cy="629.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="195" x="2157"
+              y="634.1143">void colPrint(RectangularGameBoard,int)
+        </text>
+        <ellipse cx="2148" cy="643.5313" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="242" x="2157"
+              y="647.9502">void printFieldState(RectangularGameBoard,int,int)
+        </text><!--MD5=[977010383059cbb949d7ec1104b45968]
+class dhbw.ase.plugin.userinterface.GuiInterface-->
+        <rect codeLine="196" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="172.5234"
+              id="dhbw.ase.plugin.userinterface.GuiInterface" style="stroke:#A80036;stroke-width:1.5;" width="268"
+              x="2137" y="104"/>
+        <ellipse cx="2233.25" cy="120" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M2234.25,117 L2234.25,123 L2236.25,123 L2236.7344,123 L2237.25,123.625 L2237.25,124 L2237.25,124.375 L2236.7344,125 L2236.25,125 L2230.25,125 L2229.7656,125 L2229.25,124.375 L2229.25,124 L2229.25,123.625 L2229.7656,123 L2230.25,123 L2232.25,123 L2232.25,117 L2230.25,117 L2229.7656,117 L2229.25,116.375 L2229.25,116 L2229.25,115.625 L2229.7656,115 L2230.25,115 L2236.25,115 L2236.7344,115 L2237.25,115.625 L2237.25,116 L2237.25,116.375 L2236.7344,117 L2236.25,117 L2234.25,117 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing"
+              textLength="67" x="2253.75" y="124.9102">GuiInterface
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2138" x2="2404" y1="136" y2="136"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2138" x2="2404" y1="144" y2="144"/>
+        <polygon fill="#4177AF" points="2148,151,2144,157,2152,157" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="121" x="2157"
+              y="159.4189">void print(String,boolean)
+        </text>
+        <polygon fill="#4177AF" points="2148,164.8359,2144,170.8359,2152,170.8359"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="122" x="2157"
+              y="173.2549">void printList(Iterable&lt;?&gt;)
+        </text>
+        <polygon fill="#4177AF" points="2148,178.6719,2144,184.6719,2152,184.6719"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="142" x="2157"
+              y="187.0908">void printOptions(Iterable&lt;?&gt;)
+        </text>
+        <polygon fill="#4177AF" points="2148,192.5078,2144,198.5078,2152,198.5078"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="100" x="2157"
+              y="200.9268">String getUserInput()
+        </text>
+        <polygon fill="#4177AF" points="2148,206.3438,2144,212.3438,2152,212.3438"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98" x="2157"
+              y="214.7627">void print(GameInfo)
+        </text>
+        <polygon fill="#4177AF" points="2148,220.1797,2144,226.1797,2152,226.1797"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="81" x="2157"
+              y="228.5986">String readLine()
+        </text>
+        <polygon fill="#4177AF" points="2148,234.0156,2144,240.0156,2152,240.0156"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="201" x="2157"
+              y="242.4346">void rowPrint(RectangularGameBoard,int)
+        </text>
+        <polygon fill="#4177AF" points="2148,247.8516,2144,253.8516,2152,253.8516"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="195" x="2157"
+              y="256.2705">void colPrint(RectangularGameBoard,int)
+        </text>
+        <polygon fill="#4177AF" points="2148,261.6875,2144,267.6875,2152,267.6875"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="242" x="2157"
+              y="270.1064">void printFieldState(RectangularGameBoard,int,int)
+        </text><!--MD5=[f299fd498a2b27f758cd8124d49a8050]
+class dhbw.ase.plugin.games.GamePlayer-->
+        <rect codeLine="25" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="61.8359"
+              id="dhbw.ase.plugin.games.GamePlayer" style="stroke:#A80036;stroke-width:1.5;" width="168" x="2871"
+              y="159.5"/>
+        <ellipse cx="2916.75" cy="175.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M2918.75,172 Q2918.9531,171.5 2919.1875,171.25 Q2919.4219,171 2919.6875,171 Q2920.1563,171 2920.4531,171.2813 Q2920.75,171.5625 2920.75,172.2188 L2920.75,173.7813 Q2920.75,174.4375 2920.4688,174.7188 Q2920.1875,175 2919.75,175 Q2919.3594,175 2919.1094,174.8281 Q2918.8594,174.6563 2918.75,174.2031 Q2918.7031,173.8906 2918.5313,173.7188 Q2918.2188,173.3906 2917.6563,173.2031 Q2917.0938,173 2916.5313,173 Q2915.8281,173 2915.2344,173.2813 Q2914.6563,173.5625 2914.2031,174.1875 Q2913.75,174.8125 2913.75,175.6719 L2913.75,176.5938 Q2913.75,177.625 2914.5938,178.3125 Q2915.4375,179 2916.9375,179 Q2917.8281,179 2918.4531,178.7969 Q2918.8125,178.6875 2919.2188,178.3281 Q2919.4844,178.125 2919.625,178.0625 Q2919.7656,178 2919.9375,178 Q2920.2656,178 2920.5,178.2656 Q2920.75,178.5156 2920.75,178.875 Q2920.75,179.2188 2920.4063,179.625 Q2919.9063,180.2188 2919.1094,180.5469 Q2918.0625,181 2916.7813,181 Q2915.2813,181 2914.0781,180.4063 Q2913.1094,179.9375 2912.4219,178.9219 Q2911.75,177.9063 2911.75,176.7031 L2911.75,175.6094 Q2911.75,174.3594 2912.3438,173.2656 Q2912.9531,172.1719 2914,171.5938 Q2915.0625,171 2916.25,171 Q2916.9688,171 2917.5938,171.25 Q2918.2188,171.5 2918.75,172 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68" x="2937.25"
+              y="180.4102">GamePlayer
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2872" x2="3038" y1="191.5" y2="191.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2872" x2="3038" y1="199.5" y2="199.5"/>
+        <ellipse cx="2882" cy="210.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="142" x="2891" y="214.9189">Player play(TurnBasedGame)
+        </text><!--MD5=[3709d4b4cad11745c493b434816135d0]
+class dhbw.ase.plugin.games.ConnectFour-->
+        <rect codeLine="42" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="144.8516"
+              id="dhbw.ase.plugin.games.ConnectFour" style="stroke:#A80036;stroke-width:1.5;" width="244" x="2461"
+              y="468"/>
+        <ellipse cx="2543.25" cy="484" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M2545.25,480.5 Q2545.4531,480 2545.6875,479.75 Q2545.9219,479.5 2546.1875,479.5 Q2546.6563,479.5 2546.9531,479.7813 Q2547.25,480.0625 2547.25,480.7188 L2547.25,482.2813 Q2547.25,482.9375 2546.9688,483.2188 Q2546.6875,483.5 2546.25,483.5 Q2545.8594,483.5 2545.6094,483.3281 Q2545.3594,483.1563 2545.25,482.7031 Q2545.2031,482.3906 2545.0313,482.2188 Q2544.7188,481.8906 2544.1563,481.7031 Q2543.5938,481.5 2543.0313,481.5 Q2542.3281,481.5 2541.7344,481.7813 Q2541.1563,482.0625 2540.7031,482.6875 Q2540.25,483.3125 2540.25,484.1719 L2540.25,485.0938 Q2540.25,486.125 2541.0938,486.8125 Q2541.9375,487.5 2543.4375,487.5 Q2544.3281,487.5 2544.9531,487.2969 Q2545.3125,487.1875 2545.7188,486.8281 Q2545.9844,486.625 2546.125,486.5625 Q2546.2656,486.5 2546.4375,486.5 Q2546.7656,486.5 2547,486.7656 Q2547.25,487.0156 2547.25,487.375 Q2547.25,487.7188 2546.9063,488.125 Q2546.4063,488.7188 2545.6094,489.0469 Q2544.5625,489.5 2543.2813,489.5 Q2541.7813,489.5 2540.5781,488.9063 Q2539.6094,488.4375 2538.9219,487.4219 Q2538.25,486.4063 2538.25,485.2031 L2538.25,484.1094 Q2538.25,482.8594 2538.8438,481.7656 Q2539.4531,480.6719 2540.5,480.0938 Q2541.5625,479.5 2542.75,479.5 Q2543.4688,479.5 2544.0938,479.75 Q2544.7188,480 2545.25,480.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="71" x="2563.75"
+              y="488.9102">ConnectFour
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2462" x2="2704" y1="500" y2="500"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2469" y="508"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="218" x="2481" y="515.4189">ArrayList&lt;ConnectFourVariations&gt; variations
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2469" y="521.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="193" x="2481" y="529.2549">ConnectFourVariations chosenVariation
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2469" y="535.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="146" x="2481"
+              y="543.0908">RectangularGameBoard board
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2469" y="549.5078"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="158" x="2481"
+              y="556.9268">BoardGameRule boardGameRule
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2462" x2="2704" y1="563.3438" y2="563.3438"/>
+        <ellipse cx="2472" cy="574.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="2481"
+              y="578.7627">String toString()
+        </text>
+        <ellipse cx="2472" cy="588.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="108" x="2481"
+              y="592.5986">void prepareSettings()
+        </text>
+        <ellipse cx="2472" cy="602.0156" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="2481"
+              y="606.4346">void makeTurn()
+        </text><!--MD5=[010c2e6bbc1f9f25c000fd2922a38a3a]
+class dhbw.ase.plugin.games.Connect6-->
+        <rect codeLine="111" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="283.2109"
+              id="dhbw.ase.plugin.games.Connect6" style="stroke:#A80036;stroke-width:1.5;" width="361" x="2740.5"
+              y="399"/>
+        <ellipse cx="2890.25" cy="415" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M2892.25,411.5 Q2892.4531,411 2892.6875,410.75 Q2892.9219,410.5 2893.1875,410.5 Q2893.6563,410.5 2893.9531,410.7813 Q2894.25,411.0625 2894.25,411.7188 L2894.25,413.2813 Q2894.25,413.9375 2893.9688,414.2188 Q2893.6875,414.5 2893.25,414.5 Q2892.8594,414.5 2892.6094,414.3281 Q2892.3594,414.1563 2892.25,413.7031 Q2892.2031,413.3906 2892.0313,413.2188 Q2891.7188,412.8906 2891.1563,412.7031 Q2890.5938,412.5 2890.0313,412.5 Q2889.3281,412.5 2888.7344,412.7813 Q2888.1563,413.0625 2887.7031,413.6875 Q2887.25,414.3125 2887.25,415.1719 L2887.25,416.0938 Q2887.25,417.125 2888.0938,417.8125 Q2888.9375,418.5 2890.4375,418.5 Q2891.3281,418.5 2891.9531,418.2969 Q2892.3125,418.1875 2892.7188,417.8281 Q2892.9844,417.625 2893.125,417.5625 Q2893.2656,417.5 2893.4375,417.5 Q2893.7656,417.5 2894,417.7656 Q2894.25,418.0156 2894.25,418.375 Q2894.25,418.7188 2893.9063,419.125 Q2893.4063,419.7188 2892.6094,420.0469 Q2891.5625,420.5 2890.2813,420.5 Q2888.7813,420.5 2887.5781,419.9063 Q2886.6094,419.4375 2885.9219,418.4219 Q2885.25,417.4063 2885.25,416.2031 L2885.25,415.1094 Q2885.25,413.8594 2885.8438,412.7656 Q2886.4531,411.6719 2887.5,411.0938 Q2888.5625,410.5 2889.75,410.5 Q2890.4688,410.5 2891.0938,410.75 Q2891.7188,411 2892.25,411.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="2910.75"
+              y="419.9102">Connect6
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2741.5" x2="3100.5" y1="431" y2="431"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="439"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="216" x="2760.5"
+              y="446.4189">List&lt;ConnectGameRule&gt; possibleGameRules
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="452.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="161" x="2760.5"
+              y="460.2549">List&lt;Integer&gt; possibleBoardSizes
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="466.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="141" x="2760.5"
+              y="474.0908">List&lt;Integer&gt; possiblePlayers
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="480.5078"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="2760.5"
+              y="487.9268">GameInfo gameInfo
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="494.3438"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="172" x="2760.5"
+              y="501.7627">RectangularGameBoard gameboard
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2741.5" x2="3100.5" y1="508.1797" y2="508.1797"/>
+        <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="516.1797"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="148" x="2760.5"
+              y="523.5986">Command getCommand(String)
+        </text>
+        <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="530.0156"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="335" x="2760.5"
+              y="537.4346">boolean checkCorrectParametersTypes(Connect6Commands,String[])
+        </text>
+        <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="543.8516"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="197" x="2760.5"
+              y="551.2705">void executeCommand(Player,Command)
+        </text>
+        <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="557.6875"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="214" x="2760.5"
+              y="565.1064">boolean checkAllowedPlacement(Command)
+        </text>
+        <ellipse cx="2751.5" cy="574.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="2760.5"
+              y="578.9424">String toString()
+        </text>
+        <polygon fill="#4177AF" points="2751.5,584.3594,2747.5,590.3594,2755.5,590.3594"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="108" x="2760.5"
+              y="592.7783">void prepareSettings()
+        </text>
+        <polygon fill="#4177AF" points="2751.5,598.1953,2747.5,604.1953,2755.5,604.1953"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="2760.5"
+              y="606.6143">void makeTurn()
+        </text>
+        <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="613.0313"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="124" x="2760.5"
+              y="620.4502">boolean chooseSettings()
+        </text>
+        <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="626.8672"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="119" x="2760.5"
+              y="634.2861">boolean repeatSettings()
+        </text>
+        <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="640.7031"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="179" x="2760.5"
+              y="648.1221">ConnectGameRule chooseVariation()
+        </text>
+        <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="654.5391"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="108" x="2760.5"
+              y="661.958">int chooseBoardSize()
+        </text>
+        <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2748.5" y="668.375"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="192" x="2760.5"
+              y="675.7939">ArrayList&lt;Player&gt; choosePlayerCount()
+        </text><!--MD5=[4e4b5b33a710cb4e3829f62265a36a96]
+class dhbw.ase.plugin.games.TurnBasedGame-->
+        <rect codeLine="162" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="186.3594"
+              id="dhbw.ase.plugin.games.TurnBasedGame" style="stroke:#A80036;stroke-width:1.5;" width="134" x="2578"
+              y="97.5"/>
+        <ellipse cx="2596.6" cy="113.5" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M2598.35,115 L2595.0531,115 L2594.6156,116 L2594.6156,116 L2595.0844,116 L2595.6,116.625 L2595.6,117 L2595.6,117.375 L2595.0844,118 L2594.6156,118 L2592.725,118 L2592.1156,118 L2591.6,117.375 L2591.6,117 L2591.6,116.625 L2592.1156,116 L2592.725,116 L2595.0375,110 L2594.1625,110 L2593.1156,110 L2592.6,109.375 L2592.6,109 L2592.6,108.625 L2593.1156,108 L2594.1625,108 L2597.8344,108 L2600.5219,116 L2601.0844,116 L2601.0844,116 L2601.6,116.625 L2601.6,117 L2601.6,117.375 L2601.0844,118 L2600.5219,118 L2598.6313,118 L2598.1156,118 L2597.6,117.375 L2597.6,117 L2597.6,116.625 L2598.1156,116 L2598.6313,116 L2598.6313,116 L2598.35,115 Z M2597.8031,113 L2596.6,109.4219 L2595.5688,113 L2597.8031,113 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing"
+              textLength="94" x="2611.4" y="118.4102">TurnBasedGame
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2579" x2="2711" y1="129.5" y2="129.5"/>
+        <polygon fill="none" points="2589,135.5,2593,139.5,2589,143.5,2585,139.5"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="70" x="2598"
+              y="144.9189">boolean quited
+        </text>
+        <polygon fill="none" points="2589,149.3359,2593,153.3359,2589,157.3359,2585,153.3359"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="79" x="2598"
+              y="158.7549">boolean finished
+        </text>
+        <polygon fill="none" points="2589,163.1719,2593,167.1719,2589,171.1719,2585,167.1719"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="2598"
+              y="172.5908">Player winner
+        </text>
+        <polygon fill="none" points="2589,178.0078,2585,184.0078,2593,184.0078"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="2598"
+              y="186.4268">GuiInterface gui
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2579" x2="2711" y1="192.8438" y2="192.8438"/>
+        <ellipse cx="2589" cy="203.8438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="96" x="2598"
+              y="208.2627">boolean isRunning()
+        </text>
+        <ellipse cx="2589" cy="217.6797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="102" x="2598"
+              y="222.0986">boolean wasQuited()
+        </text>
+        <ellipse cx="2589" cy="231.5156" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="90" x="2598"
+              y="235.9346">Player getWinner()
+        </text>
+        <polygon fill="#4177AF" points="2589,241.3516,2585,247.3516,2593,247.3516"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="108" x="2598"
+              y="249.7705">void prepareSettings()
+        </text>
+        <polygon fill="#4177AF" points="2589,255.1875,2585,261.1875,2593,261.1875"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="2598"
+              y="263.6064">void makeTurn()
+        </text>
+        <polygon fill="#4177AF" points="2589,269.0234,2585,275.0234,2593,275.0234"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="2598"
+              y="277.4424">Player followUp()
+        </text><!--MD5=[7ba6a30525660b8bb76c1fc91adde26f]
+class dhbw.ase.core.gamerules.connect6.Connect6TorusGameRule-->
+        <rect codeLine="28" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="117.1797"
+              id="dhbw.ase.core.gamerules.connect6.Connect6TorusGameRule" style="stroke:#A80036;stroke-width:1.5;"
+              width="336" x="1783" y="1182"/>
+        <ellipse cx="1874.25" cy="1198" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1876.25,1194.5 Q1876.4531,1194 1876.6875,1193.75 Q1876.9219,1193.5 1877.1875,1193.5 Q1877.6563,1193.5 1877.9531,1193.7813 Q1878.25,1194.0625 1878.25,1194.7188 L1878.25,1196.2813 Q1878.25,1196.9375 1877.9688,1197.2188 Q1877.6875,1197.5 1877.25,1197.5 Q1876.8594,1197.5 1876.6094,1197.3281 Q1876.3594,1197.1563 1876.25,1196.7031 Q1876.2031,1196.3906 1876.0313,1196.2188 Q1875.7188,1195.8906 1875.1563,1195.7031 Q1874.5938,1195.5 1874.0313,1195.5 Q1873.3281,1195.5 1872.7344,1195.7813 Q1872.1563,1196.0625 1871.7031,1196.6875 Q1871.25,1197.3125 1871.25,1198.1719 L1871.25,1199.0938 Q1871.25,1200.125 1872.0938,1200.8125 Q1872.9375,1201.5 1874.4375,1201.5 Q1875.3281,1201.5 1875.9531,1201.2969 Q1876.3125,1201.1875 1876.7188,1200.8281 Q1876.9844,1200.625 1877.125,1200.5625 Q1877.2656,1200.5 1877.4375,1200.5 Q1877.7656,1200.5 1878,1200.7656 Q1878.25,1201.0156 1878.25,1201.375 Q1878.25,1201.7188 1877.9063,1202.125 Q1877.4063,1202.7188 1876.6094,1203.0469 Q1875.5625,1203.5 1874.2813,1203.5 Q1872.7813,1203.5 1871.5781,1202.9063 Q1870.6094,1202.4375 1869.9219,1201.4219 Q1869.25,1200.4063 1869.25,1199.2031 L1869.25,1198.1094 Q1869.25,1196.8594 1869.8438,1195.7656 Q1870.4531,1194.6719 1871.5,1194.0938 Q1872.5625,1193.5 1873.75,1193.5 Q1874.4688,1193.5 1875.0938,1193.75 Q1875.7188,1194 1876.25,1194.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="145" x="1894.75"
+              y="1202.9102">Connect6TorusGameRule
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1784" x2="2118" y1="1214" y2="1214"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1784" x2="2118" y1="1222" y2="1222"/>
+        <polygon fill="#FFFF44" points="1794,1228,1798,1232,1794,1236,1790,1232"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="264" x="1803"
+              y="1237.4189">boolean checkOnBoard(RectangularGameBoard,int,int)
+        </text>
+        <polygon fill="#FFFF44" points="1794,1241.8359,1798,1245.8359,1794,1249.8359,1790,1245.8359"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="263" x="1803"
+              y="1251.2549">int getNextWidth(RectangularGameBoard,int,Compass)
+        </text>
+        <polygon fill="#FFFF44" points="1794,1255.6719,1798,1259.6719,1794,1263.6719,1790,1259.6719"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="266" x="1803"
+              y="1265.0908">int getNextHeight(RectangularGameBoard,int,Compass)
+        </text>
+        <ellipse cx="1794" cy="1274.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="310" x="1803"
+              y="1278.9268">boolean checkAllowedPlacement(RectangularGameBoard,int,int)
+        </text>
+        <ellipse cx="1794" cy="1288.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="1803"
+              y="1292.7627">String toString()
+        </text><!--MD5=[dad33abf596b4ce99d7f92448201fb35]
+class dhbw.ase.core.gamerules.connect6.Connect6StandardGameRule-->
+        <rect codeLine="90" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="103.3438"
+              id="dhbw.ase.core.gamerules.connect6.Connect6StandardGameRule" style="stroke:#A80036;stroke-width:1.5;"
+              width="336" x="2154" y="1189"/>
+        <ellipse cx="2236.25" cy="1205" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M2238.25,1201.5 Q2238.4531,1201 2238.6875,1200.75 Q2238.9219,1200.5 2239.1875,1200.5 Q2239.6563,1200.5 2239.9531,1200.7813 Q2240.25,1201.0625 2240.25,1201.7188 L2240.25,1203.2813 Q2240.25,1203.9375 2239.9688,1204.2188 Q2239.6875,1204.5 2239.25,1204.5 Q2238.8594,1204.5 2238.6094,1204.3281 Q2238.3594,1204.1563 2238.25,1203.7031 Q2238.2031,1203.3906 2238.0313,1203.2188 Q2237.7188,1202.8906 2237.1563,1202.7031 Q2236.5938,1202.5 2236.0313,1202.5 Q2235.3281,1202.5 2234.7344,1202.7813 Q2234.1563,1203.0625 2233.7031,1203.6875 Q2233.25,1204.3125 2233.25,1205.1719 L2233.25,1206.0938 Q2233.25,1207.125 2234.0938,1207.8125 Q2234.9375,1208.5 2236.4375,1208.5 Q2237.3281,1208.5 2237.9531,1208.2969 Q2238.3125,1208.1875 2238.7188,1207.8281 Q2238.9844,1207.625 2239.125,1207.5625 Q2239.2656,1207.5 2239.4375,1207.5 Q2239.7656,1207.5 2240,1207.7656 Q2240.25,1208.0156 2240.25,1208.375 Q2240.25,1208.7188 2239.9063,1209.125 Q2239.4063,1209.7188 2238.6094,1210.0469 Q2237.5625,1210.5 2236.2813,1210.5 Q2234.7813,1210.5 2233.5781,1209.9063 Q2232.6094,1209.4375 2231.9219,1208.4219 Q2231.25,1207.4063 2231.25,1206.2031 L2231.25,1205.1094 Q2231.25,1203.8594 2231.8438,1202.7656 Q2232.4531,1201.6719 2233.5,1201.0938 Q2234.5625,1200.5 2235.75,1200.5 Q2236.4688,1200.5 2237.0938,1200.75 Q2237.7188,1201 2238.25,1201.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="163" x="2256.75"
+              y="1209.9102">Connect6StandardGameRule
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2155" x2="2489" y1="1221" y2="1221"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="2155" x2="2489" y1="1229" y2="1229"/>
+        <ellipse cx="2165" cy="1240" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="310" x="2174"
+              y="1244.4189">boolean checkAllowedPlacement(RectangularGameBoard,int,int)
+        </text>
+        <ellipse cx="2165" cy="1253.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="2174"
+              y="1258.2549">String toString()
+        </text>
+        <polygon fill="#FFFF44" points="2165,1262.6719,2169,1266.6719,2165,1270.6719,2161,1266.6719"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="263" x="2174"
+              y="1272.0908">int getNextWidth(RectangularGameBoard,int,Compass)
+        </text>
+        <polygon fill="#FFFF44" points="2165,1276.5078,2169,1280.5078,2165,1284.5078,2161,1280.5078"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="266" x="2174"
+              y="1285.9268">int getNextHeight(RectangularGameBoard,int,Compass)
+        </text><!--MD5=[8dad422f8a297d6a707e41621e5207c9]
+class dhbw.ase.core.gamerules.connect6.Connect6GameRule-->
+        <rect codeLine="151" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="48"
+              id="dhbw.ase.core.gamerules.connect6.Connect6GameRule" style="stroke:#A80036;stroke-width:1.5;"
+              width="145" x="1878.5" y="1074"/>
+        <ellipse cx="1893.5" cy="1090" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1895.25,1091.5 L1891.9531,1091.5 L1891.5156,1092.5 L1891.5156,1092.5 L1891.9844,1092.5 L1892.5,1093.125 L1892.5,1093.5 L1892.5,1093.875 L1891.9844,1094.5 L1891.5156,1094.5 L1889.625,1094.5 L1889.0156,1094.5 L1888.5,1093.875 L1888.5,1093.5 L1888.5,1093.125 L1889.0156,1092.5 L1889.625,1092.5 L1891.9375,1086.5 L1891.0625,1086.5 L1890.0156,1086.5 L1889.5,1085.875 L1889.5,1085.5 L1889.5,1085.125 L1890.0156,1084.5 L1891.0625,1084.5 L1894.7344,1084.5 L1897.4219,1092.5 L1897.9844,1092.5 L1897.9844,1092.5 L1898.5,1093.125 L1898.5,1093.5 L1898.5,1093.875 L1897.9844,1094.5 L1897.4219,1094.5 L1895.5313,1094.5 L1895.0156,1094.5 L1894.5,1093.875 L1894.5,1093.5 L1894.5,1093.125 L1895.0156,1092.5 L1895.5313,1092.5 L1895.5313,1092.5 L1895.25,1091.5 Z M1894.7031,1089.5 L1893.5,1085.9219 L1892.4688,1089.5 L1894.7031,1089.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing"
+              textLength="113" x="1907.5" y="1094.9102">Connect6GameRule
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1879.5" x2="2022.5" y1="1106" y2="1106"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1879.5" x2="2022.5" y1="1114" y2="1114"/><!--MD5=[02102de4190ceed4689ff50632de9608]
+class dhbw.ase.core.models.GameField-->
+        <rect codeLine="35" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="117.1797"
+              id="dhbw.ase.core.models.GameField" style="stroke:#A80036;stroke-width:1.5;" width="141" x="899.5"
+              y="482"/>
+        <ellipse cx="936.1" cy="498" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M938.1,494.5 Q938.3031,494 938.5375,493.75 Q938.7719,493.5 939.0375,493.5 Q939.5063,493.5 939.8031,493.7813 Q940.1,494.0625 940.1,494.7188 L940.1,496.2813 Q940.1,496.9375 939.8188,497.2188 Q939.5375,497.5 939.1,497.5 Q938.7094,497.5 938.4594,497.3281 Q938.2094,497.1563 938.1,496.7031 Q938.0531,496.3906 937.8813,496.2188 Q937.5688,495.8906 937.0063,495.7031 Q936.4438,495.5 935.8813,495.5 Q935.1781,495.5 934.5844,495.7813 Q934.0063,496.0625 933.5531,496.6875 Q933.1,497.3125 933.1,498.1719 L933.1,499.0938 Q933.1,500.125 933.9438,500.8125 Q934.7875,501.5 936.2875,501.5 Q937.1781,501.5 937.8031,501.2969 Q938.1625,501.1875 938.5688,500.8281 Q938.8344,500.625 938.975,500.5625 Q939.1156,500.5 939.2875,500.5 Q939.6156,500.5 939.85,500.7656 Q940.1,501.0156 940.1,501.375 Q940.1,501.7188 939.7563,502.125 Q939.2563,502.7188 938.4594,503.0469 Q937.4125,503.5 936.1313,503.5 Q934.6313,503.5 933.4281,502.9063 Q932.4594,502.4375 931.7719,501.4219 Q931.1,500.4063 931.1,499.2031 L931.1,498.1094 Q931.1,496.8594 931.6938,495.7656 Q932.3031,494.6719 933.35,494.0938 Q934.4125,493.5 935.6,493.5 Q936.3188,493.5 936.9438,493.75 Q937.5688,494 938.1,494.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="61" x="954.9"
+              y="502.9102">GameField
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="900.5" x2="1039.5" y1="514" y2="514"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="907.5" y="522"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="63" x="919.5"
+              y="529.4189">Player player
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="900.5" x2="1039.5" y1="535.8359" y2="535.8359"/>
+        <ellipse cx="910.5" cy="546.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="79" x="919.5"
+              y="551.2549">boolean isFree()
+        </text>
+        <ellipse cx="910.5" cy="560.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="115" x="919.5"
+              y="565.0908">void placeStone(Player)
+        </text>
+        <ellipse cx="910.5" cy="574.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="919.5"
+              y="578.9268">Player getStone()
+        </text>
+        <ellipse cx="910.5" cy="588.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="919.5"
+              y="592.7627">String toString()
+        </text><!--MD5=[750480f63372840d7d0783101578d7a7]
+class dhbw.ase.core.models.Compass-->
+        <rect codeLine="76" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="158.6875"
+              id="dhbw.ase.core.models.Compass" style="stroke:#A80036;stroke-width:1.5;" width="87" x="1075.5" y="461"/>
+        <ellipse cx="1090.5" cy="477" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1089,478 L1089,480 L1093,480 L1093,479 L1093,478.5156 L1093.625,478 L1094,478 L1094.375,478 L1095,478.5156 L1095,479 L1095,482 L1087,482 L1086.5156,482 L1086,481.375 L1086,481 L1086,480.625 L1086.5156,480 L1087,480 L1087,480 L1087,474 L1087,474 L1086.5156,474 L1086,473.375 L1086,473 L1086,472.625 L1086.5156,472 L1087,472 L1095,472 L1095,475 L1095,475.4844 L1094.375,476 L1094,476 L1093.625,476 L1093,475.4844 L1093,475 L1093,474 L1089,474 L1089,476 L1090,476 L1090,475.5156 L1090,475.5156 L1090.625,475 L1091,475 L1091.375,475 L1092,475.5156 L1092,476 L1092,478 L1092,478.4844 L1091.375,479 L1091.375,479 L1091,479 L1090.625,479 L1090,478.4844 L1090,478.4844 L1090,478 L1089,478 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="55" x="1104.5"
+              y="481.9102">Compass
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1076.5" x2="1161.5" y1="493" y2="493"/>
+        <ellipse cx="1086.5" cy="504" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="7" x="1095.5"
+              y="508.4189">N
+        </text>
+        <ellipse cx="1086.5" cy="517.8359" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="13" x="1095.5"
+              y="522.2549">NE
+        </text>
+        <ellipse cx="1086.5" cy="531.6719" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="6" x="1095.5"
+              y="536.0908">E
+        </text>
+        <ellipse cx="1086.5" cy="545.5078" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="13" x="1095.5"
+              y="549.9268">SE
+        </text>
+        <ellipse cx="1086.5" cy="559.3438" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="7" x="1095.5"
+              y="563.7627">S
+        </text>
+        <ellipse cx="1086.5" cy="573.1797" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="17" x="1095.5"
+              y="577.5986">SW
+        </text>
+        <ellipse cx="1086.5" cy="587.0156" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="1095.5"
+              y="591.4346">W
+        </text>
+        <ellipse cx="1086.5" cy="600.8516" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="17" x="1095.5"
+              y="605.2705">NW
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1076.5" x2="1161.5" y1="611.6875" y2="611.6875"/><!--MD5=[eadd1a269e306ed0493d4174da532224]
+class dhbw.ase.core.models.Connect6GameBoard-->
+        <rect codeLine="109" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="48"
+              id="dhbw.ase.core.models.Connect6GameBoard" style="stroke:#A80036;stroke-width:1.5;" width="152" x="704"
+              y="846"/>
+        <ellipse cx="719" cy="862" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M721,858.5 Q721.2031,858 721.4375,857.75 Q721.6719,857.5 721.9375,857.5 Q722.4063,857.5 722.7031,857.7813 Q723,858.0625 723,858.7188 L723,860.2813 Q723,860.9375 722.7188,861.2188 Q722.4375,861.5 722,861.5 Q721.6094,861.5 721.3594,861.3281 Q721.1094,861.1563 721,860.7031 Q720.9531,860.3906 720.7813,860.2188 Q720.4688,859.8906 719.9063,859.7031 Q719.3438,859.5 718.7813,859.5 Q718.0781,859.5 717.4844,859.7813 Q716.9063,860.0625 716.4531,860.6875 Q716,861.3125 716,862.1719 L716,863.0938 Q716,864.125 716.8438,864.8125 Q717.6875,865.5 719.1875,865.5 Q720.0781,865.5 720.7031,865.2969 Q721.0625,865.1875 721.4688,864.8281 Q721.7344,864.625 721.875,864.5625 Q722.0156,864.5 722.1875,864.5 Q722.5156,864.5 722.75,864.7656 Q723,865.0156 723,865.375 Q723,865.7188 722.6563,866.125 Q722.1563,866.7188 721.3594,867.0469 Q720.3125,867.5 719.0313,867.5 Q717.5313,867.5 716.3281,866.9063 Q715.3594,866.4375 714.6719,865.4219 Q714,864.4063 714,863.2031 L714,862.1094 Q714,860.8594 714.5938,859.7656 Q715.2031,858.6719 716.25,858.0938 Q717.3125,857.5 718.5,857.5 Q719.2188,857.5 719.8438,857.75 Q720.4688,858 721,858.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="120" x="733"
+              y="866.9102">Connect6GameBoard
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="705" x2="855" y1="878" y2="878"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="705" x2="855" y1="886" y2="886"/><!--MD5=[e8ce5734f251a8fe3c33ee4ea6cbfcdc]
+class dhbw.ase.core.models.GameInfo-->
+        <rect codeLine="130" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="214.0313"
+              id="dhbw.ase.core.models.GameInfo" style="stroke:#A80036;stroke-width:1.5;" width="176" x="1198"
+              y="433.5"/>
+        <ellipse cx="1254.75" cy="449.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1256.75,446 Q1256.9531,445.5 1257.1875,445.25 Q1257.4219,445 1257.6875,445 Q1258.1563,445 1258.4531,445.2813 Q1258.75,445.5625 1258.75,446.2188 L1258.75,447.7813 Q1258.75,448.4375 1258.4688,448.7188 Q1258.1875,449 1257.75,449 Q1257.3594,449 1257.1094,448.8281 Q1256.8594,448.6563 1256.75,448.2031 Q1256.7031,447.8906 1256.5313,447.7188 Q1256.2188,447.3906 1255.6563,447.2031 Q1255.0938,447 1254.5313,447 Q1253.8281,447 1253.2344,447.2813 Q1252.6563,447.5625 1252.2031,448.1875 Q1251.75,448.8125 1251.75,449.6719 L1251.75,450.5938 Q1251.75,451.625 1252.5938,452.3125 Q1253.4375,453 1254.9375,453 Q1255.8281,453 1256.4531,452.7969 Q1256.8125,452.6875 1257.2188,452.3281 Q1257.4844,452.125 1257.625,452.0625 Q1257.7656,452 1257.9375,452 Q1258.2656,452 1258.5,452.2656 Q1258.75,452.5156 1258.75,452.875 Q1258.75,453.2188 1258.4063,453.625 Q1257.9063,454.2188 1257.1094,454.5469 Q1256.0625,455 1254.7813,455 Q1253.2813,455 1252.0781,454.4063 Q1251.1094,453.9375 1250.4219,452.9219 Q1249.75,451.9063 1249.75,450.7031 L1249.75,449.6094 Q1249.75,448.3594 1250.3438,447.2656 Q1250.9531,446.1719 1252,445.5938 Q1253.0625,445 1254.25,445 Q1254.9688,445 1255.5938,445.25 Q1256.2188,445.5 1256.75,446 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="54" x="1275.25"
+              y="454.4102">GameInfo
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1199" x2="1373" y1="465.5" y2="465.5"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1206" y="473.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="126" x="1218"
+              y="480.9189">ArrayList&lt;Player&gt; players
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1206" y="487.3359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="125" x="1218"
+              y="494.7549">BoardGameRule gamerule
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1206" y="501.1719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="90" x="1218"
+              y="508.5908">int gameBoardSize
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1206" y="515.0078"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="39" x="1218"
+              y="522.4268">int turns
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1199" x2="1373" y1="528.8438" y2="528.8438"/>
+        <ellipse cx="1209" cy="539.8438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="115" x="1218"
+              y="544.2627">int getGameBoardSize()
+        </text>
+        <ellipse cx="1209" cy="553.6797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="65" x="1218"
+              y="558.0986">int getTurns()
+        </text>
+        <ellipse cx="1209" cy="567.5156" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="150" x="1218"
+              y="571.9346">BoardGameRule getGamerule()
+        </text>
+        <ellipse cx="1209" cy="581.3516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="1218"
+              y="585.7705">void resetTurns()
+        </text>
+        <ellipse cx="1209" cy="595.1875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="1218"
+              y="599.6064">void addTurns(int)
+        </text>
+        <ellipse cx="1209" cy="609.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="71" x="1218"
+              y="613.4424">void addTurn()
+        </text>
+        <ellipse cx="1209" cy="622.8594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="117" x="1218"
+              y="627.2783">Player getActivePlayer()
+        </text>
+        <ellipse cx="1209" cy="636.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="149" x="1218"
+              y="641.1143">ArrayList&lt;Player&gt; getPlayers()
+        </text><!--MD5=[c3444c0e9f4fc388df1f371c67b312e4]
+class dhbw.ase.core.models.PlayerStone-->
+        <rect codeLine="156" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="75.6719"
+              id="dhbw.ase.core.models.PlayerStone" style="stroke:#A80036;stroke-width:1.5;" width="106" x="917"
+              y="832"/>
+        <ellipse cx="935.6" cy="848" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M937.6,844.5 Q937.8031,844 938.0375,843.75 Q938.2719,843.5 938.5375,843.5 Q939.0063,843.5 939.3031,843.7813 Q939.6,844.0625 939.6,844.7188 L939.6,846.2813 Q939.6,846.9375 939.3188,847.2188 Q939.0375,847.5 938.6,847.5 Q938.2094,847.5 937.9594,847.3281 Q937.7094,847.1563 937.6,846.7031 Q937.5531,846.3906 937.3813,846.2188 Q937.0688,845.8906 936.5063,845.7031 Q935.9438,845.5 935.3813,845.5 Q934.6781,845.5 934.0844,845.7813 Q933.5063,846.0625 933.0531,846.6875 Q932.6,847.3125 932.6,848.1719 L932.6,849.0938 Q932.6,850.125 933.4438,850.8125 Q934.2875,851.5 935.7875,851.5 Q936.6781,851.5 937.3031,851.2969 Q937.6625,851.1875 938.0688,850.8281 Q938.3344,850.625 938.475,850.5625 Q938.6156,850.5 938.7875,850.5 Q939.1156,850.5 939.35,850.7656 Q939.6,851.0156 939.6,851.375 Q939.6,851.7188 939.2563,852.125 Q938.7563,852.7188 937.9594,853.0469 Q936.9125,853.5 935.6313,853.5 Q934.1313,853.5 932.9281,852.9063 Q931.9594,852.4375 931.2719,851.4219 Q930.6,850.4063 930.6,849.2031 L930.6,848.1094 Q930.6,846.8594 931.1938,845.7656 Q931.8031,844.6719 932.85,844.0938 Q933.9125,843.5 935.1,843.5 Q935.8188,843.5 936.4438,843.75 Q937.0688,844 937.6,844.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="66" x="950.4"
+              y="852.9102">PlayerStone
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="918" x2="1022" y1="864" y2="864"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="925" y="872"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="937"
+              y="879.4189">String label
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="918" x2="1022" y1="885.8359" y2="885.8359"/>
+        <ellipse cx="928" cy="896.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="80" x="937"
+              y="901.2549">String getLabel()
+        </text><!--MD5=[9b6e2a204e9d2a83cae1a99a7e2b4515]
+class dhbw.ase.core.models.Player-->
+        <rect codeLine="191" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="89.5078"
+              id="dhbw.ase.core.models.Player" style="stroke:#A80036;stroke-width:1.5;" width="168" x="1058" y="825"/>
+        <ellipse cx="1120.75" cy="841" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1122.75,837.5 Q1122.9531,837 1123.1875,836.75 Q1123.4219,836.5 1123.6875,836.5 Q1124.1563,836.5 1124.4531,836.7813 Q1124.75,837.0625 1124.75,837.7188 L1124.75,839.2813 Q1124.75,839.9375 1124.4688,840.2188 Q1124.1875,840.5 1123.75,840.5 Q1123.3594,840.5 1123.1094,840.3281 Q1122.8594,840.1563 1122.75,839.7031 Q1122.7031,839.3906 1122.5313,839.2188 Q1122.2188,838.8906 1121.6563,838.7031 Q1121.0938,838.5 1120.5313,838.5 Q1119.8281,838.5 1119.2344,838.7813 Q1118.6563,839.0625 1118.2031,839.6875 Q1117.75,840.3125 1117.75,841.1719 L1117.75,842.0938 Q1117.75,843.125 1118.5938,843.8125 Q1119.4375,844.5 1120.9375,844.5 Q1121.8281,844.5 1122.4531,844.2969 Q1122.8125,844.1875 1123.2188,843.8281 Q1123.4844,843.625 1123.625,843.5625 Q1123.7656,843.5 1123.9375,843.5 Q1124.2656,843.5 1124.5,843.7656 Q1124.75,844.0156 1124.75,844.375 Q1124.75,844.7188 1124.4063,845.125 Q1123.9063,845.7188 1123.1094,846.0469 Q1122.0625,846.5 1120.7813,846.5 Q1119.2813,846.5 1118.0781,845.9063 Q1117.1094,845.4375 1116.4219,844.4219 Q1115.75,843.4063 1115.75,842.2031 L1115.75,841.1094 Q1115.75,839.8594 1116.3438,838.7656 Q1116.9531,837.6719 1118,837.0938 Q1119.0625,836.5 1120.25,836.5 Q1120.9688,836.5 1121.5938,836.75 Q1122.2188,837 1122.75,837.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="34" x="1141.25"
+              y="845.9102">Player
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1059" x2="1225" y1="857" y2="857"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1066" y="865"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="82" x="1078" y="872.4189">int playerCounter
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1066" y="878.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="119" x="1078"
+              y="886.2549">PlayerStone playerStone
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1059" x2="1225" y1="892.6719" y2="892.6719"/>
+        <ellipse cx="1069" cy="903.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="142" x="1078"
+              y="908.0908">PlayerStone getPlayerStone()
+        </text><!--MD5=[21251349a60f55f55a662562b39b44be]
+class dhbw.ase.core.models.RectangularGameBoard-->
+        <rect codeLine="207" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="158.6875"
+              id="dhbw.ase.core.models.RectangularGameBoard" style="stroke:#A80036;stroke-width:1.5;" width="169"
+              x="695.5" y="461"/>
+        <ellipse cx="711.85" cy="477" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M713.85,473.5 Q714.0531,473 714.2875,472.75 Q714.5219,472.5 714.7875,472.5 Q715.2563,472.5 715.5531,472.7813 Q715.85,473.0625 715.85,473.7188 L715.85,475.2813 Q715.85,475.9375 715.5688,476.2188 Q715.2875,476.5 714.85,476.5 Q714.4594,476.5 714.2094,476.3281 Q713.9594,476.1563 713.85,475.7031 Q713.8031,475.3906 713.6313,475.2188 Q713.3188,474.8906 712.7563,474.7031 Q712.1938,474.5 711.6313,474.5 Q710.9281,474.5 710.3344,474.7813 Q709.7563,475.0625 709.3031,475.6875 Q708.85,476.3125 708.85,477.1719 L708.85,478.0938 Q708.85,479.125 709.6938,479.8125 Q710.5375,480.5 712.0375,480.5 Q712.9281,480.5 713.5531,480.2969 Q713.9125,480.1875 714.3188,479.8281 Q714.5844,479.625 714.725,479.5625 Q714.8656,479.5 715.0375,479.5 Q715.3656,479.5 715.6,479.7656 Q715.85,480.0156 715.85,480.375 Q715.85,480.7188 715.5063,481.125 Q715.0063,481.7188 714.2094,482.0469 Q713.1625,482.5 711.8813,482.5 Q710.3813,482.5 709.1781,481.9063 Q708.2094,481.4375 707.5219,480.4219 Q706.85,479.4063 706.85,478.2031 L706.85,477.1094 Q706.85,475.8594 707.4438,474.7656 Q708.0531,473.6719 709.1,473.0938 Q710.1625,472.5 711.35,472.5 Q712.0688,472.5 712.6938,472.75 Q713.3188,473 713.85,473.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="134" x="726.15"
+              y="481.9102">RectangularGameBoard
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="696.5" x2="863.5" y1="493" y2="493"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="696.5" x2="863.5" y1="501" y2="501"/>
+        <ellipse cx="706.5" cy="512" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="101" x="715.5"
+              y="516.4189">void initGameBoard()
+        </text>
+        <ellipse cx="706.5" cy="525.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="143" x="715.5"
+              y="530.2549">void placeStone(int,int,Player)
+        </text>
+        <ellipse cx="706.5" cy="539.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="143" x="715.5"
+              y="544.0908">String getFieldAsString(int,int)
+        </text>
+        <ellipse cx="706.5" cy="553.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="715.5"
+              y="557.9268">String toString()
+        </text>
+        <ellipse cx="706.5" cy="567.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="130" x="715.5"
+              y="571.7627">String getRowAsString(int)
+        </text>
+        <ellipse cx="706.5" cy="581.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="142" x="715.5"
+              y="585.5986">String getColumnAsString(int)
+        </text>
+        <ellipse cx="706.5" cy="595.0156" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="106" x="715.5"
+              y="599.4346">int getCountOfRows()
+        </text>
+        <ellipse cx="706.5" cy="608.8516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="118" x="715.5"
+              y="613.2705">int getCountOfColumns()
+        </text><!--MD5=[54a87d5de9e31f1ccb83579e1c2cc05e]
+class dhbw.ase.core.gamerules.BoardGameRule-->
+        <rect codeLine="51" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="89.5078"
+              id="dhbw.ase.core.gamerules.BoardGameRule" style="stroke:#A80036;stroke-width:1.5;" width="336" x="1587"
+              y="495.5"/>
+        <ellipse cx="1704.25" cy="511.5" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1706,513 L1702.7031,513 L1702.2656,514 L1702.2656,514 L1702.7344,514 L1703.25,514.625 L1703.25,515 L1703.25,515.375 L1702.7344,516 L1702.2656,516 L1700.375,516 L1699.7656,516 L1699.25,515.375 L1699.25,515 L1699.25,514.625 L1699.7656,514 L1700.375,514 L1702.6875,508 L1701.8125,508 L1700.7656,508 L1700.25,507.375 L1700.25,507 L1700.25,506.625 L1700.7656,506 L1701.8125,506 L1705.4844,506 L1708.1719,514 L1708.7344,514 L1708.7344,514 L1709.25,514.625 L1709.25,515 L1709.25,515.375 L1708.7344,516 L1708.1719,516 L1706.2813,516 L1705.7656,516 L1705.25,515.375 L1705.25,515 L1705.25,514.625 L1705.7656,514 L1706.2813,514 L1706.2813,514 L1706,513 Z M1705.4531,511 L1704.25,507.4219 L1703.2188,511 L1705.4531,511 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing"
+              textLength="93" x="1724.75" y="516.4102">BoardGameRule
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1588" x2="1922" y1="527.5" y2="527.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1588" x2="1922" y1="535.5" y2="535.5"/>
+        <ellipse cx="1598" cy="546.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="310" x="1607"
+              y="550.9189">boolean checkAllowedPlacement(RectangularGameBoard,int,int)
+        </text>
+        <ellipse cx="1598" cy="560.3359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="264" x="1607" y="564.7549">Player checkWin(RectangularGameBoard,Command)
+        </text>
+        <ellipse cx="1598" cy="574.1719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="78" x="1607" y="578.5908">String toString()
+        </text><!--MD5=[5287c2c61bf3b850bce6570cf947ec04]
+class dhbw.ase.core.gamerules.PlaceableCheck-->
+        <rect codeLine="153" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="61.8359"
+              id="dhbw.ase.core.gamerules.PlaceableCheck" style="stroke:#A80036;stroke-width:1.5;" width="336" x="1745"
+              y="159.5"/>
+        <ellipse cx="1862.75" cy="175.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1863.75,172.5 L1863.75,178.5 L1865.75,178.5 L1866.2344,178.5 L1866.75,179.125 L1866.75,179.5 L1866.75,179.875 L1866.2344,180.5 L1865.75,180.5 L1859.75,180.5 L1859.2656,180.5 L1858.75,179.875 L1858.75,179.5 L1858.75,179.125 L1859.2656,178.5 L1859.75,178.5 L1861.75,178.5 L1861.75,172.5 L1859.75,172.5 L1859.2656,172.5 L1858.75,171.875 L1858.75,171.5 L1858.75,171.125 L1859.2656,170.5 L1859.75,170.5 L1865.75,170.5 L1866.2344,170.5 L1866.75,171.125 L1866.75,171.5 L1866.75,171.875 L1866.2344,172.5 L1865.75,172.5 L1863.75,172.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing"
+              textLength="92" x="1883.25" y="180.4102">PlaceableCheck
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1746" x2="2080" y1="191.5" y2="191.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1746" x2="2080" y1="199.5" y2="199.5"/>
+        <polygon fill="#4177AF" points="1756,206.5,1752,212.5,1760,212.5" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="310" x="1765"
+              y="214.9189">boolean checkAllowedPlacement(RectangularGameBoard,int,int)
+        </text><!--MD5=[b984c19b2799ed2bd1f5b1db39537afb]
+class dhbw.ase.core.gamerules.ConnectGameRule-->
+        <rect codeLine="174" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="255.5391"
+              id="dhbw.ase.core.gamerules.ConnectGameRule" style="stroke:#A80036;stroke-width:1.5;" width="329"
+              x="1590.5" y="742"/>
+        <ellipse cx="1697.75" cy="758" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1699.5,759.5 L1696.2031,759.5 L1695.7656,760.5 L1695.7656,760.5 L1696.2344,760.5 L1696.75,761.125 L1696.75,761.5 L1696.75,761.875 L1696.2344,762.5 L1695.7656,762.5 L1693.875,762.5 L1693.2656,762.5 L1692.75,761.875 L1692.75,761.5 L1692.75,761.125 L1693.2656,760.5 L1693.875,760.5 L1696.1875,754.5 L1695.3125,754.5 L1694.2656,754.5 L1693.75,753.875 L1693.75,753.5 L1693.75,753.125 L1694.2656,752.5 L1695.3125,752.5 L1698.9844,752.5 L1701.6719,760.5 L1702.2344,760.5 L1702.2344,760.5 L1702.75,761.125 L1702.75,761.5 L1702.75,761.875 L1702.2344,762.5 L1701.6719,762.5 L1699.7813,762.5 L1699.2656,762.5 L1698.75,761.875 L1698.75,761.5 L1698.75,761.125 L1699.2656,760.5 L1699.7813,760.5 L1699.7813,760.5 L1699.5,759.5 Z M1698.9531,757.5 L1697.75,753.9219 L1696.7188,757.5 L1698.9531,757.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing"
+              textLength="106" x="1718.25" y="762.9102">ConnectGameRule
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1591.5" x2="1918.5" y1="774" y2="774"/>
+        <polygon fill="none" points="1601.5,780,1605.5,784,1601.5,788,1597.5,784"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="89" x="1610.5" y="789.4189">int xInARowToWin
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1591.5" x2="1918.5" y1="795.8359" y2="795.8359"/>
+        <polygon fill="#FFFF44" points="1601.5,801.8359,1605.5,805.8359,1601.5,809.8359,1597.5,805.8359"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="264" x="1610.5"
+              y="811.2549">boolean checkOnBoard(RectangularGameBoard,int,int)
+        </text>
+        <ellipse cx="1601.5" cy="820.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="253" x="1610.5"
+              y="825.0908">Player checkWin(RectangularGameBoard,Command)
+        </text>
+        <polygon fill="#FFFF44" points="1601.5,829.5078,1605.5,833.5078,1601.5,837.5078,1597.5,833.5078"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="303" x="1610.5"
+              y="838.9268">boolean hasSurroundingWinner(RectangularGameBoard,int,int)
+        </text>
+        <polygon fill="#FFFF44" points="1601.5,843.3438,1605.5,847.3438,1601.5,851.3438,1597.5,847.3438"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="245" x="1610.5"
+              y="852.7627">int checkNorthWest(RectangularGameBoard,int,int)
+        </text>
+        <polygon fill="#FFFF44" points="1601.5,857.1797,1605.5,861.1797,1601.5,865.1797,1597.5,861.1797"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="220" x="1610.5"
+              y="866.5986">int checkNorth(RectangularGameBoard,int,int)
+        </text>
+        <polygon fill="#FFFF44" points="1601.5,871.0156,1605.5,875.0156,1601.5,879.0156,1597.5,875.0156"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="241" x="1610.5"
+              y="880.4346">int checkNorthEast(RectangularGameBoard,int,int)
+        </text>
+        <polygon fill="#FFFF44" points="1601.5,884.8516,1605.5,888.8516,1601.5,892.8516,1597.5,888.8516"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="219" x="1610.5"
+              y="894.2705">int checkWest(RectangularGameBoard,int,int)
+        </text>
+        <polygon fill="#FFFF44" points="1601.5,898.6875,1605.5,902.6875,1601.5,906.6875,1597.5,902.6875"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="215" x="1610.5"
+              y="908.1064">int checkEast(RectangularGameBoard,int,int)
+        </text>
+        <polygon fill="#FFFF44" points="1601.5,912.5234,1605.5,916.5234,1601.5,920.5234,1597.5,916.5234"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="247" x="1610.5"
+              y="921.9424">int checkSouthWest(RectangularGameBoard,int,int)
+        </text>
+        <polygon fill="#FFFF44" points="1601.5,926.3594,1605.5,930.3594,1601.5,934.3594,1597.5,930.3594"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="222" x="1610.5"
+              y="935.7783">int checkSouth(RectangularGameBoard,int,int)
+        </text>
+        <polygon fill="#FFFF44" points="1601.5,940.1953,1605.5,944.1953,1601.5,948.1953,1597.5,944.1953"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="243" x="1610.5"
+              y="949.6143">int checkSouthEast(RectangularGameBoard,int,int)
+        </text>
+        <polygon fill="#FFFF44" points="1601.5,954.0313,1605.5,958.0313,1601.5,962.0313,1597.5,958.0313"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="298" x="1610.5"
+              y="963.4502">int checkDirection(RectangularGameBoard,int,int,int,Compass)
+        </text>
+        <polygon fill="#FFFF44" points="1601.5,967.8672,1605.5,971.8672,1601.5,975.8672,1597.5,971.8672"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="274" x="1610.5" y="977.2861">int getNextWidth(RectangularGameBoard,int,Compass)
+        </text>
+        <polygon fill="#FFFF44" points="1601.5,981.7031,1605.5,985.7031,1601.5,989.7031,1597.5,985.7031"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="277" x="1610.5" y="991.1221">int getNextHeight(RectangularGameBoard,int,Compass)
+        </text><!--MD5=[5d926866a3c34e4608ab4c77ab4529c2]
+class dhbw.ase.core.gamerules.Winnable-->
+        <rect codeLine="231" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="61.8359"
+              id="dhbw.ase.core.gamerules.Winnable" style="stroke:#A80036;stroke-width:1.5;" width="279" x="1430.5"
+              y="159.5"/>
+        <ellipse cx="1539.25" cy="175.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1540.25,172.5 L1540.25,178.5 L1542.25,178.5 L1542.7344,178.5 L1543.25,179.125 L1543.25,179.5 L1543.25,179.875 L1542.7344,180.5 L1542.25,180.5 L1536.25,180.5 L1535.7656,180.5 L1535.25,179.875 L1535.25,179.5 L1535.25,179.125 L1535.7656,178.5 L1536.25,178.5 L1538.25,178.5 L1538.25,172.5 L1536.25,172.5 L1535.7656,172.5 L1535.25,171.875 L1535.25,171.5 L1535.25,171.125 L1535.7656,170.5 L1536.25,170.5 L1542.25,170.5 L1542.7344,170.5 L1543.25,171.125 L1543.25,171.5 L1543.25,171.875 L1542.7344,172.5 L1542.25,172.5 L1540.25,172.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing"
+              textLength="53" x="1559.75" y="180.4102">Winnable
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1431.5" x2="1708.5" y1="191.5" y2="191.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1431.5" x2="1708.5" y1="199.5" y2="199.5"/>
+        <polygon fill="#4177AF" points="1441.5,206.5,1437.5,212.5,1445.5,212.5"
+                 style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="253" x="1450.5"
+              y="214.9189">Player checkWin(RectangularGameBoard,Command)
+        </text><!--MD5=[58a4bac45bc34c505da885d9d448ddc1]
+class dhbw.ase.core.misc.TextRepository-->
+        <rect codeLine="56" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="297.0469"
+              id="dhbw.ase.core.misc.TextRepository" style="stroke:#A80036;stroke-width:1.5;" width="201" x="32.5"
+              y="42"/>
+        <ellipse cx="88.25" cy="58" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M90.25,54.5 Q90.4531,54 90.6875,53.75 Q90.9219,53.5 91.1875,53.5 Q91.6563,53.5 91.9531,53.7813 Q92.25,54.0625 92.25,54.7188 L92.25,56.2813 Q92.25,56.9375 91.9688,57.2188 Q91.6875,57.5 91.25,57.5 Q90.8594,57.5 90.6094,57.3281 Q90.3594,57.1563 90.25,56.7031 Q90.2031,56.3906 90.0313,56.2188 Q89.7188,55.8906 89.1563,55.7031 Q88.5938,55.5 88.0313,55.5 Q87.3281,55.5 86.7344,55.7813 Q86.1563,56.0625 85.7031,56.6875 Q85.25,57.3125 85.25,58.1719 L85.25,59.0938 Q85.25,60.125 86.0938,60.8125 Q86.9375,61.5 88.4375,61.5 Q89.3281,61.5 89.9531,61.2969 Q90.3125,61.1875 90.7188,60.8281 Q90.9844,60.625 91.125,60.5625 Q91.2656,60.5 91.4375,60.5 Q91.7656,60.5 92,60.7656 Q92.25,61.0156 92.25,61.375 Q92.25,61.7188 91.9063,62.125 Q91.4063,62.7188 90.6094,63.0469 Q89.5625,63.5 88.2813,63.5 Q86.7813,63.5 85.5781,62.9063 Q84.6094,62.4375 83.9219,61.4219 Q83.25,60.4063 83.25,59.2031 L83.25,58.1094 Q83.25,56.8594 83.8438,55.7656 Q84.4531,54.6719 85.5,54.0938 Q86.5625,53.5 87.75,53.5 Q88.4688,53.5 89.0938,53.75 Q89.7188,54 90.25,54.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="81" x="108.75"
+              y="62.9102">TextRepository
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="33.5" x2="232.5" y1="74" y2="74"/>
+        <ellipse cx="43.5" cy="85" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="96" x="52.5" y="89.4189">String SELECT_ONE
+        </text>
+        <ellipse cx="43.5" cy="98.8359" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="129" x="52.5" y="103.2549">String INPUT_ERROR_MSG
+        </text>
+        <ellipse cx="43.5" cy="112.6719" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="114" x="52.5" y="117.0908">String HELP_INFO_MSG
+        </text>
+        <ellipse cx="43.5" cy="126.5078" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="175" x="52.5" y="130.9268">String PLACEMENT_NOT_ALLOWED
+        </text>
+        <ellipse cx="43.5" cy="140.3438" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="116" x="52.5" y="144.7627">String CONNECT6_HELP
+        </text>
+        <ellipse cx="43.5" cy="154.1797" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="145" x="52.5" y="158.5986">String CHOOSE_BOARD_SIZE
+        </text>
+        <ellipse cx="43.5" cy="168.0156" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="162" x="52.5" y="172.4346">String CHOOSE_PLAYER_COUNT
+        </text>
+        <ellipse cx="43.5" cy="181.8516" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="136" x="52.5" y="186.2705">String CHOOSE_VARIATION
+        </text>
+        <ellipse cx="43.5" cy="195.6875" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="142" x="52.5" y="200.1064">String FOLLOWING_OPTIONS
+        </text>
+        <ellipse cx="43.5" cy="209.5234" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="113" x="52.5" y="213.9424">String SETTINGS_USED
+        </text>
+        <ellipse cx="43.5" cy="223.3594" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="129" x="52.5" y="227.7783">String CHANGE_SETTINGS
+        </text>
+        <ellipse cx="43.5" cy="237.1953" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="52" x="52.5" y="241.6143">String YES
+        </text>
+        <ellipse cx="43.5" cy="251.0313" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="85" x="52.5" y="255.4502">String WINNER_IS
+        </text>
+        <ellipse cx="43.5" cy="264.8672" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="104" x="52.5" y="269.2861">String GAME_ENDING
+        </text>
+        <ellipse cx="43.5" cy="278.7031" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="156" x="52.5" y="283.1221">String RETURN_TO_MAIN_MENU
+        </text>
+        <ellipse cx="43.5" cy="292.5391" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="112" x="52.5" y="296.958">String FIELD_STATE_IS
+        </text>
+        <ellipse cx="43.5" cy="306.375" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="137" x="52.5" y="310.7939">String FIELD_STATE_EMPTY
+        </text>
+        <ellipse cx="43.5" cy="320.2109" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="76" x="52.5" y="324.6299">String NOBODY
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="33.5" x2="232.5" y1="331.0469" y2="331.0469"/><!--MD5=[11196650c5a308a7a2ddb7747a4970ad]
+class dhbw.ase.core.misc.ConnectFourVariations-->
+        <rect codeLine="86" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="75.6719"
+              id="dhbw.ase.core.misc.ConnectFourVariations" style="stroke:#A80036;stroke-width:1.5;" width="158" x="481"
+              y="152.5"/>
+        <ellipse cx="496" cy="168.5" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M494.5,169.5 L494.5,171.5 L498.5,171.5 L498.5,170.5 L498.5,170.0156 L499.125,169.5 L499.5,169.5 L499.875,169.5 L500.5,170.0156 L500.5,170.5 L500.5,173.5 L492.5,173.5 L492.0156,173.5 L491.5,172.875 L491.5,172.5 L491.5,172.125 L492.0156,171.5 L492.5,171.5 L492.5,171.5 L492.5,165.5 L492.5,165.5 L492.0156,165.5 L491.5,164.875 L491.5,164.5 L491.5,164.125 L492.0156,163.5 L492.5,163.5 L500.5,163.5 L500.5,166.5 L500.5,166.9844 L499.875,167.5 L499.5,167.5 L499.125,167.5 L498.5,166.9844 L498.5,166.5 L498.5,165.5 L494.5,165.5 L494.5,167.5 L495.5,167.5 L495.5,167.0156 L495.5,167.0156 L496.125,166.5 L496.5,166.5 L496.875,166.5 L497.5,167.0156 L497.5,167.5 L497.5,169.5 L497.5,169.9844 L496.875,170.5 L496.875,170.5 L496.5,170.5 L496.125,170.5 L495.5,169.9844 L495.5,169.9844 L495.5,169.5 L494.5,169.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="126" x="510"
+              y="173.4102">ConnectFourVariations
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="482" x2="638" y1="184.5" y2="184.5"/>
+        <ellipse cx="492" cy="195.5" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="501"
+              y="199.9189">standard
+        </text>
+        <ellipse cx="492" cy="209.3359" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="501"
+              y="213.7549">dropFour
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="482" x2="638" y1="220.1719" y2="220.1719"/><!--MD5=[15383ea9060ab8a1583152f2789c7db2]
+class dhbw.ase.core.models.GameBoard-->
+        <rect codeLine="103" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="103.3438"
+              id="dhbw.ase.core.models.GameBoard" style="stroke:#A80036;stroke-width:1.5;" width="177" x="268.5"
+              y="139"/>
+        <ellipse cx="319.25" cy="155" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M321,156.5 L317.7031,156.5 L317.2656,157.5 L317.2656,157.5 L317.7344,157.5 L318.25,158.125 L318.25,158.5 L318.25,158.875 L317.7344,159.5 L317.2656,159.5 L315.375,159.5 L314.7656,159.5 L314.25,158.875 L314.25,158.5 L314.25,158.125 L314.7656,157.5 L315.375,157.5 L317.6875,151.5 L316.8125,151.5 L315.7656,151.5 L315.25,150.875 L315.25,150.5 L315.25,150.125 L315.7656,149.5 L316.8125,149.5 L320.4844,149.5 L323.1719,157.5 L323.7344,157.5 L323.7344,157.5 L324.25,158.125 L324.25,158.5 L324.25,158.875 L323.7344,159.5 L323.1719,159.5 L321.2813,159.5 L320.7656,159.5 L320.25,158.875 L320.25,158.5 L320.25,158.125 L320.7656,157.5 L321.2813,157.5 L321.2813,157.5 L321,156.5 Z M320.4531,154.5 L319.25,150.9219 L318.2188,154.5 L320.4531,154.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing"
+              textLength="67" x="339.75" y="159.9102">GameBoard
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="269.5" x2="444.5" y1="171" y2="171"/>
+        <polygon fill="none" points="279.5,177,283.5,181,279.5,185,275.5,181" style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="288.5"
+              y="186.4189">GameField[][] board
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="269.5" x2="444.5" y1="192.8359" y2="192.8359"/>
+        <ellipse cx="279.5" cy="203.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="288.5"
+              y="208.2549">int getBoardWidth()
+        </text>
+        <ellipse cx="279.5" cy="217.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="96" x="288.5"
+              y="222.0908">int getBoardHeight()
+        </text>
+        <ellipse cx="279.5" cy="231.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="151" x="288.5"
+              y="235.9268">GameField getGameField(int,int)
+        </text><!--MD5=[4db4b72134f6fb7f545eb4e1fbdf2ea9]
+class dhbw.ase.core.misc.Command-->
+        <rect codeLine="217" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="214.0313"
+              id="dhbw.ase.core.misc.Command" style="stroke:#A80036;stroke-width:1.5;" width="198" x="34" y="433.5"/>
+        <ellipse cx="99.25" cy="449.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M101.25,446 Q101.4531,445.5 101.6875,445.25 Q101.9219,445 102.1875,445 Q102.6563,445 102.9531,445.2813 Q103.25,445.5625 103.25,446.2188 L103.25,447.7813 Q103.25,448.4375 102.9688,448.7188 Q102.6875,449 102.25,449 Q101.8594,449 101.6094,448.8281 Q101.3594,448.6563 101.25,448.2031 Q101.2031,447.8906 101.0313,447.7188 Q100.7188,447.3906 100.1563,447.2031 Q99.5938,447 99.0313,447 Q98.3281,447 97.7344,447.2813 Q97.1563,447.5625 96.7031,448.1875 Q96.25,448.8125 96.25,449.6719 L96.25,450.5938 Q96.25,451.625 97.0938,452.3125 Q97.9375,453 99.4375,453 Q100.3281,453 100.9531,452.7969 Q101.3125,452.6875 101.7188,452.3281 Q101.9844,452.125 102.125,452.0625 Q102.2656,452 102.4375,452 Q102.7656,452 103,452.2656 Q103.25,452.5156 103.25,452.875 Q103.25,453.2188 102.9063,453.625 Q102.4063,454.2188 101.6094,454.5469 Q100.5625,455 99.2813,455 Q97.7813,455 96.5781,454.4063 Q95.6094,453.9375 94.9219,452.9219 Q94.25,451.9063 94.25,450.7031 L94.25,449.6094 Q94.25,448.3594 94.8438,447.2656 Q95.4531,446.1719 96.5,445.5938 Q97.5625,445 98.75,445 Q99.4688,445 100.0938,445.25 Q100.7188,445.5 101.25,446 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="59" x="119.75"
+              y="454.4102">Command
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="35" x2="231" y1="465.5" y2="465.5"/>
+        <ellipse cx="45" cy="476.5" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="131" x="54" y="480.9189">int PRINT_PARAM_LENGTH
+        </text>
+        <ellipse cx="45" cy="490.3359" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="156" x="54" y="494.7549">int ROWPRINT_PARAM_LENGTH
+        </text>
+        <ellipse cx="45" cy="504.1719" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="152" x="54" y="508.5908">int COLPRINT_PARAM_LENGTH
+        </text>
+        <ellipse cx="45" cy="518.0078" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="126" x="54" y="522.4268">int QUIT_PARAM_LENGTH
+        </text>
+        <ellipse cx="45" cy="531.8438" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="135" x="54" y="536.2627">int RESET_PARAM_LENGTH
+        </text>
+        <ellipse cx="45" cy="545.6797" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="136" x="54" y="550.0986">int PLACE_PARAM_LENGTH
+        </text>
+        <ellipse cx="45" cy="559.5156" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="136" x="54" y="563.9346">int STATE_PARAM_LENGTH
+        </text>
+        <ellipse cx="45" cy="573.3516" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="128" x="54" y="577.7705">int HELP_PARAM_LENGTH
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="42" y="584.1875"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="148" x="54"
+              y="591.6064">Connect6Commands command
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="42" y="598.0234"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="75" x="54"
+              y="605.4424">int[] parameters
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="35" x2="231" y1="611.8594" y2="611.8594"/>
+        <ellipse cx="45" cy="622.8594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="172" x="54"
+              y="627.2783">Connect6Commands getCommand()
+        </text>
+        <ellipse cx="45" cy="636.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98" x="54"
+              y="641.1143">int[] getParameters()
+        </text><!--MD5=[17d488e6bbdbb3878841b83e4ccac3e7]
+class dhbw.ase.core.misc.Connect6Commands-->
+        <rect codeLine="234" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="158.6875"
+              id="dhbw.ase.core.misc.Connect6Commands" style="stroke:#A80036;stroke-width:1.5;" width="151" x="267.5"
+              y="461"/>
+        <ellipse cx="282.5" cy="477" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M281,478 L281,480 L285,480 L285,479 L285,478.5156 L285.625,478 L286,478 L286.375,478 L287,478.5156 L287,479 L287,482 L279,482 L278.5156,482 L278,481.375 L278,481 L278,480.625 L278.5156,480 L279,480 L279,480 L279,474 L279,474 L278.5156,474 L278,473.375 L278,473 L278,472.625 L278.5156,472 L279,472 L287,472 L287,475 L287,475.4844 L286.375,476 L286,476 L285.625,476 L285,475.4844 L285,475 L285,474 L281,474 L281,476 L282,476 L282,475.5156 L282,475.5156 L282.625,475 L283,475 L283.375,475 L284,475.5156 L284,476 L284,478 L284,478.4844 L283.375,479 L283.375,479 L283,479 L282.625,479 L282,478.4844 L282,478.4844 L282,478 L281,478 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="119" x="296.5"
+              y="481.9102">Connect6Commands
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="268.5" x2="417.5" y1="493" y2="493"/>
+        <ellipse cx="278.5" cy="504" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="21" x="287.5"
+              y="508.4189">print
+        </text>
+        <ellipse cx="278.5" cy="517.8359" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="41" x="287.5"
+              y="522.2549">rowprint
+        </text>
+        <ellipse cx="278.5" cy="531.6719" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="35" x="287.5"
+              y="536.0908">colprint
+        </text>
+        <ellipse cx="278.5" cy="545.5078" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="17" x="287.5"
+              y="549.9268">quit
+        </text>
+        <ellipse cx="278.5" cy="559.3438" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="287.5"
+              y="563.7627">reset
+        </text>
+        <ellipse cx="278.5" cy="573.1797" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="26" x="287.5"
+              y="577.5986">place
+        </text>
+        <ellipse cx="278.5" cy="587.0156" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="24" x="287.5"
+              y="591.4346">state
+        </text>
+        <ellipse cx="278.5" cy="600.8516" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="20" x="287.5"
+              y="605.2705">help
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="268.5" x2="417.5" y1="611.6875" y2="611.6875"/><!--MD5=[f29db3d77317d93d9c43e170308e9138]
+class dhbw.ase.plugin.main.GameSelection-->
+        <rect codeLine="96" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="117.1797"
+              id="dhbw.ase.plugin.main.GameSelection" style="stroke:#A80036;stroke-width:1.5;" width="216" x="3158"
+              y="132"/>
+        <ellipse cx="3219.25" cy="148" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M3221.25,144.5 Q3221.4531,144 3221.6875,143.75 Q3221.9219,143.5 3222.1875,143.5 Q3222.6563,143.5 3222.9531,143.7813 Q3223.25,144.0625 3223.25,144.7188 L3223.25,146.2813 Q3223.25,146.9375 3222.9688,147.2188 Q3222.6875,147.5 3222.25,147.5 Q3221.8594,147.5 3221.6094,147.3281 Q3221.3594,147.1563 3221.25,146.7031 Q3221.2031,146.3906 3221.0313,146.2188 Q3220.7188,145.8906 3220.1563,145.7031 Q3219.5938,145.5 3219.0313,145.5 Q3218.3281,145.5 3217.7344,145.7813 Q3217.1563,146.0625 3216.7031,146.6875 Q3216.25,147.3125 3216.25,148.1719 L3216.25,149.0938 Q3216.25,150.125 3217.0938,150.8125 Q3217.9375,151.5 3219.4375,151.5 Q3220.3281,151.5 3220.9531,151.2969 Q3221.3125,151.1875 3221.7188,150.8281 Q3221.9844,150.625 3222.125,150.5625 Q3222.2656,150.5 3222.4375,150.5 Q3222.7656,150.5 3223,150.7656 Q3223.25,151.0156 3223.25,151.375 Q3223.25,151.7188 3222.9063,152.125 Q3222.4063,152.7188 3221.6094,153.0469 Q3220.5625,153.5 3219.2813,153.5 Q3217.7813,153.5 3216.5781,152.9063 Q3215.6094,152.4375 3214.9219,151.4219 Q3214.25,150.4063 3214.25,149.2031 L3214.25,148.1094 Q3214.25,146.8594 3214.8438,145.7656 Q3215.4531,144.6719 3216.5,144.0938 Q3217.5625,143.5 3218.75,143.5 Q3219.4688,143.5 3220.0938,143.75 Q3220.7188,144 3221.25,144.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="85" x="3239.75"
+              y="152.9102">GameSelection
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="3159" x2="3373" y1="164" y2="164"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3166" y="172"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="190" x="3178" y="179.4189">ArrayList&lt;TurnBasedGame&gt; gamesList
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3166" y="185.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="76" x="3178" y="193.2549">GuiInterface gui
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3166" y="199.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="54" x="3178" y="207.0908">String input
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3166" y="213.5078"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="73" x="3178" y="220.9268">boolean denied
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="3159" x2="3373" y1="227.3438" y2="227.3438"/>
+        <ellipse cx="3169" cy="238.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
+              textLength="87" x="3178" y="242.7627">void main(String[])
+        </text><!--MD5=[e53dc7c34dc88994e5ca76a79ce7d109]
+class dhbw.ase.core.NeededInPlugin.Card-->
+        <rect codeLine="160" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="48"
+              id="dhbw.ase.core.NeededInPlugin.Card" style="stroke:#A80036;stroke-width:1.5;" width="59" x="3501.5"
+              y="166.5"/>
+        <ellipse cx="3516.5" cy="182.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M3518.5,179 Q3518.7031,178.5 3518.9375,178.25 Q3519.1719,178 3519.4375,178 Q3519.9063,178 3520.2031,178.2813 Q3520.5,178.5625 3520.5,179.2188 L3520.5,180.7813 Q3520.5,181.4375 3520.2188,181.7188 Q3519.9375,182 3519.5,182 Q3519.1094,182 3518.8594,181.8281 Q3518.6094,181.6563 3518.5,181.2031 Q3518.4531,180.8906 3518.2813,180.7188 Q3517.9688,180.3906 3517.4063,180.2031 Q3516.8438,180 3516.2813,180 Q3515.5781,180 3514.9844,180.2813 Q3514.4063,180.5625 3513.9531,181.1875 Q3513.5,181.8125 3513.5,182.6719 L3513.5,183.5938 Q3513.5,184.625 3514.3438,185.3125 Q3515.1875,186 3516.6875,186 Q3517.5781,186 3518.2031,185.7969 Q3518.5625,185.6875 3518.9688,185.3281 Q3519.2344,185.125 3519.375,185.0625 Q3519.5156,185 3519.6875,185 Q3520.0156,185 3520.25,185.2656 Q3520.5,185.5156 3520.5,185.875 Q3520.5,186.2188 3520.1563,186.625 Q3519.6563,187.2188 3518.8594,187.5469 Q3517.8125,188 3516.5313,188 Q3515.0313,188 3513.8281,187.4063 Q3512.8594,186.9375 3512.1719,185.9219 Q3511.5,184.9063 3511.5,183.7031 L3511.5,182.6094 Q3511.5,181.3594 3512.0938,180.2656 Q3512.7031,179.1719 3513.75,178.5938 Q3514.8125,178 3516,178 Q3516.7188,178 3517.3438,178.25 Q3517.9688,178.5 3518.5,179 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="27" x="3530.5"
+              y="187.4102">Card
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="3502.5" x2="3559.5" y1="198.5" y2="198.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="3502.5" x2="3559.5" y1="206.5" y2="206.5"/><!--MD5=[8b3f890020a8efab565d23d6897caefb]
+reverse link dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule to dhbw.ase.core.gamerules.connect_four.ConnectFourDropGameRule-->
+        <path codeLine="246" d="M1479.38,1129.15 C1438.75,1144.54 1387.93,1163.79 1340.16,1181.88 " fill="none"
+              id="dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule-backto-dhbw.ase.core.gamerules.connect_four.ConnectFourDropGameRule"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="1476.97,1122.58,1498.15,1122.04,1481.93,1135.67,1476.97,1122.58"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[22b32b3337ed4eaea285ffd7fd0a5141]
+reverse link dhbw.ase.plugin.userinterface.GuiInterface to dhbw.ase.plugin.userinterface.GUI-->
+        <path codeLine="247" d="M2271,297.2 C2271,338.01 2271,384.78 2271,426.28 " fill="none"
+              id="dhbw.ase.plugin.userinterface.GuiInterface-backto-dhbw.ase.plugin.userinterface.GUI"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="2264,297.08,2271,277.08,2278,297.08,2264,297.08"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c081ef20a8f1cf7d3fa642e2bef851b3]
+reverse link dhbw.ase.core.gamerules.ConnectGameRule to dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule-->
+        <path codeLine="248" d="M1631.51,1013.39 C1611.2,1036.81 1592.46,1058.42 1579.12,1073.8 " fill="none"
+              id="dhbw.ase.core.gamerules.ConnectGameRule-backto-dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="1626.29,1008.72,1644.68,998.2,1636.87,1017.9,1626.29,1008.72"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2d8dc9c0f2b9bccbcc3997657849d2bc]
+reverse link dhbw.ase.core.gamerules.connect6.Connect6GameRule to dhbw.ase.core.gamerules.connect6.Connect6TorusGameRule-->
+        <path codeLine="249" d="M1951,1142.28 C1951,1154.83 1951,1168.73 1951,1182 " fill="none"
+              id="dhbw.ase.core.gamerules.connect6.Connect6GameRule-backto-dhbw.ase.core.gamerules.connect6.Connect6TorusGameRule"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="1944,1142.2,1951,1122.2,1958,1142.2,1944,1142.2"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e6efa1760f5df0acd6a84ac2b182723b]
+reverse link dhbw.ase.plugin.games.TurnBasedGame to dhbw.ase.plugin.games.ConnectFour-->
+        <path codeLine="250" d="M2625.02,303.64 C2615.41,357.58 2604.18,420.64 2595.74,467.98 " fill="none"
+              id="dhbw.ase.plugin.games.TurnBasedGame-backto-dhbw.ase.plugin.games.ConnectFour"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="2618.15,302.31,2628.55,283.84,2631.93,304.76,2618.15,302.31"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[eff1c910969ec78adbc07a7d29ed699c]
+reverse link dhbw.ase.core.gamerules.Winnable to dhbw.ase.core.gamerules.BoardGameRule-->
+        <path codeLine="251" d="M1595.64,239.74 C1631.66,307.48 1696.7,429.83 1731.51,495.31 " fill="none"
+              id="dhbw.ase.core.gamerules.Winnable-backto-dhbw.ase.core.gamerules.BoardGameRule"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="1589.3,242.72,1586.09,221.77,1601.66,236.15,1589.3,242.72"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e4aa1fccbaa7f8a49eaaf48baa4ef33e]
+reverse link dhbw.ase.core.gamerules.PlaceableCheck to dhbw.ase.core.gamerules.BoardGameRule-->
+        <path codeLine="252" d="M1890.9,240.17 C1860.11,308 1804.73,429.97 1775.06,495.31 " fill="none"
+              id="dhbw.ase.core.gamerules.PlaceableCheck-backto-dhbw.ase.core.gamerules.BoardGameRule"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="1884.61,237.09,1899.25,221.77,1897.36,242.88,1884.61,237.09"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f9ea625cbb657496784c3dc259afa4db]
+reverse link dhbw.ase.core.gamerules.connect6.Connect6GameRule to dhbw.ase.core.gamerules.connect6.Connect6StandardGameRule-->
+        <path codeLine="253" d="M2030.68,1129.17 C2076.6,1146.57 2135.53,1168.88 2188.36,1188.89 " fill="none"
+              id="dhbw.ase.core.gamerules.connect6.Connect6GameRule-backto-dhbw.ase.core.gamerules.connect6.Connect6StandardGameRule"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="2028.07,1135.67,2011.85,1122.04,2033.03,1122.58,2028.07,1135.67"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[5d3d42f860d189efe38a808b9610f8b1]
+reverse link dhbw.ase.core.models.RectangularGameBoard to dhbw.ase.core.models.Connect6GameBoard-->
+        <path codeLine="254" d="M780,640.5 C780,712.28 780,803.86 780,845.95 " fill="none"
+              id="dhbw.ase.core.models.RectangularGameBoard-backto-dhbw.ase.core.models.Connect6GameBoard"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="773,640.36,780,620.36,787,640.36,773,640.36"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4f078db9c9ec0265a7a59d1e04b277f6]
+reverse link dhbw.ase.plugin.games.TurnBasedGame to dhbw.ase.plugin.games.Connect6-->
+        <path codeLine="255" d="M2724.81,292.12 C2751.17,325.36 2781,362.98 2809.3,398.66 " fill="none"
+              id="dhbw.ase.plugin.games.TurnBasedGame-backto-dhbw.ase.plugin.games.Connect6"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="2719.11,296.21,2712.16,276.19,2730.08,287.51,2719.11,296.21"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[334fe4aa3b96966218693edf281e9985]
+reverse link dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule to dhbw.ase.core.gamerules.connect_four.ConnectFourStandardGameRule-->
+        <path codeLine="256" d="M1559,1142.28 C1559,1154.83 1559,1168.73 1559,1182 " fill="none"
+              id="dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule-backto-dhbw.ase.core.gamerules.connect_four.ConnectFourStandardGameRule"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="1552,1142.2,1559,1122.2,1566,1142.2,1552,1142.2"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[da734ed85a9d25e8f430e5082896bea0]
+reverse link dhbw.ase.core.gamerules.ConnectGameRule to dhbw.ase.core.gamerules.connect6.Connect6GameRule-->
+        <path codeLine="257" d="M1878.49,1013.39 C1898.8,1036.81 1917.54,1058.42 1930.88,1073.8 " fill="none"
+              id="dhbw.ase.core.gamerules.ConnectGameRule-backto-dhbw.ase.core.gamerules.connect6.Connect6GameRule"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="1873.13,1017.9,1865.32,998.2,1883.71,1008.72,1873.13,1017.9"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7d7b9141a1e68d608823dabc0e993936]
+reverse link dhbw.ase.core.gamerules.BoardGameRule to dhbw.ase.core.gamerules.ConnectGameRule-->
+        <path codeLine="258" d="M1755,605.84 C1755,644.54 1755,695.16 1755,741.65 " fill="none"
+              id="dhbw.ase.core.gamerules.BoardGameRule-backto-dhbw.ase.core.gamerules.ConnectGameRule"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="1748,605.67,1755,585.67,1762,605.67,1748,605.67"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[54a3167b896c22a37c8b96161d672844]
+reverse link dhbw.ase.core.models.GameBoard to dhbw.ase.core.models.RectangularGameBoard-->
+        <path codeLine="259"
+              d="M392.44,259.52 C410.37,287.89 434.61,318.86 464,339 C536.43,388.64 580.95,342.32 655,389.5 C683.73,407.81 709.17,434.86 729.47,460.96 "
+              fill="none" id="dhbw.ase.core.misc.GameBoard-backto-dhbw.ase.core.models.RectangularGameBoard"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="386.4,263.06,382.1,242.31,398.4,255.85,386.4,263.06"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[950653b87295bb7a4bc8763c92448ee7]
+link dhbw.ase.core.models.GameField to dhbw.ase.core.models.Compass--><!--MD5=[5db23dee8bf896057fc2a34877692e21]
+link dhbw.ase.core.models.Compass to dhbw.ase.core.models.GameInfo--><!--MD5=[0564bfb263004a2794bc1ff1627f6ea7]
+link dhbw.ase.core.models.GameField to dhbw.ase.core.models.PlayerStone--><!--MD5=[b5949d2a420f33e0d8f911e6a32e5a3e]
+link dhbw.ase.core.models.PlayerStone to dhbw.ase.core.models.Player--><!--MD5=[834253677e9097ed049629a745531f8a]
+link dhbw.ase.core.misc.TextRepository to dhbw.ase.core.misc.ConnectFourVariations--><!--MD5=[9d6bcc08ac0a38d101df43ff93626c5e]
+link dhbw.ase.core.misc.TextRepository to dhbw.ase.core.misc.Command--><!--MD5=[45692995dfc9674108820815f090b17e]
+link dhbw.ase.core.misc.Command to dhbw.ase.core.misc.Connect6Commands--><!--MD5=[ffbece40126612b1e7d49b47fef267d4]
+@startuml
+class dhbw.ase.core.gamerules.connect_four.ConnectFourDropGameRule {
++ boolean checkAllowedPlacement(RectangularGameBoard,int,int)
++ String toString()
++ Player checkWin(RectangularGameBoard,Command)
+# int getNextWidth(RectangularGameBoard,int,Compass)
+# int getNextHeight(RectangularGameBoard,int,Compass)
+}
+class dhbw.ase.plugin.userinterface.GUI {
+- {static} BufferedReader IN
++ {static} void printError(String)
++ {static} void printLine(Object)
++ {static} void printLine(char[])
++ void print(String,boolean)
++ void printList(Iterable<?>)
++ void printOptions(Iterable<?>)
++ String getUserInput()
++ void print(GameInfo)
++ String readLine()
++ void rowPrint(RectangularGameBoard,int)
++ void colPrint(RectangularGameBoard,int)
++ void printFieldState(RectangularGameBoard,int,int)
+}
+abstract class dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule {
+}
+class dhbw.ase.plugin.games.GamePlayer {
++ {static} Player play(TurnBasedGame)
+}
+class dhbw.ase.core.gamerules.connect6.Connect6TorusGameRule {
+# boolean checkOnBoard(RectangularGameBoard,int,int)
+# int getNextWidth(RectangularGameBoard,int,Compass)
+# int getNextHeight(RectangularGameBoard,int,Compass)
++ boolean checkAllowedPlacement(RectangularGameBoard,int,int)
++ String toString()
+}
+class dhbw.ase.core.models.GameField {
+- Player player
++ boolean isFree()
++ void placeStone(Player)
++ Player getStone()
++ String toString()
+}
+class dhbw.ase.plugin.games.ConnectFour {
+- {static} ArrayList<ConnectFourVariations> variations
+- {static} ConnectFourVariations chosenVariation
+- RectangularGameBoard board
+- BoardGameRule boardGameRule
++ String toString()
++ void prepareSettings()
++ void makeTurn()
+}
+abstract class dhbw.ase.core.gamerules.BoardGameRule {
++ boolean checkAllowedPlacement(RectangularGameBoard,int,int)
++ {abstract}Player checkWin(RectangularGameBoard,Command)
++ {abstract}String toString()
+}
+class dhbw.ase.core.misc.TextRepository {
++ {static} String SELECT_ONE
++ {static} String INPUT_ERROR_MSG
++ {static} String HELP_INFO_MSG
++ {static} String PLACEMENT_NOT_ALLOWED
++ {static} String CONNECT6_HELP
++ {static} String CHOOSE_BOARD_SIZE
++ {static} String CHOOSE_PLAYER_COUNT
++ {static} String CHOOSE_VARIATION
++ {static} String FOLLOWING_OPTIONS
++ {static} String SETTINGS_USED
++ {static} String CHANGE_SETTINGS
++ {static} String YES
++ {static} String WINNER_IS
++ {static} String GAME_ENDING
++ {static} String RETURN_TO_MAIN_MENU
++ {static} String FIELD_STATE_IS
++ {static} String FIELD_STATE_EMPTY
++ {static} String NOBODY
+}
+enum dhbw.ase.core.models.Compass {
++  N
++  NE
++  E
++  SE
++  S
++  SW
++  W
++  NW
+}
+enum dhbw.ase.core.misc.ConnectFourVariations {
++  standard
++  dropFour
+}
+class dhbw.ase.core.gamerules.connect6.Connect6StandardGameRule {
++ boolean checkAllowedPlacement(RectangularGameBoard,int,int)
++ String toString()
+# int getNextWidth(RectangularGameBoard,int,Compass)
+# int getNextHeight(RectangularGameBoard,int,Compass)
+}
+class dhbw.ase.plugin.main.GameSelection {
+- {static} ArrayList<TurnBasedGame> gamesList
+- {static} GuiInterface gui
+- {static} String input
+- {static} boolean denied
++ {static} void main(String[])
+}
+abstract class dhbw.ase.core.models.GameBoard {
+# GameField[][] board
++ int getBoardWidth()
++ int getBoardHeight()
++ GameField getGameField(int,int)
+}
+class dhbw.ase.core.models.Connect6GameBoard {
+}
+class dhbw.ase.plugin.games.Connect6 {
+- List<ConnectGameRule> possibleGameRules
+- List<Integer> possibleBoardSizes
+- List<Integer> possiblePlayers
+- GameInfo gameInfo
+- RectangularGameBoard gameboard
+- Command getCommand(String)
+- boolean checkCorrectParametersTypes(Connect6Commands,String[])
+- void executeCommand(Player,Command)
+- boolean checkAllowedPlacement(Command)
++ String toString()
+~ void prepareSettings()
+~ void makeTurn()
+- boolean chooseSettings()
+- boolean repeatSettings()
+- ConnectGameRule chooseVariation()
+- int chooseBoardSize()
+- ArrayList<Player> choosePlayerCount()
+}
+class dhbw.ase.core.models.GameInfo {
+- ArrayList<Player> players
+- BoardGameRule gamerule
+- int gameBoardSize
+- int turns
++ int getGameBoardSize()
++ int getTurns()
++ BoardGameRule getGamerule()
++ void resetTurns()
++ void addTurns(int)
++ void addTurn()
++ Player getActivePlayer()
++ ArrayList<Player> getPlayers()
+}
+class dhbw.ase.core.gamerules.connect_four.ConnectFourStandardGameRule {
++ boolean checkAllowedPlacement(RectangularGameBoard,int,int)
++ String toString()
++ Player checkWin(RectangularGameBoard,Command)
+# int getNextWidth(RectangularGameBoard,int,Compass)
+# int getNextHeight(RectangularGameBoard,int,Compass)
+}
+abstract class dhbw.ase.core.gamerules.connect6.Connect6GameRule {
+}
+interface dhbw.ase.core.gamerules.PlaceableCheck {
+~ boolean checkAllowedPlacement(RectangularGameBoard,int,int)
+}
+class dhbw.ase.core.models.PlayerStone {
+- String label
++ String getLabel()
+}
+class dhbw.ase.core.NeededInPlugin.Card {
+}
+abstract class dhbw.ase.plugin.games.TurnBasedGame {
+# boolean quited
+# boolean finished
+# Player winner
+~ GuiInterface gui
++ boolean isRunning()
++ boolean wasQuited()
++ Player getWinner()
+~ void prepareSettings()
+~ void makeTurn()
+~ Player followUp()
+}
+abstract class dhbw.ase.core.gamerules.ConnectGameRule {
+# {static} int xInARowToWin
+# boolean checkOnBoard(RectangularGameBoard,int,int)
++ Player checkWin(RectangularGameBoard,Command)
+# boolean hasSurroundingWinner(RectangularGameBoard,int,int)
+# int checkNorthWest(RectangularGameBoard,int,int)
+# int checkNorth(RectangularGameBoard,int,int)
+# int checkNorthEast(RectangularGameBoard,int,int)
+# int checkWest(RectangularGameBoard,int,int)
+# int checkEast(RectangularGameBoard,int,int)
+# int checkSouthWest(RectangularGameBoard,int,int)
+# int checkSouth(RectangularGameBoard,int,int)
+# int checkSouthEast(RectangularGameBoard,int,int)
+# int checkDirection(RectangularGameBoard,int,int,int,Compass)
+# {abstract}int getNextWidth(RectangularGameBoard,int,Compass)
+# {abstract}int getNextHeight(RectangularGameBoard,int,Compass)
+}
+class dhbw.ase.core.models.Player {
+- {static} int playerCounter
+- PlayerStone playerStone
++ PlayerStone getPlayerStone()
+}
+interface dhbw.ase.plugin.userinterface.GuiInterface {
+~ void print(String,boolean)
+~ void printList(Iterable<?>)
+~ void printOptions(Iterable<?>)
+~ String getUserInput()
+~ void print(GameInfo)
+~ String readLine()
+~ void rowPrint(RectangularGameBoard,int)
+~ void colPrint(RectangularGameBoard,int)
+~ void printFieldState(RectangularGameBoard,int,int)
+}
+class dhbw.ase.core.models.RectangularGameBoard {
++ void initGameBoard()
++ void placeStone(int,int,Player)
++ String getFieldAsString(int,int)
++ String toString()
++ String getRowAsString(int)
++ String getColumnAsString(int)
++ int getCountOfRows()
++ int getCountOfColumns()
+}
+class dhbw.ase.core.misc.Command {
++ {static} int PRINT_PARAM_LENGTH
++ {static} int ROWPRINT_PARAM_LENGTH
++ {static} int COLPRINT_PARAM_LENGTH
++ {static} int QUIT_PARAM_LENGTH
++ {static} int RESET_PARAM_LENGTH
++ {static} int PLACE_PARAM_LENGTH
++ {static} int STATE_PARAM_LENGTH
++ {static} int HELP_PARAM_LENGTH
+- Connect6Commands command
+- int[] parameters
++ Connect6Commands getCommand()
++ int[] getParameters()
+}
+interface dhbw.ase.core.gamerules.Winnable {
+~ Player checkWin(RectangularGameBoard,Command)
+}
+enum dhbw.ase.core.misc.Connect6Commands {
++  print
++  rowprint
++  colprint
++  quit
++  reset
++  place
++  state
++  help
+}
+
+
+dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule <|- - dhbw.ase.core.gamerules.connect_four.ConnectFourDropGameRule
+dhbw.ase.plugin.userinterface.GuiInterface <|.. dhbw.ase.plugin.userinterface.GUI
+dhbw.ase.core.gamerules.ConnectGameRule <|- - dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule
+dhbw.ase.core.gamerules.connect6.Connect6GameRule <|- - dhbw.ase.core.gamerules.connect6.Connect6TorusGameRule
+dhbw.ase.plugin.games.TurnBasedGame <|- - dhbw.ase.plugin.games.ConnectFour
+dhbw.ase.core.gamerules.Winnable <|.. dhbw.ase.core.gamerules.BoardGameRule
+dhbw.ase.core.gamerules.PlaceableCheck <|.. dhbw.ase.core.gamerules.BoardGameRule
+dhbw.ase.core.gamerules.connect6.Connect6GameRule <|- - dhbw.ase.core.gamerules.connect6.Connect6StandardGameRule
+dhbw.ase.core.models.RectangularGameBoard <|- - dhbw.ase.core.models.Connect6GameBoard
+dhbw.ase.plugin.games.TurnBasedGame <|- - dhbw.ase.plugin.games.Connect6
+dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule <|- - dhbw.ase.core.gamerules.connect_four.ConnectFourStandardGameRule
+dhbw.ase.core.gamerules.ConnectGameRule <|- - dhbw.ase.core.gamerules.connect6.Connect6GameRule
+dhbw.ase.core.gamerules.BoardGameRule <|- - dhbw.ase.core.gamerules.ConnectGameRule
+dhbw.ase.core.models.GameBoard <|- - dhbw.ase.core.models.RectangularGameBoard
+@enduml
+
+PlantUML version 1.2022.1(Tue Feb 01 19:19:58 CET 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: de
+Country: DE
+-->
+    </g>
+</svg>

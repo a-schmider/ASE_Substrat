@@ -1,7 +1,5 @@
 package dhbw.ase.core.models;
 
-import dhbw.ase.core.misc.GameBoard;
-
 public class RectangularGameBoard extends GameBoard {
 
 

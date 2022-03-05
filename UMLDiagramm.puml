@@ -1,0 +1,269 @@
+@startuml
+class dhbw.ase.core.gamerules.connect_four.ConnectFourDropGameRule {
++ boolean checkAllowedPlacement(RectangularGameBoard,int,int)
++ String toString()
++ Player checkWin(RectangularGameBoard,Command)
+# int getNextWidth(RectangularGameBoard,int,Compass)
+# int getNextHeight(RectangularGameBoard,int,Compass)
+}
+class dhbw.ase.plugin.userinterface.GUI {
+- {static} BufferedReader IN
++ {static} void printError(String)
++ {static} void printLine(Object)
++ {static} void printLine(char[])
++ void print(String,boolean)
++ void printList(Iterable<?>)
++ void printOptions(Iterable<?>)
++ String getUserInput()
++ void print(GameInfo)
++ String readLine()
++ void rowPrint(RectangularGameBoard,int)
++ void colPrint(RectangularGameBoard,int)
++ void printFieldState(RectangularGameBoard,int,int)
+}
+abstract class dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule {
+}
+class dhbw.ase.plugin.games.GamePlayer {
++ {static} Player play(TurnBasedGame)
+}
+class dhbw.ase.core.gamerules.connect6.Connect6TorusGameRule {
+# boolean checkOnBoard(RectangularGameBoard,int,int)
+# int getNextWidth(RectangularGameBoard,int,Compass)
+# int getNextHeight(RectangularGameBoard,int,Compass)
++ boolean checkAllowedPlacement(RectangularGameBoard,int,int)
++ String toString()
+}
+class dhbw.ase.core.models.GameField {
+- Player player
++ boolean isFree()
++ void placeStone(Player)
++ Player getStone()
++ String toString()
+}
+class dhbw.ase.plugin.games.ConnectFour {
+- {static} ArrayList<ConnectFourVariations> variations
+- {static} ConnectFourVariations chosenVariation
+- RectangularGameBoard board
+- BoardGameRule boardGameRule
++ String toString()
++ void prepareSettings()
++ void makeTurn()
+}
+abstract class dhbw.ase.core.gamerules.BoardGameRule {
++ boolean checkAllowedPlacement(RectangularGameBoard,int,int)
++ {abstract}Player checkWin(RectangularGameBoard,Command)
++ {abstract}String toString()
+}
+class dhbw.ase.core.misc.TextRepository {
++ {static} String SELECT_ONE
++ {static} String INPUT_ERROR_MSG
++ {static} String HELP_INFO_MSG
++ {static} String PLACEMENT_NOT_ALLOWED
++ {static} String CONNECT6_HELP
++ {static} String CHOOSE_BOARD_SIZE
++ {static} String CHOOSE_PLAYER_COUNT
++ {static} String CHOOSE_VARIATION
++ {static} String FOLLOWING_OPTIONS
++ {static} String SETTINGS_USED
++ {static} String CHANGE_SETTINGS
++ {static} String YES
++ {static} String WINNER_IS
++ {static} String GAME_ENDING
++ {static} String RETURN_TO_MAIN_MENU
++ {static} String FIELD_STATE_IS
++ {static} String FIELD_STATE_EMPTY
++ {static} String NOBODY
+}
+enum dhbw.ase.core.models.Compass {
++  N
++  NE
++  E
++  SE
++  S
++  SW
++  W
++  NW
+}
+enum dhbw.ase.core.misc.ConnectFourVariations {
++  standard
++  dropFour
+}
+class dhbw.ase.core.gamerules.connect6.Connect6StandardGameRule {
++ boolean checkAllowedPlacement(RectangularGameBoard,int,int)
++ String toString()
+# int getNextWidth(RectangularGameBoard,int,Compass)
+# int getNextHeight(RectangularGameBoard,int,Compass)
+}
+class dhbw.ase.plugin.main.GameSelection {
+- {static} ArrayList<TurnBasedGame> gamesList
+- {static} GuiInterface gui
+- {static} String input
+- {static} boolean denied
++ {static} void main(String[])
+}
+abstract class dhbw.ase.core.misc.GameBoard {
+# GameField[][] board
++ int getBoardWidth()
++ int getBoardHeight()
++ GameField getGameField(int,int)
+}
+class dhbw.ase.core.models.Connect6GameBoard {
+}
+class dhbw.ase.plugin.games.Connect6 {
+- List<ConnectGameRule> possibleGameRules
+- List<Integer> possibleBoardSizes
+- List<Integer> possiblePlayers
+- GameInfo gameInfo
+- RectangularGameBoard gameboard
+- Command getCommand(String)
+- boolean checkCorrectParametersTypes(Connect6Commands,String[])
+- void executeCommand(Player,Command)
+- boolean checkAllowedPlacement(Command)
++ String toString()
+~ void prepareSettings()
+~ void makeTurn()
+- boolean chooseSettings()
+- boolean repeatSettings()
+- ConnectGameRule chooseVariation()
+- int chooseBoardSize()
+- ArrayList<Player> choosePlayerCount()
+}
+class dhbw.ase.core.models.GameInfo {
+- ArrayList<Player> players
+- BoardGameRule gamerule
+- int gameBoardSize
+- int turns
++ int getGameBoardSize()
++ int getTurns()
++ BoardGameRule getGamerule()
++ void resetTurns()
++ void addTurns(int)
++ void addTurn()
++ Player getActivePlayer()
++ ArrayList<Player> getPlayers()
+}
+class dhbw.ase.core.gamerules.connect_four.ConnectFourStandardGameRule {
++ boolean checkAllowedPlacement(RectangularGameBoard,int,int)
++ String toString()
++ Player checkWin(RectangularGameBoard,Command)
+# int getNextWidth(RectangularGameBoard,int,Compass)
+# int getNextHeight(RectangularGameBoard,int,Compass)
+}
+abstract class dhbw.ase.core.gamerules.connect6.Connect6GameRule {
+}
+interface dhbw.ase.core.gamerules.PlaceableCheck {
+~ boolean checkAllowedPlacement(RectangularGameBoard,int,int)
+}
+class dhbw.ase.core.models.PlayerStone {
+- String label
++ String getLabel()
+}
+class dhbw.ase.core.NeededInPlugin.Card {
+}
+abstract class dhbw.ase.plugin.games.TurnBasedGame {
+# boolean quited
+# boolean finished
+# Player winner
+~ GuiInterface gui
++ boolean isRunning()
++ boolean wasQuited()
++ Player getWinner()
+~ void prepareSettings()
+~ void makeTurn()
+~ Player followUp()
+}
+abstract class dhbw.ase.core.gamerules.ConnectGameRule {
+# {static} int xInARowToWin
+# boolean checkOnBoard(RectangularGameBoard,int,int)
++ Player checkWin(RectangularGameBoard,Command)
+# boolean hasSurroundingWinner(RectangularGameBoard,int,int)
+# int checkNorthWest(RectangularGameBoard,int,int)
+# int checkNorth(RectangularGameBoard,int,int)
+# int checkNorthEast(RectangularGameBoard,int,int)
+# int checkWest(RectangularGameBoard,int,int)
+# int checkEast(RectangularGameBoard,int,int)
+# int checkSouthWest(RectangularGameBoard,int,int)
+# int checkSouth(RectangularGameBoard,int,int)
+# int checkSouthEast(RectangularGameBoard,int,int)
+# int checkDirection(RectangularGameBoard,int,int,int,Compass)
+# {abstract}int getNextWidth(RectangularGameBoard,int,Compass)
+# {abstract}int getNextHeight(RectangularGameBoard,int,Compass)
+}
+class dhbw.ase.core.models.Player {
+- {static} int playerCounter
+- PlayerStone playerStone
++ PlayerStone getPlayerStone()
+}
+interface dhbw.ase.plugin.userinterface.GuiInterface {
+~ void print(String,boolean)
+~ void printList(Iterable<?>)
+~ void printOptions(Iterable<?>)
+~ String getUserInput()
+~ void print(GameInfo)
+~ String readLine()
+~ void rowPrint(RectangularGameBoard,int)
+~ void colPrint(RectangularGameBoard,int)
+~ void printFieldState(RectangularGameBoard,int,int)
+}
+class dhbw.ase.core.models.RectangularGameBoard {
++ void initGameBoard()
++ void placeStone(int,int,Player)
++ String getFieldAsString(int,int)
++ String toString()
++ String getRowAsString(int)
++ String getColumnAsString(int)
++ int getCountOfRows()
++ int getCountOfColumns()
+}
+class dhbw.ase.core.misc.Command {
++ {static} int PRINT_PARAM_LENGTH
++ {static} int ROWPRINT_PARAM_LENGTH
++ {static} int COLPRINT_PARAM_LENGTH
++ {static} int QUIT_PARAM_LENGTH
++ {static} int RESET_PARAM_LENGTH
++ {static} int PLACE_PARAM_LENGTH
++ {static} int STATE_PARAM_LENGTH
++ {static} int HELP_PARAM_LENGTH
+- Connect6Commands command
+- int[] parameters
++ Connect6Commands getCommand()
++ int[] getParameters()
+}
+interface dhbw.ase.core.gamerules.Winnable {
+~ Player checkWin(RectangularGameBoard,Command)
+}
+enum dhbw.ase.core.misc.Connect6Commands {
++  print
++  rowprint
++  colprint
++  quit
++  reset
++  place
++  state
++  help
+}
+
+
+dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule <|-- dhbw.ase.core.gamerules.connect_four.ConnectFourDropGameRule
+dhbw.ase.plugin.userinterface.GuiInterface <|.. dhbw.ase.plugin.userinterface.GUI
+dhbw.ase.core.gamerules.ConnectGameRule <|-- dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule
+dhbw.ase.core.gamerules.connect6.Connect6GameRule <|-- dhbw.ase.core.gamerules.connect6.Connect6TorusGameRule
+dhbw.ase.plugin.games.TurnBasedGame <|-- dhbw.ase.plugin.games.ConnectFour
+dhbw.ase.core.gamerules.Winnable <|.. dhbw.ase.core.gamerules.BoardGameRule
+dhbw.ase.core.gamerules.PlaceableCheck <|.. dhbw.ase.core.gamerules.BoardGameRule
+dhbw.ase.core.gamerules.connect6.Connect6GameRule <|-- dhbw.ase.core.gamerules.connect6.Connect6StandardGameRule
+dhbw.ase.core.models.RectangularGameBoard <|-- dhbw.ase.core.models.Connect6GameBoard
+dhbw.ase.plugin.games.TurnBasedGame <|-- dhbw.ase.plugin.games.Connect6
+dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule <|-- dhbw.ase.core.gamerules.connect_four.ConnectFourStandardGameRule
+dhbw.ase.core.gamerules.ConnectGameRule <|-- dhbw.ase.core.gamerules.connect6.Connect6GameRule
+dhbw.ase.core.gamerules.BoardGameRule <|-- dhbw.ase.core.gamerules.ConnectGameRule
+dhbw.ase.core.misc.GameBoard <|-- dhbw.ase.core.models.RectangularGameBoard
+
+
+dhbw.ase.core.misc.GameBoard --> dhbw.ase.core.models.GameField
+
+dhbw.ase.core.misc.Command --> dhbw.ase.core.misc.Connect6Commands
+
+
+
+@enduml

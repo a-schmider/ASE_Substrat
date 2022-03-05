@@ -8,6 +8,7 @@ import dhbw.ase.core.models.Connect6GameBoard;
 import dhbw.ase.core.models.GameInfo;
 import dhbw.ase.core.models.Player;
 import dhbw.ase.core.models.RectangularGameBoard;
+import dhbw.ase.plugin.userinterface.GUI;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class Connect6 extends TurnBasedGame {
         this.possibleGameRules = possibleGameRules;
         this.possibleBoardSizes = possibleBoardSizes;
         this.possiblePlayers = possiblePlayersCount;
+        gui = new GUI();
     }
 
     private Command getCommand(String input) throws IOException {
@@ -79,6 +81,7 @@ public class Connect6 extends TurnBasedGame {
         };
     }
 
+    //TODO jeden Case in Methode auslagern
     private void executeCommand(Player player, Command command) {
         switch (command.getCommand()) {
             case print:

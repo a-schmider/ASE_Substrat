@@ -2,7 +2,6 @@ package dhbw.ase.plugin.games;
 
 import dhbw.ase.core.misc.TextRepository;
 import dhbw.ase.core.models.Player;
-import dhbw.ase.plugin.userinterface.GUI;
 import dhbw.ase.plugin.userinterface.GuiInterface;
 
 public abstract class TurnBasedGame {
@@ -11,7 +10,7 @@ public abstract class TurnBasedGame {
     protected boolean quited;
     protected boolean finished;
     protected Player winner;
-    GuiInterface gui = new GUI();
+    GuiInterface gui; //TODO war = new GUI()
 
     /**
      * Returns true if the game is not finished yet

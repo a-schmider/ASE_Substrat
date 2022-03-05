@@ -1,6 +1,4 @@
-package dhbw.ase.core.misc;
-
-import dhbw.ase.core.models.GameField;
+package dhbw.ase.core.models;
 
 public abstract class GameBoard {
 
