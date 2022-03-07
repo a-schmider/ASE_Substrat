@@ -8,7 +8,7 @@ import dhbw.ase.core.models.Connect6GameBoard;
 import dhbw.ase.core.models.GameInfo;
 import dhbw.ase.core.models.Player;
 import dhbw.ase.core.models.RectangularGameBoard;
-import dhbw.ase.plugin.userinterface.GUI;
+import dhbw.ase.plugin.userinterface.ConsoleGUI;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class Connect6 extends TurnBasedGame {
         this.possibleGameRules = possibleGameRules;
         this.possibleBoardSizes = possibleBoardSizes;
         this.possiblePlayers = possiblePlayersCount;
-        gui = new GUI();
+        gui = new ConsoleGUI();
     }
 
     private Command getCommand(String input) throws IOException {

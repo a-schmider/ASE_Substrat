@@ -7,7 +7,7 @@ import dhbw.ase.plugin.games.Connect6;
 import dhbw.ase.plugin.games.ConnectFour;
 import dhbw.ase.plugin.games.GamePlayer;
 import dhbw.ase.plugin.games.TurnBasedGame;
-import dhbw.ase.plugin.userinterface.GUI;
+import dhbw.ase.plugin.userinterface.ConsoleGUI;
 import dhbw.ase.plugin.userinterface.GuiInterface;
 
 import java.io.IOException;
@@ -25,7 +25,7 @@ public class GameSelection {
                             new ArrayList<>(Arrays.asList(2, 3, 4)))));
 
     //TODO GUI-Methoden static machen? Dependency Inversion? Gui kennt alle, main kennt Gui
-    private static final GuiInterface gui = new GUI();
+    private static final GuiInterface gui = new ConsoleGUI();
     private static String input;
     private static boolean denied = true;
 

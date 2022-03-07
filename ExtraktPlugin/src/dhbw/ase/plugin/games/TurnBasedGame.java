@@ -6,11 +6,10 @@ import dhbw.ase.plugin.userinterface.GuiInterface;
 
 public abstract class TurnBasedGame {
 
-
     protected boolean quited;
     protected boolean finished;
     protected Player winner;
-    GuiInterface gui; //TODO war = new GUI()
+    GuiInterface gui;
 
     /**
      * Returns true if the game is not finished yet

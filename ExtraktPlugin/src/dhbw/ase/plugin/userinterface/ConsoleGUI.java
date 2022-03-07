@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class GUI implements GuiInterface {
+public class ConsoleGUI implements GuiInterface {
 
     private static final BufferedReader IN = new BufferedReader(new InputStreamReader(System.in));
 

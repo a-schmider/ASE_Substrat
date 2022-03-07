@@ -165,9 +165,10 @@ class dhbw.ase.core.gamerules.connect_four.ConnectFourStandardGameRule-->
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="266" x="1411"
               y="1292.7627">int getNextHeight(RectangularGameBoard,int,Compass)
         </text><!--MD5=[9316ee656d4803f2e830c680d26537df]
-class dhbw.ase.plugin.userinterface.GUI-->
+class dhbw.ase.plugin.userinterface.ConsoleGUI-->
         <rect codeLine="8" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="227.8672"
-              id="dhbw.ase.plugin.userinterface.GUI" style="stroke:#A80036;stroke-width:1.5;" width="268" x="2137"
+              id="dhbw.ase.plugin.userinterface.ConsoleGUI" style="stroke:#A80036;stroke-width:1.5;" width="268"
+              x="2137"
               y="426.5"/>
         <ellipse cx="2256.25" cy="442.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
         <path d="M2258.25,439 Q2258.4531,438.5 2258.6875,438.25 Q2258.9219,438 2259.1875,438 Q2259.6563,438 2259.9531,438.2813 Q2260.25,438.5625 2260.25,439.2188 L2260.25,440.7813 Q2260.25,441.4375 2259.9688,441.7188 Q2259.6875,442 2259.25,442 Q2258.8594,442 2258.6094,441.8281 Q2258.3594,441.6563 2258.25,441.2031 Q2258.2031,440.8906 2258.0313,440.7188 Q2257.7188,440.3906 2257.1563,440.2031 Q2256.5938,440 2256.0313,440 Q2255.3281,440 2254.7344,440.2813 Q2254.1563,440.5625 2253.7031,441.1875 Q2253.25,441.8125 2253.25,442.6719 L2253.25,443.5938 Q2253.25,444.625 2254.0938,445.3125 Q2254.9375,446 2256.4375,446 Q2257.3281,446 2257.9531,445.7969 Q2258.3125,445.6875 2258.7188,445.3281 Q2258.9844,445.125 2259.125,445.0625 Q2259.2656,445 2259.4375,445 Q2259.7656,445 2260,445.2656 Q2260.25,445.5156 2260.25,445.875 Q2260.25,446.2188 2259.9063,446.625 Q2259.4063,447.2188 2258.6094,447.5469 Q2257.5625,448 2256.2813,448 Q2254.7813,448 2253.5781,447.4063 Q2252.6094,446.9375 2251.9219,445.9219 Q2251.25,444.9063 2251.25,443.7031 L2251.25,442.6094 Q2251.25,441.3594 2251.8438,440.2656 Q2252.4531,439.1719 2253.5,438.5938 Q2254.5625,438 2255.75,438 Q2256.4688,438 2257.0938,438.25 Q2257.7188,438.5 2258.25,439 Z "
@@ -1221,9 +1222,9 @@ reverse link dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule to dhbw.as
               style="stroke:#A80036;stroke-width:1.0;"/>
         <polygon fill="none" points="1476.97,1122.58,1498.15,1122.04,1481.93,1135.67,1476.97,1122.58"
                  style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[22b32b3337ed4eaea285ffd7fd0a5141]
-reverse link dhbw.ase.plugin.userinterface.GuiInterface to dhbw.ase.plugin.userinterface.GUI-->
+reverse link dhbw.ase.plugin.userinterface.GuiInterface to dhbw.ase.plugin.userinterface.ConsoleGUI-->
         <path codeLine="247" d="M2271,297.2 C2271,338.01 2271,384.78 2271,426.28 " fill="none"
-              id="dhbw.ase.plugin.userinterface.GuiInterface-backto-dhbw.ase.plugin.userinterface.GUI"
+              id="dhbw.ase.plugin.userinterface.GuiInterface-backto-dhbw.ase.plugin.userinterface.ConsoleGUI"
               style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
         <polygon fill="none" points="2264,297.08,2271,277.08,2278,297.08,2264,297.08"
                  style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c081ef20a8f1cf7d3fa642e2bef851b3]
@@ -1315,7 +1316,7 @@ class dhbw.ase.core.gamerules.connect_four.ConnectFourDropGameRule {
 # int getNextWidth(RectangularGameBoard,int,Compass)
 # int getNextHeight(RectangularGameBoard,int,Compass)
 }
-class dhbw.ase.plugin.userinterface.GUI {
+class dhbw.ase.plugin.userinterface.ConsoleGUI {
 - {static} BufferedReader IN
 + {static} void printError(String)
 + {static} void printLine(Object)
@@ -1554,7 +1555,7 @@ enum dhbw.ase.core.misc.Connect6Commands {
 
 
 dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule <|- - dhbw.ase.core.gamerules.connect_four.ConnectFourDropGameRule
-dhbw.ase.plugin.userinterface.GuiInterface <|.. dhbw.ase.plugin.userinterface.GUI
+dhbw.ase.plugin.userinterface.GuiInterface <|.. dhbw.ase.plugin.userinterface.ConsoleGUI
 dhbw.ase.core.gamerules.ConnectGameRule <|- - dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule
 dhbw.ase.core.gamerules.connect6.Connect6GameRule <|- - dhbw.ase.core.gamerules.connect6.Connect6TorusGameRule
 dhbw.ase.plugin.games.TurnBasedGame <|- - dhbw.ase.plugin.games.ConnectFour
