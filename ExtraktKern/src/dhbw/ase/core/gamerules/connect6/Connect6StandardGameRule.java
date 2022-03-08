@@ -31,7 +31,7 @@ public class Connect6StandardGameRule extends Connect6GameRule {
             case NW, W, SW -> {
                 return --width;
             }
-            default -> throw new NoSuchFieldException("No direction specified");
+            default -> throw new NoSuchFieldException("No valid direction specified");
         }
     }
 
@@ -47,7 +47,7 @@ public class Connect6StandardGameRule extends Connect6GameRule {
             case SW, S, SE -> {
                 return --height;
             }
-            default -> throw new NoSuchFieldException("No direction specified");
+            default -> throw new NoSuchFieldException("No valid direction specified");
         }
     }
 }
