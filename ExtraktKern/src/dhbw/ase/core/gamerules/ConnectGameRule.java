@@ -5,8 +5,7 @@ import dhbw.ase.core.models.Compass;
 import dhbw.ase.core.models.Player;
 import dhbw.ase.core.models.RectangularGameBoard;
 
-import java.util.EnumMap;
-import java.util.Map;
+import java.util.*;
 
 public abstract class ConnectGameRule extends BoardGameRule {
 
@@ -29,95 +28,25 @@ public abstract class ConnectGameRule extends BoardGameRule {
     }
 
     protected boolean hasSurroundingWinner(RectangularGameBoard board, int width, int height) {
-        Map<Compass, Integer> surroundings = new EnumMap<>(Compass.class);
-        surroundings.put(Compass.NW, checkNorthWest(board, width, height));
-        surroundings.put(Compass.N, checkNorth(board, width, height));
-        surroundings.put(Compass.NE, checkNorthEast(board, width, height));
-        surroundings.put(Compass.W, checkWest(board, width, height));
-        surroundings.put(Compass.E, checkEast(board, width, height));
-        surroundings.put(Compass.SW, checkSouthWest(board, width, height));
-        surroundings.put(Compass.S, checkSouth(board, width, height));
-        surroundings.put(Compass.SE, checkSouthEast(board, width, height));
-
-        return surroundings.get(Compass.NW) + surroundings.get(Compass.SE) + 1 >= xInARowToWin
-                || surroundings.get(Compass.N) + surroundings.get(Compass.S) + 1 >= xInARowToWin
-                || surroundings.get(Compass.NE) + surroundings.get(Compass.SW) + 1 >= xInARowToWin
-                || surroundings.get(Compass.W) + surroundings.get(Compass.E) + 1 >= xInARowToWin;
+        Map<Compass, Integer> surroundings = countStonesForEightDirections(board, width, height);
+        List<Integer> wins = lineUpToFourDirections(surroundings);
+        List<Boolean> evaluatedResult = evaluateWin(wins);
+        return ifAtLeastOneIsTrueFrom(evaluatedResult);
     }
 
-    protected int checkNorthWest(RectangularGameBoard board, int width, int height) {
-        try {
-            return checkDirection(board, width, height, 0, Compass.NW);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
+    protected EnumMap<Compass, Integer> countStonesForEightDirections(RectangularGameBoard board, int width, int height) {
+        EnumMap<Compass, Integer> surroundings = new EnumMap<>(Compass.class);
+        for (Compass direction : Compass.values()) {
+            try {
+                surroundings.put(direction, countStonesForDirection(board, width, height, 0, direction));
+            } catch (NoSuchFieldException e) {
+                surroundings.put(direction, -1);
+            }
         }
-        return -1;
+        return surroundings;
     }
 
-    protected int checkNorth(RectangularGameBoard board, int width, int height) {
-        try {
-            return checkDirection(board, width, height, 0, Compass.N);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-        return -1;
-    }
-
-    protected int checkNorthEast(RectangularGameBoard board, int width, int height) {
-        try {
-            return checkDirection(board, width, height, 0, Compass.NE);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-        return -1;
-    }
-
-    protected int checkWest(RectangularGameBoard board, int width, int height) {
-        try {
-            return checkDirection(board, width, height, 0, Compass.W);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-        return -1;
-    }
-
-    protected int checkEast(RectangularGameBoard board, int width, int height) {
-        try {
-            return checkDirection(board, width, height, 0, Compass.E);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-        return -1;
-    }
-
-    protected int checkSouthWest(RectangularGameBoard board, int width, int height) {
-        try {
-            return checkDirection(board, width, height, 0, Compass.SW);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-        return -1;
-    }
-
-    protected int checkSouth(RectangularGameBoard board, int width, int height) {
-        try {
-            return checkDirection(board, width, height, 0, Compass.S);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-        return -1;
-    }
-
-    protected int checkSouthEast(RectangularGameBoard board, int width, int height) {
-        try {
-            return checkDirection(board, width, height, 0, Compass.SE);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-        return -1;
-    }
-
-    protected int checkDirection(RectangularGameBoard board, int width, int height, int curInARow, Compass direction) throws NoSuchFieldException {
+    protected int countStonesForDirection(RectangularGameBoard board, int width, int height, int curInARow, Compass direction) throws NoSuchFieldException {
         Player currentPlayer = board.getGameField(width, height).getStone();
 
         int nextWidth = getNextWidth(board, width, direction);
@@ -126,13 +55,48 @@ public abstract class ConnectGameRule extends BoardGameRule {
         boolean stillOnBoard = checkOnBoard(board, nextWidth, nextHeight);
         if (curInARow < xInARowToWin - 1 && stillOnBoard) {
             if (board.getGameField(nextWidth, nextHeight).getStone() == currentPlayer) {
-                return checkDirection(board, nextWidth, nextHeight, ++curInARow, direction);
+                return countStonesForDirection(board, nextWidth, nextHeight, ++curInARow, direction);
             } else {
                 return curInARow;
             }
         } else {
             return curInARow;
         }
+    }
+
+    protected ArrayList<Integer> lineUpToFourDirections(Map<Compass, Integer> surroundings) {
+        int northSouthWin = surroundings.get(Compass.N) + surroundings.get(Compass.S) + 1;
+        int westEastWin = surroundings.get(Compass.W) + surroundings.get(Compass.E) + 1;
+        int southwestNortheastWin = surroundings.get(Compass.N) + surroundings.get(Compass.S) + 1;
+        int northwestSoutheastWin = surroundings.get(Compass.N) + surroundings.get(Compass.S) + 1;
+
+        ArrayList<Integer> wins = new ArrayList<>();
+        wins.add(northSouthWin);
+        wins.add(westEastWin);
+        wins.add(southwestNortheastWin);
+        wins.add(northwestSoutheastWin);
+        return wins;
+    }
+
+    private List<Boolean> evaluateWin(Iterable<Integer> wins) {
+        ArrayList<Boolean> evaluatedResult = new ArrayList<>();
+        for (Integer win : wins) {
+            if (win >= xInARowToWin) {
+                evaluatedResult.add(true);
+            } else {
+                evaluatedResult.add(false);
+            }
+        }
+        return evaluatedResult;
+    }
+
+    protected boolean ifAtLeastOneIsTrueFrom(Iterable<Boolean> container) {
+        for (Boolean value : container) {
+            if (value) {
+                return true;
+            }
+        }
+        return false;
     }
 
 
