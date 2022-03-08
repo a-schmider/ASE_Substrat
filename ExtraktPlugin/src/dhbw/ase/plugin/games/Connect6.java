@@ -11,9 +11,7 @@ import dhbw.ase.core.models.RectangularGameBoard;
 import dhbw.ase.plugin.userinterface.ConsoleGUI;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 
 public class Connect6 extends TurnBasedGame {
@@ -81,50 +79,65 @@ public class Connect6 extends TurnBasedGame {
         };
     }
 
-    //TODO jeden Case in Methode auslagern
     private void executeCommand(Player player, Command command) {
         switch (command.getCommand()) {
-            case print:
-                gui.print(gameboard.toString(), false);
-                break;
-            case rowprint:
-                gui.print(gameboard.getRowAsString(command.getParameters()[0]), false);
-                break;
-            case colprint:
-                gui.print(gameboard.getColumnAsString(command.getParameters()[0]), false);
-                break;
-            case quit:
-                quited = true;
-                break;
-            case reset:
-                finished = false;
-                winner = null;
-                gameboard.initGameBoard();
-                gameInfo.resetTurns();
-                break;
-            case place:
-                if (checkAllowedPlacement(command)) {
-                    gameboard.placeStone(command.getParameters()[0], command.getParameters()[1], player);
-                    gameboard.placeStone(command.getParameters()[2], command.getParameters()[3], player);
-                    gameInfo.addTurn();
-
-                    winner = gameInfo.getGamerule().checkWin(gameboard, command);
-                    if (winner != null) {
-                        finished = true;
-                    }
-                } else {
-                    gui.print(TextRepository.PLACEMENT_NOT_ALLOWED, false);
-                }
-                break;
-            case state:
-                gui.printFieldState(gameboard, command.getParameters()[0], command.getParameters()[1]);
-                break;
-            case help:
-                gui.print(TextRepository.CONNECT6_HELP, false);
-                break;
-            default:
-                break;
+            case print -> executePrint();
+            case rowprint -> executeRowprint(command);
+            case colprint -> executeColprint(command);
+            case quit -> executeQuit();
+            case reset -> executeReset();
+            case place -> executePlace(player, command);
+            case state -> executeState(command);
+            case help -> executeHelp();
+            default -> {
+            }
         }
+    }
+
+    private void executeHelp() {
+        gui.print(TextRepository.CONNECT6_HELP, false);
+    }
+
+    private void executeState(Command command) {
+        gui.printFieldState(gameboard, command.getParameters()[0], command.getParameters()[1]);
+    }
+
+    private void executePlace(Player player, Command command) {
+        if (checkAllowedPlacement(command)) {
+            gameboard.placeStone(command.getParameters()[0], command.getParameters()[1], player);
+            gameboard.placeStone(command.getParameters()[2], command.getParameters()[3], player);
+            gameInfo.addTurn();
+
+            winner = gameInfo.getGamerule().checkWin(gameboard, command);
+            if (winner != null) {
+                finished = true;
+            }
+        } else {
+            gui.print(TextRepository.PLACEMENT_NOT_ALLOWED, false);
+        }
+    }
+
+    private void executeReset() {
+        finished = false;
+        winner = null;
+        gameboard.initGameBoard();
+        gameInfo.resetTurns();
+    }
+
+    private void executeQuit() {
+        quited = true;
+    }
+
+    private void executeColprint(Command command) {
+        gui.print(gameboard.getColumnAsString(command.getParameters()[0]), false);
+    }
+
+    private void executeRowprint(Command command) {
+        gui.print(gameboard.getRowAsString(command.getParameters()[0]), false);
+    }
+
+    private void executePrint() {
+        gui.print(gameboard.toString(), false);
     }
 
     /**
