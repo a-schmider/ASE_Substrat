@@ -160,11 +160,11 @@ public class Connect6 extends TurnBasedGame {
     }
 
     @Override
-    void prepareSettings() {
+    protected void prepareSettings() {
         //Repeat settings questions until the settings are accepted
 
         //noinspection StatementWithEmptyBody
-        while (chooseSettings()) ;
+        while (chooseSettings());
 
         gameboard = new Connect6GameBoard(gameInfo.getGameBoardSize());
 
@@ -172,7 +172,7 @@ public class Connect6 extends TurnBasedGame {
     }
 
     @Override
-    void makeTurn() {
+    protected void makeTurn() {
         if (!wasQuited()) {
             Player activePlayer = gameInfo.getActivePlayer();
             gui.print(activePlayer.getPlayerStone().getLabel() + "s turn:", false);

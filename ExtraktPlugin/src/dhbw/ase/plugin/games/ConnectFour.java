@@ -31,7 +31,7 @@ public class ConnectFour extends TurnBasedGame {
     }
 
     @Override
-    public void prepareSettings() {
+    protected void prepareSettings() {
         gui.printList(variations);
 
         int inputNumber;
@@ -46,7 +46,7 @@ public class ConnectFour extends TurnBasedGame {
     }
 
     @Override
-    public void makeTurn() {
+    protected void makeTurn() {
         board = new RectangularGameBoard(7, 6);
         switch (chosenVariation) {
             case standard -> boardGameRule = new ConnectFourStandardGameRule();

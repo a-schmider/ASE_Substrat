@@ -33,19 +33,22 @@ public abstract class TurnBasedGame {
         return winner;
     }
 
+    protected abstract void prepareSettings();
 
-    //Diese Methoden sollten nicht einfach so ausführbar sein nur von GamePlayer
-    void prepareSettings() {
-        System.out.println("Choose Variation");
-    }
+    protected abstract void makeTurn();
 
-    void makeTurn() {
-        System.out.println("Make Turn");
-        finished = true;
-    }
-
-    Player followUp() {
+    protected Player followUp() {
         gui.print(TextRepository.RETURN_TO_MAIN_MENU, false);
         return winner;
+    }
+
+    public final Player play() {
+        prepareSettings();
+
+        while (!wasQuited()) {
+            makeTurn();
+        }
+
+        return followUp();
     }
 }

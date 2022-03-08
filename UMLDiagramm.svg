@@ -286,22 +286,6 @@ class dhbw.ase.plugin.userinterface.GuiInterface-->
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="242" x="2157"
               y="270.1064">void printFieldState(RectangularGameBoard,int,int)
         </text><!--MD5=[f299fd498a2b27f758cd8124d49a8050]
-class dhbw.ase.plugin.games.GamePlayer-->
-        <rect codeLine="25" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="61.8359"
-              id="dhbw.ase.plugin.games.GamePlayer" style="stroke:#A80036;stroke-width:1.5;" width="168" x="2871"
-              y="159.5"/>
-        <ellipse cx="2916.75" cy="175.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
-        <path d="M2918.75,172 Q2918.9531,171.5 2919.1875,171.25 Q2919.4219,171 2919.6875,171 Q2920.1563,171 2920.4531,171.2813 Q2920.75,171.5625 2920.75,172.2188 L2920.75,173.7813 Q2920.75,174.4375 2920.4688,174.7188 Q2920.1875,175 2919.75,175 Q2919.3594,175 2919.1094,174.8281 Q2918.8594,174.6563 2918.75,174.2031 Q2918.7031,173.8906 2918.5313,173.7188 Q2918.2188,173.3906 2917.6563,173.2031 Q2917.0938,173 2916.5313,173 Q2915.8281,173 2915.2344,173.2813 Q2914.6563,173.5625 2914.2031,174.1875 Q2913.75,174.8125 2913.75,175.6719 L2913.75,176.5938 Q2913.75,177.625 2914.5938,178.3125 Q2915.4375,179 2916.9375,179 Q2917.8281,179 2918.4531,178.7969 Q2918.8125,178.6875 2919.2188,178.3281 Q2919.4844,178.125 2919.625,178.0625 Q2919.7656,178 2919.9375,178 Q2920.2656,178 2920.5,178.2656 Q2920.75,178.5156 2920.75,178.875 Q2920.75,179.2188 2920.4063,179.625 Q2919.9063,180.2188 2919.1094,180.5469 Q2918.0625,181 2916.7813,181 Q2915.2813,181 2914.0781,180.4063 Q2913.1094,179.9375 2912.4219,178.9219 Q2911.75,177.9063 2911.75,176.7031 L2911.75,175.6094 Q2911.75,174.3594 2912.3438,173.2656 Q2912.9531,172.1719 2914,171.5938 Q2915.0625,171 2916.25,171 Q2916.9688,171 2917.5938,171.25 Q2918.2188,171.5 2918.75,172 Z "
-              fill="#000000"/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68" x="2937.25"
-              y="180.4102">GamePlayer
-        </text>
-        <line style="stroke:#A80036;stroke-width:1.5;" x1="2872" x2="3038" y1="191.5" y2="191.5"/>
-        <line style="stroke:#A80036;stroke-width:1.5;" x1="2872" x2="3038" y1="199.5" y2="199.5"/>
-        <ellipse cx="2882" cy="210.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline"
-              textLength="142" x="2891" y="214.9189">Player play(TurnBasedGame)
-        </text><!--MD5=[3709d4b4cad11745c493b434816135d0]
 class dhbw.ase.plugin.games.ConnectFour-->
         <rect codeLine="42" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="144.8516"
               id="dhbw.ase.plugin.games.ConnectFour" style="stroke:#A80036;stroke-width:1.5;" width="244" x="2461"
@@ -1332,9 +1316,6 @@ class dhbw.ase.plugin.userinterface.ConsoleGUI {
 + void printFieldState(RectangularGameBoard,int,int)
 }
 abstract class dhbw.ase.core.gamerules.connect_four.ConnectFourGameRule {
-}
-class dhbw.ase.plugin.games.GamePlayer {
-+ {static} Player play(TurnBasedGame)
 }
 class dhbw.ase.core.gamerules.connect6.Connect6TorusGameRule {
 # boolean checkOnBoard(RectangularGameBoard,int,int)

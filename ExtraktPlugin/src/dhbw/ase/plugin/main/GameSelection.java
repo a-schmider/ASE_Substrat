@@ -5,7 +5,6 @@ import dhbw.ase.core.gamerules.connect6.Connect6TorusGameRule;
 import dhbw.ase.core.misc.TextRepository;
 import dhbw.ase.plugin.games.Connect6;
 import dhbw.ase.plugin.games.ConnectFour;
-import dhbw.ase.plugin.games.GamePlayer;
 import dhbw.ase.plugin.games.TurnBasedGame;
 import dhbw.ase.plugin.userinterface.ConsoleGUI;
 import dhbw.ase.plugin.userinterface.GuiInterface;
@@ -45,7 +44,7 @@ public class GameSelection {
             try {
                 inputNumber = Integer.parseInt(input) - 1;
 
-                GamePlayer.play(gamesList.get(inputNumber));
+                gamesList.get(inputNumber).play();
             } catch (NumberFormatException e) {
                 if ("quit".equals(input)) {
                     System.exit(0);
