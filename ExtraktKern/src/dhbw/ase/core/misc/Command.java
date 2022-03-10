@@ -12,20 +12,20 @@ public class Command {
     public static final int HELP_PARAM_LENGTH = 0;
 
 
-    private final Connect6Commands command;
+    private final Connect6CommandEnum command;
     private final int[] parameters;
 
-    public Command(Connect6Commands command, int parameters) {
+    public Command(Connect6CommandEnum command, int parameters) {
         this.command = command;
         this.parameters = new int[]{parameters};
     }
 
-    public Command(Connect6Commands command, int[] parameters) {
+    public Command(Connect6CommandEnum command, int[] parameters) {
         this.command = command;
         this.parameters = parameters;
     }
 
-    public Connect6Commands getCommand() {
+    public Connect6CommandEnum getCommand() {
         return command;
     }
 

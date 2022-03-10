@@ -4,5 +4,4 @@ module ExtraktKern {
     exports dhbw.ase.core.gamerules.connect_four;
     exports dhbw.ase.core.misc;
     exports dhbw.ase.core.models;
-    exports dhbw.ase.core.NeededInPlugin;
 }

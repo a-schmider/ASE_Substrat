@@ -1,9 +1,7 @@
 package dhbw.ase.plugin.games;
 
 import dhbw.ase.core.gamerules.ConnectGameRule;
-import dhbw.ase.core.misc.Command;
-import dhbw.ase.core.misc.Connect6Commands;
-import dhbw.ase.core.misc.TextRepository;
+import dhbw.ase.core.misc.*;
 import dhbw.ase.core.models.Connect6GameBoard;
 import dhbw.ase.core.models.GameInfo;
 import dhbw.ase.core.models.Player;
@@ -12,6 +10,7 @@ import dhbw.ase.plugin.userinterface.ConsoleGUI;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.function.BiConsumer;
 
 
 public class Connect6 extends TurnBasedGame {
@@ -29,23 +28,40 @@ public class Connect6 extends TurnBasedGame {
         this.possibleBoardSizes = possibleBoardSizes;
         this.possiblePlayers = possiblePlayersCount;
         gui = new ConsoleGUI();
+        initalizeCommandMap();
+    }
+
+    private void initalizeCommandMap() {
+        Connect6CommandMap.addCommand("print", Connect6CommandEnum.print, 0,
+                (ignored, ignored2) -> executePrint());
+
+        Connect6CommandMap.addCommand("rowprint", Connect6CommandEnum.rowprint, 1,
+                (BiConsumer<Player, Command>) (ignored, command) -> executeRowprint(command));
+
+        Connect6CommandMap.addCommand("colprint", Connect6CommandEnum.colprint, 1,
+                (BiConsumer<Player, Command>) (ignored, command) -> executeColprint(command));
+
+        Connect6CommandMap.addCommand("quit", Connect6CommandEnum.quit, 0,
+                (BiConsumer<Player, Command>) (ignored, ignored2) -> executeQuit());
+
+        Connect6CommandMap.addCommand("reset", Connect6CommandEnum.reset, 0,
+                (BiConsumer<Player, Command>) (ignored, ignored2) -> executeReset());
+
+        Connect6CommandMap.addCommand("place", Connect6CommandEnum.place, 4,
+                (BiConsumer<Player, Command>) this::executePlace);
+
+        Connect6CommandMap.addCommand("state", Connect6CommandEnum.state, 2,
+                (BiConsumer<Player, Command>) (ignored, command) -> executeState(command));
+
+        Connect6CommandMap.addCommand("help", Connect6CommandEnum.help, 0,
+                (ignored, ignored2) -> executeHelp());
     }
 
     private Command getCommand(String input) throws IOException {
         String[] arrayString;
         arrayString = input.split("\\s+");
 
-        Connect6Commands command = switch (arrayString[0]) {
-            case "print" -> Connect6Commands.print;
-            case "rowprint" -> Connect6Commands.rowprint;
-            case "colprint" -> Connect6Commands.colprint;
-            case "quit" -> Connect6Commands.quit;
-            case "reset" -> Connect6Commands.reset;
-            case "place" -> Connect6Commands.place;
-            case "state" -> Connect6Commands.state;
-            case "help" -> Connect6Commands.help;
-            default -> throw new IOException("Command not recognized");
-        };
+        Connect6CommandEnum command = Connect6CommandMap.getEnum(arrayString[0]);
 
         String[] parameter = new String[0];
         if (arrayString.length > 1) {
@@ -59,7 +75,7 @@ public class Connect6 extends TurnBasedGame {
         throw new IOException("Mismatch of command and parameters");
     }
 
-    private boolean checkCorrectParametersTypes(Connect6Commands command, String[] parameters) {
+    private boolean checkCorrectParametersTypes(Connect6CommandEnum command, String[] parameters) {
         int[] values;
         try {
             values = Arrays.stream(parameters).mapToInt(Integer::parseInt).toArray();
@@ -67,31 +83,11 @@ public class Connect6 extends TurnBasedGame {
             return false;
         }
 
-        return switch (command) {
-            case print -> values.length == Command.PRINT_PARAM_LENGTH;
-            case rowprint -> values.length == Command.ROWPRINT_PARAM_LENGTH;
-            case colprint -> values.length == Command.COLPRINT_PARAM_LENGTH;
-            case quit -> values.length == Command.QUIT_PARAM_LENGTH;
-            case reset -> values.length == Command.RESET_PARAM_LENGTH;
-            case place -> values.length == Command.PLACE_PARAM_LENGTH;
-            case state -> values.length == Command.STATE_PARAM_LENGTH;
-            case help -> values.length == Command.HELP_PARAM_LENGTH;
-        };
+        return values.length == Connect6CommandMap.getInt(command);
     }
 
     private void executeCommand(Player player, Command command) {
-        switch (command.getCommand()) {
-            case print -> executePrint();
-            case rowprint -> executeRowprint(command);
-            case colprint -> executeColprint(command);
-            case quit -> executeQuit();
-            case reset -> executeReset();
-            case place -> executePlace(player, command);
-            case state -> executeState(command);
-            case help -> executeHelp();
-            default -> {
-            }
-        }
+        Connect6CommandMap.getBiConsumer(command.getCommand()).accept(player, command);
     }
 
     private void executeHelp() {

@@ -43,6 +43,7 @@
 \usepackage{graphicx}
 \graphicspath{ bilder/}
 
+
 \newcommand{\Autor}{Andreas Schmider}
 
 \newcommand{\Bearbeitungszeitraum}{2 Semester}
@@ -237,6 +238,16 @@ Bisher gibt es in diesem Projekt nur drei Interfaces. Eins für die GUI und zwei
 
 \subsubsection{Dependency-Inversion-Principle}
 
+Um Abhängigkeiten der inneren von denen der äußeren Schichten der Clean Architecture zu unterbinden kann Dependency Inversion verwendet werden. Damit können die Abhängigkeiten umgedreht werden, sodass nur noch die äußeren von den inneren Schichten abhängig sind. Der erste Schritt dazu ist die Dependency Injection. Dabei wird eine Referenz von den inneren Schichten in die äußeren Schichten im Konstruktor übergeben. Damit können die äußeren Schichten auf die Funktionalitäten der inneren Schichten zurückgreifen. Verwendet wurde das bei der Connect6-Klasse aus der Plugin-Schicht und der ConnectGameRule-Klasse aus dem Kern.
+
+
+\begin{figure}[H]
+\centering
+{\includegraphics[width=13cm]{Bilder/DependencyInjection}}
+\caption{Die Dependency Injection bei der Connect6-Klasse}
+\label{fig:DependencyInjection}
+\end{figure}
+
 
 
 
@@ -344,6 +355,20 @@ Damit die Abstraktionen das Interface verwendet können, besitzen sie dieses als
 
 \newpage
 \section{Refactoring}
+Refactoring wird dazu verwendet den Code durch Code Reviews übersichtlicher und/oder lesbarer zu machen. Dabei wird das Gesamtverhalten des bestehendem Codes nicht verändert. Nachdem Refactoring-Schritt sollte die Vorgehensweise des Programms immer noch die gleiche sein wie zuvor. Dabei können sich aber Fehler einschleichen, da möglicherweise etwas vergessen oder übersehen wurde.
+Diese Stellen, die auf \glqq schlechten \grqq Code hinweisen, werden als Code Smells bezeichnet.
+
+\subsection{Duplicated Code}
+Wie der Name schon sagt, gibt es an mehreren Stellen Code, der für das Gleiche zuständig ist. Dies sollte vermieden werden, da zum einen der Code unnötig größer wird und, falls sich etwas an dieser Stelle ändern soll, muss das an zwei oder mehr Stellen getan werden. Um einen Gewinner nach einem Spielzug zu berechnen werden Spielregeln verwendet.
+
+\begin{figure}[H]
+\centering
+{\includegraphics[height=4cm]{Bilder/ClassDiagGameRules}}
+\caption{Klassendiagramm der Spielregeln}
+\label{fig:ClassDiagGameRules}
+\end{figure}
+
+Ursprünglich wurden sowohl in der Connect6StandardGameRule und der Connect6-TorusGameRule berechnet ob ein Sieger vorliegt. Im Grundaufbau machen die beiden Klassen genau das Gleiche. Nur dass bei der Torus-Variante die Felder auch über den Rand hinaus gezählt werden. Zusätzlich wurde bei der Torus-Variante der Algorithmus auch sehr kompliziert programmiert. Aus diesen zwei verschiedene Implementierungen wurde dann eine in der Oberklasse Connect6GameRule. Somit kann diese Implementierung dann auch bei den Connect\_four Spielregeln verwendet werden. In ConnectGameRules wurde diese Methode dann wie bei der Connect6StandardGameRule programmiert. Es wurde nur eine kleine Anpassung gemacht, sodass das nächste Feld, das betrachtet werden soll, in einer eigenen Methode bestimmt wird. Dies wird dann erst in den beiden Unterklassen definiert. Somit gibt es jetzt nur noch eine Implementierung die einen Gewinner berechnet.
 
 
 \end{document}
