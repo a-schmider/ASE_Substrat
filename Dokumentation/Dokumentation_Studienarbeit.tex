@@ -181,13 +181,23 @@ Der Kunde erhält Spaß und Unterhaltung.
 \noindent \textbf{Link zum Repository}
 \url{https://github.com/a-schmider/ASE_Substrat}
 
+
+
+
+
 \newpage
 \section{Unit tests}
+
+
+
 
 \newpage
 \section{Programming Principles}
 
+
+
 \subsection{SOLID}
+
 
 \subsubsection{Single-Responsibility-Principle}
 Das Single-Responsibility-Principle soll dafür sorgen, dass jede Klasse nur eine Aufgabe erfüllt. Damit entstehen viele kleinere, unabhängigere Klassen. Sobald sich bei einer großen Klasse etwas ändert muss möglicherweise vieles auch in anderen Methoden angepasst werden. Wenn es viele kleine Klassen gibt, die nur für eine Sache zuständig sind, ist es nach der kleinen Änderung in einer Klasse getan und es müssen sonst nirgends Anpassungen gemacht werden (je nach Ausprägung der Änderung).
@@ -250,9 +260,9 @@ Um Abhängigkeiten der inneren von denen der äußeren Schichten der Clean Archi
 
 
 
-
 \subsection{GRASP}
 Im laufe der Vorlesung wurden neun Faktoren von General Responsibility Assignment Software Patterns/Principles (GRASP) besprochen. Davon wurden aber nur zwei (Low Coupling und High Cohesion) genauer besprochen und deshalb sollen in diesem Dokument auch nur diese beiden thematisiert werden.
+
 
 
 \subsubsection{Low Coupling}
@@ -339,9 +349,13 @@ Dieses Programm wurde in zwei Schichten aufgeteilt. Dem Kern-Modul, in dem die g
 
 
 
-
 \newpage
-\section{Entwurfsmuster evtl. Noch Template/Schablonen pattern}
+\section{Entwurfsmuster}
+Entwurfsmuster werden verwendet um Konstrukte, die häufig im Code vorkommen, generell zu beschreiben und stellen damit einen allgemeinen Lösungsansatz dar. Über die Jahre wurden dies immer mehr. Im folgenden wird aber nur auf zwei eingegangen.
+
+
+
+\subsection{Brücken-Entwurfsmuster}
 Eines der Entwurfsmuster, das eingesetzt wurde ist das Brücken-Muster. Dies hat sich von selber eingeschlichen, als versucht wurde eine hohe Abstraktion zu erreichen. Genau dafür ist dieses Muster auch vorgesehen. Es soll die genaue Implementierung von der Abstraktion trennen. In diesem Fall wurde ein Interface erstellt, das die Benutzeroberfläche verwenden soll (GuiInterface). Dies ist der Implementierer in dem Design-Pattern. Bisher gibt es nur eine Klasse, die ConsoleGUI-Klasse, die dieses Interface implementiert und Ausgaben in der Konsole macht. Es sollte aber in Zukunft auch möglich sein eine weitere Klasse zu erstellen, die dann z.B. eine Graphische Benutzeroberfläche verwendet. Diese Klassen (ConsoleGUI und die folgenden) sind die Konkreten Implementierer des Interfaces. Aufgerufen werden die Implementierungen des GuiInterfaces von der TurnBasedGame-Klasse bzw. den Unterklassen, Connect6 und ConnectFour, da diese eine abstrakte Klasse ist. Dabei ist die TurnBasedGame-Klasse die Abstraktion und Connect6 und ConnectFour sind die speziellen Abstraktionen.
 
 \begin{figure}[htpb!]
@@ -353,10 +367,28 @@ Eines der Entwurfsmuster, das eingesetzt wurde ist das Brücken-Muster. Dies hat
 
 Damit die Abstraktionen das Interface verwendet können, besitzen sie dieses als Attribut. In TurnBasedGame wird dieses jedoch noch nicht instanziiert, da es dort nicht verwendet wird. Erst in den Unterklassen werden diese in dem Konstruktor instanziiert. Erst damit ist es möglich die Methoden des Interfaces zu verwenden.
 
+
+
+\subsection{Schablonen-Entwurfsmuster}
+Dieses Entwurfsmuster wird verwendet um eine Reihenfolge der auszuführenden Methoden notwendig ist. Häufig wird das verwendet um z.B. erst Speicher zu belegen und später dann wieder freizugeben. Der Entwickler kann dann nur sagen, was zwischen diesen Schritten geschehen soll und kann nicht vergessen den Speicher wieder freizugeben. 
+Ich habe das verwendet, damit jedes Spiel den gleichen Spielverlauf hat. Somit wird zu Beginn immer erst die Einstellungen festgelegt. Danach wird solange das Spiel nicht beendet wurde ein Zug eines Spielers gemacht. Und zum Schluss wird immer noch der Gewinner bekanntgegeben. Dieser Ablauf muss von jedem verwendet werden, sofern von der TurnBasedGame-Klasse geerbt wird und das Muster nicht umgangen wird. Was die Spiele in den einzelnen Methoden machen kann der Entwickler selber entscheiden. Aber mit diesem Muster kann ein Ablauf vorgegeben werden.
+
+\begin{figure}[H]
+\centering
+{\includegraphics[width=8cm]{Bilder/templatePattern}}
+\caption{Die Template-Methode play()}
+\label{fig:templatePattern}
+\end{figure}
+
+
+
+
 \newpage
 \section{Refactoring}
 Refactoring wird dazu verwendet den Code durch Code Reviews übersichtlicher und/oder lesbarer zu machen. Dabei wird das Gesamtverhalten des bestehendem Codes nicht verändert. Nachdem Refactoring-Schritt sollte die Vorgehensweise des Programms immer noch die gleiche sein wie zuvor. Dabei können sich aber Fehler einschleichen, da möglicherweise etwas vergessen oder übersehen wurde.
 Diese Stellen, die auf \glqq schlechten \grqq Code hinweisen, werden als Code Smells bezeichnet.
+
+
 
 \subsection{Duplicated Code}
 Wie der Name schon sagt, gibt es an mehreren Stellen Code, der für das Gleiche zuständig ist. Dies sollte vermieden werden, da zum einen der Code unnötig größer wird und, falls sich etwas an dieser Stelle ändern soll, muss das an zwei oder mehr Stellen getan werden. Um einen Gewinner nach einem Spielzug zu berechnen werden Spielregeln verwendet.
@@ -369,6 +401,61 @@ Wie der Name schon sagt, gibt es an mehreren Stellen Code, der für das Gleiche 
 \end{figure}
 
 Ursprünglich wurden sowohl in der Connect6StandardGameRule und der Connect6-TorusGameRule berechnet ob ein Sieger vorliegt. Im Grundaufbau machen die beiden Klassen genau das Gleiche. Nur dass bei der Torus-Variante die Felder auch über den Rand hinaus gezählt werden. Zusätzlich wurde bei der Torus-Variante der Algorithmus auch sehr kompliziert programmiert. Aus diesen zwei verschiedene Implementierungen wurde dann eine in der Oberklasse Connect6GameRule. Somit kann diese Implementierung dann auch bei den Connect\_four Spielregeln verwendet werden. In ConnectGameRules wurde diese Methode dann wie bei der Connect6StandardGameRule programmiert. Es wurde nur eine kleine Anpassung gemacht, sodass das nächste Feld, das betrachtet werden soll, in einer eigenen Methode bestimmt wird. Dies wird dann erst in den beiden Unterklassen definiert. Somit gibt es jetzt nur noch eine Implementierung die einen Gewinner berechnet.
+
+
+
+\subsection{Shotgun Surgery \& Switch-Statement}
+Dieses Problem tritt auf, wenn eigentlich nur eine Kleinigkeit angepasst werden soll aber dann tatsächlich an vielen Stellen Code angepasst werden muss. In meinem Fall kam noch hinzu, dass es sich um ein Enum gehandelt hat, dass auch in mehreren Switch-Statements verwendet wurde und die möglichen Befehle darstellen sollte. Wenn jetzt aber ein neuer Befehl hinzukommen soll, musste an mindestens vier Stellen Code angepasst werden.
+\\
+
+\begin{figure}[htpb!]
+\centering
+\begin{subfigure}{.4\textwidth}
+  \centering
+  {\includegraphics[height=4cm]{Bilder/Switch}}
+  %\caption{A subfigure}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.6\textwidth}
+  \centering
+  {\includegraphics[height=4.2cm]{Bilder/Switch2}}
+  %\caption{A subfigure}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{Mehrere Swtich-Statements für Befehle}
+\label{fig:test}
+\end{figure}
+
+\noindent Jeder Befehl braucht folgende Informationen: 
+\begin{itemize}
+\item einen Text, der in der Konsole eingegeben werden muss um den Befehl zu adressieren
+\item einen Enum, um den Befehl unabhängig der Eingabe zu machen z.B. case-insensitiv
+\item eine Anzahl an korrekten Parametern
+\item welche Methode angewendet werden soll
+\end{itemize}
+
+\noindent Daraus wurde dann eine neue Klasse gemacht, die alle diese Punkte in einem Objekt speichert. Zusätzlich dazu wurde noch eine Klasse erstellt, die auf Anfrage die richtigen Werte zurückgibt und die zuvor verwendeten Switch-Konstrukte ablöst. Somit muss nur noch an zwei Stellen Änderungen gemacht werden. Zum Einen muss ein neues Enum definiert werden und zum Anderen müssen alle anderen Werte für diesen Befehl definiert werden. Damit sind die Befehle auch direkt im Spiel verwendbar werden.
+
+\begin{figure}[H]
+\centering
+{\includegraphics[height=4cm]{Bilder/CmdMap}}
+\caption{Definition der Eigenschaften der Befehle}
+\label{fig:CmdMap}
+\end{figure}
+
+
+
+\subsection{Long Method}
+Dieses Problem taucht an mehreren Stellen im Code auf. Zwar gibt es so gut wie keine Methode, die länger als 20 Zeilen ist aber bei manchen Methoden ist selbst das zu viel und sorgt für Probleme beim Lesen der Klasse. Je nach Person ist die akzeptable Länge auch unterschiedlich. Bei mir sind das ungefähr 10 Zeilen pro Methode. Dies halte ich auch an vielen Stellen ein aber an vielen Stellen eben auch nicht, wie in der Connect6-Klasse.
+
+\begin{figure}[H]
+\centering
+{\includegraphics[width=15cm]{Bilder/longMethod}}
+\caption{Beispiel für lange Methoden}
+\label{fig:CmdMap}
+\end{figure}
+
+
 
 
 \end{document}
