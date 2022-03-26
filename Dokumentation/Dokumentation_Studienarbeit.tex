@@ -400,12 +400,12 @@ Wie der Name schon sagt, gibt es an mehreren Stellen Code, der für das Gleiche 
 \label{fig:ClassDiagGameRules}
 \end{figure}
 
-Ursprünglich wurden sowohl in der Connect6StandardGameRule und der Connect6-TorusGameRule berechnet ob ein Sieger vorliegt. Im Grundaufbau machen die beiden Klassen genau das Gleiche. Nur dass bei der Torus-Variante die Felder auch über den Rand hinaus gezählt werden. Zusätzlich wurde bei der Torus-Variante der Algorithmus auch sehr kompliziert programmiert. Aus diesen zwei verschiedene Implementierungen wurde dann eine in der Oberklasse Connect6GameRule. Somit kann diese Implementierung dann auch bei den Connect\_four Spielregeln verwendet werden. In ConnectGameRules wurde diese Methode dann wie bei der Connect6StandardGameRule programmiert. Es wurde nur eine kleine Anpassung gemacht, sodass das nächste Feld, das betrachtet werden soll, in einer eigenen Methode bestimmt wird. Dies wird dann erst in den beiden Unterklassen definiert. Somit gibt es jetzt nur noch eine Implementierung die einen Gewinner berechnet.
+Ursprünglich wurden sowohl in der Connect6StandardGameRule und der Connect6-TorusGameRule berechnet ob ein Sieger vorliegt. Im Grundaufbau machen die beiden Klassen genau das Gleiche. Nur dass bei der Torus-Variante die Felder auch über den Rand hinaus gezählt werden. Zusätzlich wurde bei der Torus-Variante der Algorithmus auch sehr kompliziert programmiert. Aus diesen zwei verschiedene Implementierungen wurde dann eine in der Oberklasse Connect6GameRule. Somit kann diese Implementierung dann auch bei den Connect\_four Spielregeln verwendet werden. In ConnectGameRules wurde diese Methode dann wie bei der Connect6StandardGameRule programmiert und somit eine Method-Extraktion angewendet. Es wurde nur eine kleine Anpassung gemacht, sodass das nächste Feld, das betrachtet werden soll, in einer eigenen Methode bestimmt wird. Dies wird dann erst in den beiden Unterklassen definiert. Somit gibt es jetzt nur noch eine Implementierung die einen Gewinner berechnet.
 
 
 
 \subsection{Shotgun Surgery \& Switch-Statement}
-Dieses Problem tritt auf, wenn eigentlich nur eine Kleinigkeit angepasst werden soll aber dann tatsächlich an vielen Stellen Code angepasst werden muss. In meinem Fall kam noch hinzu, dass es sich um ein Enum gehandelt hat, dass auch in mehreren Switch-Statements verwendet wurde und die möglichen Befehle darstellen sollte. Wenn jetzt aber ein neuer Befehl hinzukommen soll, musste an mindestens vier Stellen Code angepasst werden.
+Dieses Problem tritt auf, wenn eigentlich nur eine Kleinigkeit angepasst werden soll aber dann tatsächlich an vielen Stellen Code angepasst werden muss. In meinem Fall kam noch hinzu, dass es sich um ein Enum gehandelt hat, dass auch in mehreren Switch-Statements verwendet wurde und die möglichen Befehle darstellen sollte. Wenn bisher aber ein neuer Befehl hinzukommen soll, musste an mindestens vier Stellen Code angepasst werden.
 \\
 
 \begin{figure}[htpb!]
@@ -434,7 +434,7 @@ Dieses Problem tritt auf, wenn eigentlich nur eine Kleinigkeit angepasst werden 
 \item welche Methode angewendet werden soll
 \end{itemize}
 
-\noindent Daraus wurde dann eine neue Klasse gemacht, die alle diese Punkte in einem Objekt speichert. Zusätzlich dazu wurde noch eine Klasse erstellt, die auf Anfrage die richtigen Werte zurückgibt und die zuvor verwendeten Switch-Konstrukte ablöst. Somit muss nur noch an zwei Stellen Änderungen gemacht werden. Zum Einen muss ein neues Enum definiert werden und zum Anderen müssen alle anderen Werte für diesen Befehl definiert werden. Damit sind die Befehle auch direkt im Spiel verwendbar werden.
+\noindent Daraus wurde dann eine neue Klasse gemacht, die alle diese Punkte in einem Objekt speichert. Zusätzlich dazu wurde noch eine Klasse erstellt, die auf Anfrage die richtigen Werte zurückgibt und die zuvor verwendeten Switch-Konstrukte ablöst. Damit wurde Replace Conditional with Polymorphism angewendet. Somit muss nur noch an zwei Stellen Änderungen gemacht werden. Zum Einen muss ein neues Enum definiert werden und zum Anderen müssen alle anderen Werte für diesen Befehl definiert werden. Damit sind die Befehle auch direkt im Spiel verwendbar werden.
 
 \begin{figure}[H]
 \centering
