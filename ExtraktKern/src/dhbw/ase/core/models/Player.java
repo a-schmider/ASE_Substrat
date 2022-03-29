@@ -2,15 +2,15 @@ package dhbw.ase.core.models;
 
 public class Player {
 
-    private static int playerCounter = 1;
+    private static int playerCounter = 0;
     private final PlayerStone playerStone;
 
     /**
-     * creates new PlayerStone with : P + playerCounter
+     * creates new PlayerStone with : "P + <playerCounter>" as PlayerStone
      */
     public Player() {
-        playerStone = new PlayerStone("P" + Player.playerCounter);
         playerCounter++;
+        playerStone = new PlayerStone("P" + Player.playerCounter);
     }
 
     public PlayerStone getPlayerStone() {

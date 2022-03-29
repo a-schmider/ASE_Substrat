@@ -8,34 +8,34 @@ import java.util.function.BiConsumer;
 
 public class Connect6CommandMap {
 
-    private static List<Connect6Command> list = new ArrayList<>();
+    private static List<Connect6CommandDefinition> list = new ArrayList<>();
 
     public static void addCommand(String text, Connect6CommandEnum enums, int parameter, BiConsumer method) {
-        list.add(new Connect6Command(text, enums, parameter, method));
+        list.add(new Connect6CommandDefinition(text, enums, parameter, method));
     }
 
     public static Connect6CommandEnum getEnum(String command) {
-        for (Connect6Command connect6Command : list) {
-            if (connect6Command.getText().equals(command)) {
-                return connect6Command.getEnum();
+        for (Connect6CommandDefinition definition : list) {
+            if (definition.getText().equals(command)) {
+                return definition.getEnum();
             }
         }
         return null;
     }
 
     public static int getInt(Connect6CommandEnum command) {
-        for (Connect6Command connect6Command : list) {
-            if (connect6Command.getEnum() == command) {
-                return connect6Command.getParameter();
+        for (Connect6CommandDefinition definition : list) {
+            if (definition.getEnum() == command) {
+                return definition.getParameter();
             }
         }
         return 0;
     }
 
-    public static BiConsumer<Player, Command> getBiConsumer(Connect6CommandEnum command) {
-        for (Connect6Command connect6Command : list) {
-            if (connect6Command.getEnum() == command) {
-                return connect6Command.getMethod();
+    public static BiConsumer<Player, SpecificConnect6CommandWithParameters> getBiConsumer(Connect6CommandEnum command) {
+        for (Connect6CommandDefinition definition : list) {
+            if (definition.getEnum() == command) {
+                return definition.getMethod();
             }
         }
         return null;

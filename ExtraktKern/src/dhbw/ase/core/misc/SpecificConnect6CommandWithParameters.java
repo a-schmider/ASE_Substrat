@@ -1,6 +1,6 @@
 package dhbw.ase.core.misc;
 
-public class Command {
+public class SpecificConnect6CommandWithParameters {
 
     public static final int PRINT_PARAM_LENGTH = 0;
     public static final int ROWPRINT_PARAM_LENGTH = 1;
@@ -12,21 +12,21 @@ public class Command {
     public static final int HELP_PARAM_LENGTH = 0;
 
 
-    private final Connect6CommandEnum command;
+    private final Connect6CommandEnum commandEnum;
     private final int[] parameters;
 
-    public Command(Connect6CommandEnum command, int parameters) {
-        this.command = command;
+    public SpecificConnect6CommandWithParameters(Connect6CommandEnum commandEnum, int parameters) {
+        this.commandEnum = commandEnum;
         this.parameters = new int[]{parameters};
     }
 
-    public Command(Connect6CommandEnum command, int[] parameters) {
-        this.command = command;
+    public SpecificConnect6CommandWithParameters(Connect6CommandEnum commandEnum, int[] parameters) {
+        this.commandEnum = commandEnum;
         this.parameters = parameters;
     }
 
-    public Connect6CommandEnum getCommand() {
-        return command;
+    public Connect6CommandEnum getCommandEnum() {
+        return commandEnum;
     }
 
     public int[] getParameters() {

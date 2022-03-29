@@ -1,7 +1,7 @@
 package dhbw.ase.core.gamerules.connect_four;
 
 
-import dhbw.ase.core.misc.Command;
+import dhbw.ase.core.misc.SpecificConnect6CommandWithParameters;
 import dhbw.ase.core.models.Compass;
 import dhbw.ase.core.models.Player;
 import dhbw.ase.core.models.RectangularGameBoard;
@@ -19,7 +19,7 @@ public class ConnectFourStandardGameRule extends ConnectFourGameRule {
     }
 
     @Override
-    public Player checkWin(RectangularGameBoard board, Command command) {
+    public Player checkWin(RectangularGameBoard board, SpecificConnect6CommandWithParameters command) {
         return null;
     }
 

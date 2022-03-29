@@ -14,7 +14,7 @@ public class GameField {
         this.player = player;
     }
 
-    public Player getStone() {
+    public Player getPlayer() {
         return player;
     }
 

@@ -1,6 +1,6 @@
 package dhbw.ase.core.gamerules;
 
-import dhbw.ase.core.misc.Command;
+import dhbw.ase.core.misc.SpecificConnect6CommandWithParameters;
 import dhbw.ase.core.models.Compass;
 import dhbw.ase.core.models.Player;
 import dhbw.ase.core.models.RectangularGameBoard;
@@ -16,8 +16,8 @@ public abstract class ConnectGameRule extends BoardGameRule {
         return width >= 0 && width < board.getBoardWidth() && height >= 0 && height < board.getBoardHeight();
     }
 
-    public Player checkWin(RectangularGameBoard board, Command command) {
-        Player player = board.getGameField(command.getParameters()[0], command.getParameters()[1]).getStone();
+    public Player checkWin(RectangularGameBoard board, SpecificConnect6CommandWithParameters command) {
+        Player player = board.getGameField(command.getParameters()[0], command.getParameters()[1]).getPlayer();
 
         if (hasSurroundingWinner(board, command.getParameters()[0], command.getParameters()[1])
                 || hasSurroundingWinner(board, command.getParameters()[2], command.getParameters()[3])) {
@@ -47,14 +47,14 @@ public abstract class ConnectGameRule extends BoardGameRule {
     }
 
     protected int countStonesForDirection(RectangularGameBoard board, int width, int height, int curInARow, Compass direction) throws NoSuchFieldException {
-        Player currentPlayer = board.getGameField(width, height).getStone();
+        Player currentPlayer = board.getGameField(width, height).getPlayer();
 
         int nextWidth = getNextWidth(board, width, direction);
         int nextHeight = getNextHeight(board, height, direction);
 
         boolean stillOnBoard = checkOnBoard(board, nextWidth, nextHeight);
         if (curInARow < xInARowToWin - 1 && stillOnBoard) {
-            if (board.getGameField(nextWidth, nextHeight).getStone() == currentPlayer) {
+            if (board.getGameField(nextWidth, nextHeight).getPlayer() == currentPlayer) {
                 return countStonesForDirection(board, nextWidth, nextHeight, ++curInARow, direction);
             } else {
                 return curInARow;

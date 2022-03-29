@@ -27,7 +27,7 @@ public class ConnectFour extends TurnBasedGame {
 
     @Override
     public String toString() {
-        return "Connect Four";
+        return "Connect Four [not playable]";
     }
 
     @Override

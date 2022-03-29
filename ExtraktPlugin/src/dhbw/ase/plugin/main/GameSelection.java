@@ -17,11 +17,11 @@ public class GameSelection {
 
     private static final ArrayList<TurnBasedGame> gamesList =
             new ArrayList<>(Arrays.asList(
-                    new ConnectFour(),
                     new Connect6(
                             new ArrayList<>(Arrays.asList(new Connect6StandardGameRule(), new Connect6TorusGameRule())),
                             new ArrayList<>(Arrays.asList(18, 20)),
-                            new ArrayList<>(Arrays.asList(2, 3, 4)))));
+                            new ArrayList<>(Arrays.asList(2, 3, 4))),
+                    new ConnectFour()));
 
     //TODO GUI-Methoden static machen? Dependency Inversion? Gui kennt alle, main kennt Gui
     private static final GuiInterface gui = new ConsoleGUI();
@@ -46,7 +46,7 @@ public class GameSelection {
 
                 gamesList.get(inputNumber).play();
             } catch (NumberFormatException e) {
-                if ("quit".equals(input)) {
+                if (input.equals("quit")) {
                     System.exit(0);
                 } else {
                     gui.print("\r\n" + TextRepository.INPUT_ERROR_MSG, false);

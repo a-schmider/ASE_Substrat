@@ -1053,9 +1053,9 @@ class dhbw.ase.core.models.GameBoard-->
         <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="151" x="288.5"
               y="235.9268">GameField getGameField(int,int)
         </text><!--MD5=[4db4b72134f6fb7f545eb4e1fbdf2ea9]
-class dhbw.ase.core.misc.Command-->
+class dhbw.ase.core.misc.SpecificConnect6CommandWithParameters-->
         <rect codeLine="217" fill="#FEFECE" filter="url(#f1snjpap8q9d8z)" height="214.0313"
-              id="dhbw.ase.core.misc.Command" style="stroke:#A80036;stroke-width:1.5;" width="198" x="34" y="433.5"/>
+              id="dhbw.ase.core.misc.SpecificConnect6CommandWithParameters" style="stroke:#A80036;stroke-width:1.5;" width="198" x="34" y="433.5"/>
         <ellipse cx="99.25" cy="449.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
         <path d="M101.25,446 Q101.4531,445.5 101.6875,445.25 Q101.9219,445 102.1875,445 Q102.6563,445 102.9531,445.2813 Q103.25,445.5625 103.25,446.2188 L103.25,447.7813 Q103.25,448.4375 102.9688,448.7188 Q102.6875,449 102.25,449 Q101.8594,449 101.6094,448.8281 Q101.3594,448.6563 101.25,448.2031 Q101.2031,447.8906 101.0313,447.7188 Q100.7188,447.3906 100.1563,447.2031 Q99.5938,447 99.0313,447 Q98.3281,447 97.7344,447.2813 Q97.1563,447.5625 96.7031,448.1875 Q96.25,448.8125 96.25,449.6719 L96.25,450.5938 Q96.25,451.625 97.0938,452.3125 Q97.9375,453 99.4375,453 Q100.3281,453 100.9531,452.7969 Q101.3125,452.6875 101.7188,452.3281 Q101.9844,452.125 102.125,452.0625 Q102.2656,452 102.4375,452 Q102.7656,452 103,452.2656 Q103.25,452.5156 103.25,452.875 Q103.25,453.2188 102.9063,453.625 Q102.4063,454.2188 101.6094,454.5469 Q100.5625,455 99.2813,455 Q97.7813,455 96.5781,454.4063 Q95.6094,453.9375 94.9219,452.9219 Q94.25,451.9063 94.25,450.7031 L94.25,449.6094 Q94.25,448.3594 94.8438,447.2656 Q95.4531,446.1719 96.5,445.5938 Q97.5625,445 98.75,445 Q99.4688,445 100.0938,445.25 Q100.7188,445.5 101.25,446 Z "
               fill="#000000"/>
@@ -1290,8 +1290,8 @@ link dhbw.ase.core.models.Compass to dhbw.ase.core.models.GameInfo--><!--MD5=[05
 link dhbw.ase.core.models.GameField to dhbw.ase.core.models.PlayerStone--><!--MD5=[b5949d2a420f33e0d8f911e6a32e5a3e]
 link dhbw.ase.core.models.PlayerStone to dhbw.ase.core.models.Player--><!--MD5=[834253677e9097ed049629a745531f8a]
 link dhbw.ase.core.misc.TextRepository to dhbw.ase.core.misc.ConnectFourVariations--><!--MD5=[9d6bcc08ac0a38d101df43ff93626c5e]
-link dhbw.ase.core.misc.TextRepository to dhbw.ase.core.misc.Command--><!--MD5=[45692995dfc9674108820815f090b17e]
-link dhbw.ase.core.misc.Command to dhbw.ase.core.misc.Connect6CommandEnum--><!--MD5=[ffbece40126612b1e7d49b47fef267d4]
+link dhbw.ase.core.misc.TextRepository to dhbw.ase.core.misc.SpecificConnect6CommandWithParameters--><!--MD5=[45692995dfc9674108820815f090b17e]
+link dhbw.ase.core.misc.SpecificConnect6CommandWithParameters to dhbw.ase.core.misc.Connect6CommandEnum--><!--MD5=[ffbece40126612b1e7d49b47fef267d4]
 @startuml
 class dhbw.ase.core.gamerules.connect_four.ConnectFourDropGameRule {
 + boolean checkAllowedPlacement(RectangularGameBoard,int,int)
@@ -1506,7 +1506,7 @@ class dhbw.ase.core.models.RectangularGameBoard {
 + int getCountOfRows()
 + int getCountOfColumns()
 }
-class dhbw.ase.core.misc.Command {
+class dhbw.ase.core.misc.SpecificConnect6CommandWithParameters {
 + {static} int PRINT_PARAM_LENGTH
 + {static} int ROWPRINT_PARAM_LENGTH
 + {static} int COLPRINT_PARAM_LENGTH

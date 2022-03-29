@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.util.*;
 import java.util.function.BiConsumer;
 
+import static dhbw.ase.core.misc.SpecificConnect6CommandWithParameters.*;
+
 
 public class Connect6 extends TurnBasedGame {
 
@@ -32,32 +34,32 @@ public class Connect6 extends TurnBasedGame {
     }
 
     private void initalizeCommandMap() {
-        Connect6CommandMap.addCommand("print", Connect6CommandEnum.print, 0,
+        Connect6CommandMap.addCommand("print", Connect6CommandEnum.print, PRINT_PARAM_LENGTH,
                 (ignored, ignored2) -> executePrint());
 
-        Connect6CommandMap.addCommand("rowprint", Connect6CommandEnum.rowprint, 1,
-                (BiConsumer<Player, Command>) (ignored, command) -> executeRowprint(command));
+        Connect6CommandMap.addCommand("rowprint", Connect6CommandEnum.rowprint, ROWPRINT_PARAM_LENGTH,
+                (BiConsumer<Player, SpecificConnect6CommandWithParameters>) (ignored, command) -> executeRowprint(command));
 
-        Connect6CommandMap.addCommand("colprint", Connect6CommandEnum.colprint, 1,
-                (BiConsumer<Player, Command>) (ignored, command) -> executeColprint(command));
+        Connect6CommandMap.addCommand("colprint", Connect6CommandEnum.colprint, COLPRINT_PARAM_LENGTH,
+                (BiConsumer<Player, SpecificConnect6CommandWithParameters>) (ignored, command) -> executeColprint(command));
 
-        Connect6CommandMap.addCommand("quit", Connect6CommandEnum.quit, 0,
-                (BiConsumer<Player, Command>) (ignored, ignored2) -> executeQuit());
+        Connect6CommandMap.addCommand("quit", Connect6CommandEnum.quit, QUIT_PARAM_LENGTH,
+                (BiConsumer<Player, SpecificConnect6CommandWithParameters>) (ignored, ignored2) -> executeQuit());
 
-        Connect6CommandMap.addCommand("reset", Connect6CommandEnum.reset, 0,
-                (BiConsumer<Player, Command>) (ignored, ignored2) -> executeReset());
+        Connect6CommandMap.addCommand("reset", Connect6CommandEnum.reset, RESET_PARAM_LENGTH,
+                (BiConsumer<Player, SpecificConnect6CommandWithParameters>) (ignored, ignored2) -> executeReset());
 
-        Connect6CommandMap.addCommand("place", Connect6CommandEnum.place, 4,
-                (BiConsumer<Player, Command>) this::executePlace);
+        Connect6CommandMap.addCommand("place", Connect6CommandEnum.place, PLACE_PARAM_LENGTH,
+                (BiConsumer<Player, SpecificConnect6CommandWithParameters>) this::executePlace);
 
-        Connect6CommandMap.addCommand("state", Connect6CommandEnum.state, 2,
-                (BiConsumer<Player, Command>) (ignored, command) -> executeState(command));
+        Connect6CommandMap.addCommand("state", Connect6CommandEnum.state, STATE_PARAM_LENGTH,
+                (BiConsumer<Player, SpecificConnect6CommandWithParameters>) (ignored, command) -> executeState(command));
 
-        Connect6CommandMap.addCommand("help", Connect6CommandEnum.help, 0,
+        Connect6CommandMap.addCommand("help", Connect6CommandEnum.help, HELP_PARAM_LENGTH,
                 (ignored, ignored2) -> executeHelp());
     }
 
-    private Command getCommand(String input) throws IOException {
+    private SpecificConnect6CommandWithParameters getCommand(String input) throws IOException {
         String[] arrayString;
         arrayString = input.split("\\s+");
 
@@ -69,7 +71,7 @@ public class Connect6 extends TurnBasedGame {
         }
 
         if (checkCorrectParametersTypes(command, parameter)) {
-            return new Command(command, Arrays.stream(parameter).mapToInt(Integer::parseInt).toArray());
+            return new SpecificConnect6CommandWithParameters(command, Arrays.stream(parameter).mapToInt(Integer::parseInt).toArray());
         }
 
         throw new IOException("Mismatch of command and parameters");
@@ -86,19 +88,19 @@ public class Connect6 extends TurnBasedGame {
         return values.length == Connect6CommandMap.getInt(command);
     }
 
-    private void executeCommand(Player player, Command command) {
-        Connect6CommandMap.getBiConsumer(command.getCommand()).accept(player, command);
+    private void executeCommand(Player player, SpecificConnect6CommandWithParameters command) {
+        Connect6CommandMap.getBiConsumer(command.getCommandEnum()).accept(player, command);
     }
 
     private void executeHelp() {
         gui.print(TextRepository.CONNECT6_HELP, false);
     }
 
-    private void executeState(Command command) {
+    private void executeState(SpecificConnect6CommandWithParameters command) {
         gui.printFieldState(gameboard, command.getParameters()[0], command.getParameters()[1]);
     }
 
-    private void executePlace(Player player, Command command) {
+    private void executePlace(Player player, SpecificConnect6CommandWithParameters command) {
         if (checkAllowedPlacement(command)) {
             gameboard.placeStone(command.getParameters()[0], command.getParameters()[1], player);
             gameboard.placeStone(command.getParameters()[2], command.getParameters()[3], player);
@@ -124,11 +126,11 @@ public class Connect6 extends TurnBasedGame {
         quited = true;
     }
 
-    private void executeColprint(Command command) {
+    private void executeColprint(SpecificConnect6CommandWithParameters command) {
         gui.print(gameboard.getColumnAsString(command.getParameters()[0]), false);
     }
 
-    private void executeRowprint(Command command) {
+    private void executeRowprint(SpecificConnect6CommandWithParameters command) {
         gui.print(gameboard.getRowAsString(command.getParameters()[0]), false);
     }
 
@@ -142,7 +144,7 @@ public class Connect6 extends TurnBasedGame {
      * @param command to executed command
      * @return true, if it is allowed to place both stones
      */
-    private boolean checkAllowedPlacement(Command command) {
+    private boolean checkAllowedPlacement(SpecificConnect6CommandWithParameters command) {
         return isRunning()
                 && gameInfo.getGamerule().checkAllowedPlacement(gameboard, command.getParameters()[0], command.getParameters()[1])
                 && gameInfo.getGamerule().checkAllowedPlacement(gameboard, command.getParameters()[2], command.getParameters()[3])
@@ -174,7 +176,7 @@ public class Connect6 extends TurnBasedGame {
             gui.print(activePlayer.getPlayerStone().getLabel() + "s turn:", false);
             String input = gui.readLine();
             try {
-                Command command = getCommand(input);
+                SpecificConnect6CommandWithParameters command = getCommand(input);
                 executeCommand(activePlayer, command);
             } catch (IOException e) {
                 gui.print(TextRepository.INPUT_ERROR_MSG, false);
