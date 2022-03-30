@@ -12,8 +12,10 @@ class GameFieldTest {
 
     @Test
     public void newFieldIsFreeTest() {
+        //Act
         GameField field = new GameField();
 
+        //Assert
         assertTrue(field.isFree());
     }
 
@@ -45,7 +47,7 @@ class GameFieldTest {
 
     @Test
     public void toStringWithFreeFieldTest() {
-        //Arrange
+        //Act
         GameField field = new GameField();
 
         //Assert
