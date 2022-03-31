@@ -19,9 +19,5 @@ public interface GuiInterface {
 
     String readLine();
 
-    void rowPrint(RectangularGameBoard board, int wantedRow);
-
-    void colPrint(RectangularGameBoard board, int wantedColumn);
-
     void printFieldState(RectangularGameBoard board, int i, int j);
 }

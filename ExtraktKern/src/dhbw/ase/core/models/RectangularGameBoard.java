@@ -61,12 +61,4 @@ public class RectangularGameBoard extends GameBoard {
         builder.append("\r\n");
         return builder.toString();
     }
-
-    public int getCountOfRows() {
-        return 0;
-    }
-
-    public int getCountOfColumns() {
-        return 0;
-    }
 }

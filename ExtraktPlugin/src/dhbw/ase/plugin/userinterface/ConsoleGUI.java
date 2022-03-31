@@ -12,54 +12,6 @@ public class ConsoleGUI implements GuiInterface {
 
     private static final BufferedReader IN = new BufferedReader(new InputStreamReader(System.in));
 
-    /**
-     * Prints the given error-{@code message} with the prefix "{@code Error, }".
-     *
-     * <p>More specific, this method behaves exactly as if the following code got executed:
-     * <blockquote><pre>
-     * Terminal.printLine("Error, " + message);</pre>
-     * </blockquote>
-     *
-     * @param message the error message to be printed
-     * @see #printLine(Object)
-     */
-    public static void printError(final String message) {
-        printLine("Error, " + message);
-    }
-
-    /**
-     * Prints the string representation of an {@code Object} and then terminate the line.
-     *
-     * <p>If the argument is {@code null}, then the string {@code "null"} is printed, otherwise the object's string
-     * value {@code obj.toString()} is printed.
-     *
-     * @param object the {@code Object} to be printed
-     * @see String#valueOf(Object)
-     */
-    public static void printLine(final Object object) {
-        System.out.println(object);
-    }
-
-    /**
-     * Prints an array of characters and then terminate the line.
-     *
-     * <p>If the argument is {@code null}, then a {@code NullPointerException} is thrown, otherwise the value of {@code
-     * new String(charArray)} is printed.
-     *
-     * @param charArray an array of chars to be printed
-     * @see String#valueOf(char[])
-     */
-    public static void printLine(final char[] charArray) {
-        /*
-         * Note: This method's sole purpose is to ensure that the Terminal-class behaves exactly as
-         * System.out regarding output. (System.out.println(char[]) calls String.valueOf(char[])
-         * which itself returns 'new String(char[])' and is therefore the only method that behaves
-         * differently when passing the provided parameter to the System.out.println(Object)
-         * method.)
-         */
-        System.out.println(charArray);
-    }
-
     public void print(String text, boolean emptyEndingLine) {
         System.out.println(text);
         if (emptyEndingLine) {
@@ -117,32 +69,6 @@ public class ConsoleGUI implements GuiInterface {
              * following RuntimeException does not have to get handled.
              */
             throw new RuntimeException(e);
-        }
-    }
-
-    public void rowPrint(RectangularGameBoard board, int wantedRow) {
-        if (wantedRow >= 0 && wantedRow < board.getCountOfRows()) {
-            StringBuilder line = new StringBuilder();
-            for (int i = 0; i < board.getCountOfColumns(); i++) {
-                line.append(board.getFieldAsString(wantedRow, i)).append(" ");
-            }
-            line = new StringBuilder(line.substring(0, line.length() - 1));
-            printLine(line.toString());
-        } else {
-            printError("invalid row");
-        }
-    }
-
-    public void colPrint(RectangularGameBoard board, int wantedRow) {
-        if (wantedRow >= 0 && wantedRow < board.getCountOfColumns()) {
-            StringBuilder line = new StringBuilder();
-            for (int i = 0; i < board.getCountOfRows(); i++) {
-                line.append(board.getFieldAsString(wantedRow, i)).append(" ");
-            }
-            line = new StringBuilder(line.substring(0, line.length() - 1));
-            printLine(line.toString());
-        } else {
-            printError("invalid column");
         }
     }
 

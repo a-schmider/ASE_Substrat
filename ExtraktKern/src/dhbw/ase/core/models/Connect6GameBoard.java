@@ -15,7 +15,7 @@ public class Connect6GameBoard extends RectangularGameBoard {
      */
     public Connect6GameBoard(int gameBoardSize) {
         super(gameBoardSize, gameBoardSize);
-        if (gameBoardSize <= 7 || gameBoardSize > 40) {
+        if (gameBoardSize < 7 || gameBoardSize > 40) {
             throw new IllegalArgumentException("size must be between 7 and 40");
         }
     }

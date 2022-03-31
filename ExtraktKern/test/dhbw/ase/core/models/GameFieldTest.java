@@ -47,8 +47,9 @@ class GameFieldTest {
 
     @Test
     public void toStringWithFreeFieldTest() {
-        //Act
+        //Arrange
         GameField field = new GameField();
+        field.placeStone(null);
 
         //Assert
         assertEquals(TextRepository.FIELD_STATE_EMPTY, field.toString());
@@ -63,10 +64,12 @@ class GameFieldTest {
         Player player = Mockito.mock(Player.class);
         Mockito.when(player.getPlayerStone()).thenReturn(stone);
 
-        //Act
         field.placeStone(player);
 
+        //Act
+        String fieldRepresantation = field.toString();
+
         //Assert
-        assertEquals("P1", field.toString());
+        assertEquals("P1", fieldRepresantation);
     }
 }

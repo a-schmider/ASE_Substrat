@@ -164,17 +164,67 @@ Der Kunde erhält Spaß und Unterhaltung.
 
 \newpage
 \section{Unit tests}
-Die AAA Regeln wurde bei allen Tests angewandt. Jedoch waren bei einigen Tests der Arrange-Schritt nicht notwendig. Zu sehen ist das z.B. bei dem Test mit Mocks in Abbildung \pageref{fig:Mock} .
-\\
+Mit den bisher erstellten Tests werden ?\% der Programmzeilen abgedeckt. Dies wurde mittels Code Coverage ermittelt. IntelliJ bietet dies standardmäßig schon an und zeigt genau welcher Code ausgeführt wurde und welcher nicht. ?\% ist sehr wenig aber auch nicht verwunderlich bei diesen kleinen und wenigen Tests. 
+
+\begin{figure}[H]
+\centering
+{\includegraphics[width=13cm]{Bilder/CoverageAll}}
+\caption{Test-Coverage über das komplette Programm}
+\label{fig:CoverageAll}
+\end{figure}
+
+
+Wenn man sich aber die die getesteten Klassen ansieht, sieht das schon ganz anders aus. Dort wurde 100\% der Zeilen abgedeckt.
+
+\begin{figure}[H]
+\centering
+{\includegraphics[width=13cm]{Bilder/CoverageModel}}
+\caption{Test-Coverage für die getesteten Klassen}
+\label{fig:CoverageModel}
+\end{figure}
+
 
 \subsection{ATRIP}
 
 \subsubsection{Automatic}
-\subsubsection{Thorough}
-\subsubsection{Repeatable}
-\subsubsection{Independent}
-\subsubsection{Professional}
+Damit die Test automatisch ausgeführt werden, wurde in IntelliJ ein Run Configuration erstellt, womit alle Tests ausgeführt werden. Damit sich nach einer Änderung keine Fehler einschleichen, wurde auch in der Normalen Run Konfiguration für das Programm festgelegt, dass die Test im vor hinein ausgeführt werden sollen, bevor das Programm gestartet wird. 
 
+\begin{figure}[H]
+\centering
+{\includegraphics[width=8cm]{Bilder/AutomatedTests}}
+\caption{Run-Konfiguration des Programmes}
+\label{fig:AutomatedTests}
+\end{figure}
+
+Sofern die Projekt-Dateien auch im Git-Repository hinterlegt sind, haben alle Entwickler diese Konfigurationen zur Verfügung und können diese Verwenden.
+
+
+\begin{figure}[H]
+\centering
+{\includegraphics[width=13cm]{Bilder/TestResults}}
+\caption{Automatisierung der Tests}
+\label{fig:TestResults}
+\end{figure}
+
+
+\newpage
+
+\subsubsection{Thorough}
+Vieles in meinem Programm arbeitet mit anderen Klassen zusammen. So ist es nicht so einfach möglich mit Unit Tests zu testen, ob die Spielereingaben korrekt sind. Dies würde sich über mehrere Berichte ziehen und es würde ein Integrationstest werden. 
+
+Ein grundlegende Funktion, worauf vieles aufbaut, sind die GameFields. Also die einzelnen Felder auf die ein Stein gesetzt werden kann. Deshalb wurden diese als erstes getestet.
+
+
+\subsubsection{Repeatable}
+Bei den getestet Klassen wurde darauf geachtet, dass die Tests nicht von zufälligen Eingaben oder ähnlichem abhängig sind. Somit sollten die Test beliebig wiederholt werden können und immer das Gleiche Ergebnis liefern.
+
+\subsubsection{Independent}
+Alle Tests wurden so aufgebaut, das alles, was für die Tests benötigt wurde auch nur in diesem einen Test erstellt wird. So können die Tests in beliebiger Reihenfolge ausgeführt werden.
+
+\subsubsection{Professional}
+Damit die Tests einfach zu verstehen sind, wurden die AAA Regeln bei allen Tests angewandt. Jedoch waren bei einigen Tests nicht alle Schritte notwendig und wurden deshalb weggelassen . Zu sehen ist das zum Beispiel bei dem Test mit Mocks in Abbildung \pageref{fig:Mock}.
+
+\newpage
 
 \subsection{Mocking}
 Um die Klasse GameField zu testen wurden Mocks verwendet. Genauer gesagt, bei der toString-Methode. Diese Methode gibt den Wert, von dem Spielstein als Text zurück, der auf diesem Feld liegt. Dafür wird natürlich eine Instanz der Klasse Spieler verwendet. Dementsprechend wird dieses Objekt gemocked. Eigentlich will die GameField-Klasse aber den Spielstein, der auch noch in dem Spieler liegt. Deshalb wird der Spielstein auch gemocked. Die Player-Instanz verwendet dann die gemockte PlayerStone-Klasse. Schluss endlich kann das GameField getestet werden ohne die anderen Klassen zu verwenden.

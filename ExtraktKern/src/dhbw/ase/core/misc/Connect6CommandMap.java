@@ -2,13 +2,13 @@ package dhbw.ase.core.misc;
 
 import dhbw.ase.core.models.Player;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.function.BiConsumer;
 
 public class Connect6CommandMap {
 
-    private static List<Connect6CommandDefinition> list = new ArrayList<>();
+    private static List<Connect6CommandDefinition> list = new LinkedList<>();
 
     public static void addCommand(String text, Connect6CommandEnum enums, int parameter, BiConsumer method) {
         list.add(new Connect6CommandDefinition(text, enums, parameter, method));
