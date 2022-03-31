@@ -54,14 +54,8 @@
 
 % Images
 \newcommand{\DHBWLogoDeckblatt}{\includegraphics[width=4.5cm]{Logos/dhbw-logo}}
-\newcommand{\KernPackages}{\includegraphics[height=12cm]{Bilder/KernModul_Packages}}
-\newcommand{\PluginPackages}{\includegraphics[height=7cm]{Bilder/PluginModul_Packages}}
-\newcommand{\BridgePattern}{\includegraphics[height=7cm]{Bilder/Bridge_complete}}
-\newcommand{\PrintList}{\includegraphics[width=15cm]{Bilder/printList}}
-\newcommand{\RowPrint}{\includegraphics[width=15cm]{Bilder/rowPrint}}
-\newcommand{\pkgGamerule}{\includegraphics[width=7cm]{Bilder/gamerules}}
-\newcommand{\boardGR}{\includegraphics[width=15cm]{Bilder/BoardGameRule}}
-\newcommand{\torus}{\includegraphics[width=15cm]{Bilder/Torus}}
+
+
 
 \newcommand{\Titel}{Kleine Spielesammlung von 4-Gewinnt Versionen}
 \newcommand{\Abschluss}{Bachelor of Science}
@@ -164,7 +158,7 @@ Der Kunde erhält Spaß und Unterhaltung.
 
 \newpage
 \section{Unit tests}
-Mit den bisher erstellten Tests werden ?\% der Programmzeilen abgedeckt. Dies wurde mittels Code Coverage ermittelt. IntelliJ bietet dies standardmäßig schon an und zeigt genau welcher Code ausgeführt wurde und welcher nicht. ?\% ist sehr wenig aber auch nicht verwunderlich bei diesen kleinen und wenigen Tests. 
+Mit den bisher erstellten Tests werden 5\% aller Programmzeilen abgedeckt. Dies wurde mittels Code Coverage ermittelt. IntelliJ bietet dies standardmäßig schon an und zeigt genau welcher Code ausgeführt wurde und welcher nicht. ?\% ist sehr wenig aber auch nicht verwunderlich bei diesen kleinen und wenigen Tests. 
 
 \begin{figure}[H]
 \centering
@@ -174,15 +168,22 @@ Mit den bisher erstellten Tests werden ?\% der Programmzeilen abgedeckt. Dies wu
 \end{figure}
 
 
-Wenn man sich aber die die getesteten Klassen ansieht, sieht das schon ganz anders aus. Dort wurde 100\% der Zeilen abgedeckt.
+Wenn man sich aber die die getesteten Klassen ansieht, sieht das schon ganz anders aus. Dort wurde bei der GameField-Klasse 100\% der Zeilen abgedeckt. Bei der anderen getesteten Klasse Connect6StandardGameRule wurden 37\% der Zeilen abgedeckt, da dort bisher auch nur eine Methode getestet wurde. 
 
 \begin{figure}[H]
 \centering
 {\includegraphics[width=13cm]{Bilder/CoverageModel}}
-\caption{Test-Coverage für die getesteten Klassen}
+\caption{Test-Coverage für die GameField-Klasse}
 \label{fig:CoverageModel}
 \end{figure}
 
+
+\begin{figure}[H]
+\centering
+{\includegraphics[width=13cm]{Bilder/CoverageGameRule}}
+\caption{Test-Coverage für die Connect6StandardGameRule-Klasse}
+\label{fig:CoverageGameRule}
+\end{figure}
 
 \subsection{ATRIP}
 
@@ -191,7 +192,7 @@ Damit die Test automatisch ausgeführt werden, wurde in IntelliJ ein Run Configu
 
 \begin{figure}[H]
 \centering
-{\includegraphics[width=8cm]{Bilder/AutomatedTests}}
+{\includegraphics[width=13cm]{Bilder/AutomatedTests}}
 \caption{Run-Konfiguration des Programmes}
 \label{fig:AutomatedTests}
 \end{figure}
@@ -201,7 +202,7 @@ Sofern die Projekt-Dateien auch im Git-Repository hinterlegt sind, haben alle En
 
 \begin{figure}[H]
 \centering
-{\includegraphics[width=13cm]{Bilder/TestResults}}
+{\includegraphics[width=8cm]{Bilder/TestResults}}
 \caption{Automatisierung der Tests}
 \label{fig:TestResults}
 \end{figure}
@@ -253,7 +254,7 @@ Im Code wurde das bei den Spielregeln angewendet. Für jede Spielversion gibt es
 
 \begin{figure}[H]
 \centering
-{\boardGR}
+\includegraphics[width=13cm]{Bilder/BoardGameRule}
 \caption{Die abstrakte BoardGameRule-Klasse}
 \label{fig:boardGR}
 \end{figure}
@@ -265,7 +266,7 @@ Angewendet wurde das auf die Spielregeln. Zu Beginn gab es nur zwei Klassen für
 
 \begin{figure}[H]
 \centering
-{\torus}
+\includegraphics[width=13cm]{Bilder/Torus}
 \caption{Die Connect6TorusGameRule-Klasse}
 \label{fig:torus}
 \end{figure}
@@ -308,7 +309,7 @@ Ein gutes Beispiel dafür ist das GuiInterface. Dieses besitzt eine Methode prin
 
 \begin{figure}[H]
 \centering
-{\PrintList}
+\includegraphics[width=12cm]{Bilder/printList}
 \caption{Die printList-Methoden Implementierung}
 \label{fig:printList}
 \end{figure}
@@ -319,7 +320,7 @@ Das GuiInterfaces enthält ebenfalls eine rowPrint(RectangularGameBoard)-Methode
 
 \begin{figure}[H]
 \centering
-{\RowPrint}
+\includegraphics[width=13cm]{Bilder/rowPrint}
 \caption{Die rowPrint-Methoden Implementierung}
 \label{fig:rowPrint}
 \end{figure}
@@ -343,7 +344,7 @@ Um eine hohe Kohäsion zu erreichen werden in diesem Projekt hauptsächlich Pack
 
 \begin{figure}[H]
 \centering
-{\pkgGamerule}
+\includegraphics[width=7cm]{Bilder/gamerules}
 \caption{Das gamerule-Package}
 \label{fig:pkgGamerule}
 \end{figure}
@@ -364,13 +365,13 @@ Dieses Programm wurde in zwei Schichten aufgeteilt. Dem Kern-Modul, in dem die g
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
-  {\KernPackages}\\[2cm]
+  \includegraphics[height=12cm]{Bilder/KernModul_Packages}\\[2cm]
   %\caption{A subfigure}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  {\PluginPackages}\\[2cm]
+  \includegraphics[height=7cm]{Bilder/PluginModul_Packages}\\[2cm]
   %\caption{A subfigure}
   \label{fig:sub2}
 \end{subfigure}
@@ -392,7 +393,7 @@ Eines der Entwurfsmuster, das eingesetzt wurde ist das Brücken-Muster. Dies hat
 
 \begin{figure}[htpb!]
 \centering
-{\BridgePattern}\\[1cm]
+\includegraphics[width=13cm]{Bilder/Bridge_complete}
 \caption{Das Brücken-Entwurfsmuster}
 \label{fig:bridge}
 \end{figure}
@@ -407,7 +408,7 @@ Ich habe das verwendet, damit jedes Spiel den gleichen Spielverlauf hat. Somit w
 
 \begin{figure}[H]
 \centering
-{\includegraphics[width=8cm]{Bilder/templatePattern}}
+{\includegraphics[width=6cm]{Bilder/templatePattern}}
 \caption{Die Template-Methode play()}
 \label{fig:templatePattern}
 \end{figure}
@@ -417,9 +418,6 @@ Ich habe das verwendet, damit jedes Spiel den gleichen Spielverlauf hat. Somit w
 
 \newpage
 \section{Refactoring}
-Refactoring wird dazu verwendet den Code durch Code Reviews übersichtlicher und/oder lesbarer zu machen. Dabei wird das Gesamtverhalten des bestehendem Codes nicht verändert. Nachdem Refactoring-Schritt sollte die Vorgehensweise des Programms immer noch die gleiche sein wie zuvor. Dabei können sich aber Fehler einschleichen, da möglicherweise etwas vergessen oder übersehen wurde.
-Diese Stellen, die auf \glqq schlechten \grqq Code hinweisen, werden als Code Smells bezeichnet.
-
 
 
 \subsection{Duplicated Code}
@@ -427,7 +425,7 @@ Wie der Name schon sagt, gibt es an mehreren Stellen Code, der für das Gleiche 
 
 \begin{figure}[H]
 \centering
-{\includegraphics[height=4cm]{Bilder/ClassDiagGameRules}}
+{\includegraphics[width=13cm]{Bilder/ClassDiagGameRules}}
 \caption{Klassendiagramm der Spielregeln}
 \label{fig:ClassDiagGameRules}
 \end{figure}
