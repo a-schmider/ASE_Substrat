@@ -16,7 +16,7 @@ class Connect6StandardGameRuleTest {
         Connect6StandardGameRule gameRule = new Connect6StandardGameRule();
 
         //Act
-        int returnedWidth =returnNextWidth(gameRule, 18, Compass.E);
+        int returnedWidth = returnNextWidth(gameRule, 18, Compass.E);
 
         //Assert
         assertEquals(19, returnedWidth);
